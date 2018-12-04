@@ -24,12 +24,6 @@ while (Answer != RandomNumber) {
     break
   }
 
-  if (Guesses >= MaxTries) {
-    alert("Nice try! The correct answer was " + RandomNumber + ". Better luck next time!");
-    document.write("You lost the game while on a streak of " + Streak + ".")
-    break
-  }
-
   if (Streak < 10) {
     if (Answer > RandomNumber) {
       alert("Lower!");
@@ -91,6 +85,12 @@ while (Answer != RandomNumber) {
       TotalTries = 3;
       alert("*Notice* The number has changed to 10 and you have 3 tries from 14. AND you don't have any hints to tell you if the number is higher or lower. The game will remain like this until you lose.")
     }
+    
+     if (Guesses >= MaxTries) {
+    alert("Nice try! The correct answer was " + RandomNumber + ". Better luck next time!");
+    document.write("You lost the game while on a streak of " + Streak + ".")
+    break
+  }
 
     {
       alert("This is the start of a new round and are now on round " + Round + ".")
