@@ -89,10 +89,10 @@ while (Attempts != RandomNumber) {
         }
  
         if (Correct == 10) {
-            alert("*Notice* The number has changed to 10, you have 4 tries from 14, AND you have no hints to tell you if the number is higher or lower.")
-            Number = 10;
-            MaxTries = 4;
-            TotalTries = 4;
+            alert("*Notice* The number has changed to 30 and you have 5 tries from 14.")
+            Number = 30;
+            MaxTries = 5;
+            TotalTries = 5;
         }
  
         if (Correct < 5) {
@@ -111,8 +111,8 @@ while (Attempts != RandomNumber) {
         }
  
         if (Correct >= 10) {
-            MaxTries = 4;
-            TotalTries = 4;
+            MaxTries = 5;
+            TotalTries = 5;
         }
 
         alert("This is the start of a new round. You are now on round " + Round + ".")
@@ -129,11 +129,11 @@ while (Attempts != RandomNumber) {
  
 
     if (Attempts == null) {   //If user presses the "Cancel" button it will end the code and display the messages below.
-        document.write("You have ended the game.")
+        document.write("You have ended the game with a streak of " + Correct + ".")
         break
     }
  
-    if (Correct < 10) { 
+     
     if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
         alert('Higher!');
     }
@@ -141,9 +141,9 @@ while (Attempts != RandomNumber) {
     if (Attempts > RandomNumber) { //If user tpes in answer higher than the random number the system will tell them to guess lower
         alert('Lower!');
     }
-}
+
  
-if (Guesses == MaxTries - 1) { // If user is on it's last try the system will display the message below
+    if (Guesses == MaxTries - 1) { // If user is on it's last try the system will display the message below
         alert('This is your last try!!! Make it a good one! GOOD LUCK. :)');
     }
 
