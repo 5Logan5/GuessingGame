@@ -22,22 +22,25 @@ var Name = prompt("Before we begin the game, what is your name?");
 var firstChar = Name.slice(0,1);
 var upperCaseName = firstChar.toUpperCase();
 var restOfName = Name.slice(1,10);
-var Name = (upperCaseName + restOfName);
+var restOfNameLowerCase = restOfName.toLowerCase();
+var Name = (upperCaseName + restOfNameLowerCase);
+
 
 while (Attempts != RandomNumber) {
    
  
     if (Name == null) {
-        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(")
-        document.write("Please reload and enter a name.")
+        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(");
+        document.write("Please reload and enter a name.");
         break
     }
  
     if (Name == "") {
-        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(")
+        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :("); 
         break
     }
  
+
     (Attempts != RandomNumber); {
     var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
     Guesses += 1;
