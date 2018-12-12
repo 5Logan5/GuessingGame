@@ -1,4 +1,4 @@
-console.log('Welcome to V.4 of my Guessing Game')
+console.log('Welcome to V.4.1 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -7,7 +7,7 @@ console.log('Welcome to V.4 of my Guessing Game')
 //Patch Notes: V.3.3 Bug Fixes
 //Patch Notes: V.3.8 Bug Fixes
 //Patch Notes: V.4 Bug Fixes 
- 
+//Patch Notes: V.4.1 Only allowed ten letters in name and first letter of name is always capitilized
 
 var Number = 100
 var Guesses = 0
@@ -16,10 +16,13 @@ var RandomNumber = Math.floor(Math.random() * Number) + 1;
 var Correct = 0
 var Round = 1
 var TotalTries = 11
-var NameAnswer = prompt("Before we begin the game, what is your name?");
-var AnswerToName = NameAnswer
-var Name = AnswerToName
- 
+var Name = prompt("Before we begin the game, what is your name?");
+
+// Capitilizing the first letter of name
+var firstChar = Name.slice(0,1);
+var upperCaseName = firstChar.toUpperCase();
+var restOfName = Name.slice(1,10);
+var Name = (upperCaseName + restOfName);
 
 while (Attempts != RandomNumber) {
    
@@ -30,7 +33,7 @@ while (Attempts != RandomNumber) {
         break
     }
  
-    if (NameAnswer == "") {
+    if (Name == "") {
         alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(")
         break
     }
