@@ -19,13 +19,14 @@ var Round = 1
 var TotalTries = 7
 var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
 
+if (Name != null) {
 // Capitilizing the first letter of name
 var firstChar = Name.slice(0,1);
 var upperCaseName = firstChar.toUpperCase();
 var restOfName = Name.slice(1,10);
 var restOfNameLowerCase = restOfName.toLowerCase();
 var Name = (upperCaseName + restOfNameLowerCase);
-
+}
 
 while (Attempts != RandomNumber) {
    
@@ -38,6 +39,7 @@ while (Attempts != RandomNumber) {
  
     if (Name == "") {
         alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :("); 
+        document.write("Please reload and enter a name.");
         break
     }
 
