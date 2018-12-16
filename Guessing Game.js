@@ -42,7 +42,7 @@ while (Attempts != RandomNumber) {
 
 
     (Attempts != RandomNumber); {
-    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left." + RandomNumber + ".");
+    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
     Guesses += 1;
     TotalTries -=1;
     }
@@ -126,7 +126,7 @@ while (Attempts != RandomNumber) {
        
         {
             var RandomNumber = Math.floor(Math.random() * Number) + 0;
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left." + RandomNumber + ".");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
             Guesses += 1;
             TotalTries -=1;
         }
