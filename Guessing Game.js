@@ -1,4 +1,4 @@
-console.log('Welcome to V.4.1 of my Guessing Game')
+console.log('Welcome to V.5 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -8,15 +8,16 @@ console.log('Welcome to V.4.1 of my Guessing Game')
 //Patch Notes: V.3.8 Bug Fixes
 //Patch Notes: V.4 Bug Fixes 
 //Patch Notes: V.4.1 Only allowed ten letters in name and first letter of name is always capitilized
+//Patch Notes: V.5 Bug Fixes refer to github update description
 
 var Number = 100
 var Guesses = 0
-var MaxTries = 11
+var MaxTries = 7
 var RandomNumber = Math.floor(Math.random() * Number) + 1;
 var Correct = 0
 var Round = 1
-var TotalTries = 11
-var Name = prompt("Before we begin the game, what is your name?");
+var TotalTries = 7
+var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
 
 // Capitilizing the first letter of name
 var firstChar = Name.slice(0,1);
@@ -28,7 +29,7 @@ var Name = (upperCaseName + restOfNameLowerCase);
 
 while (Attempts != RandomNumber) {
    
- 
+
     if (Name == null) {
         alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(");
         document.write("Please reload and enter a name.");
@@ -57,7 +58,7 @@ while (Attempts != RandomNumber) {
         Guesses +=1
     }
 
-    if (Attempts == RandomNumber) { //If user types in the correct answer it will add a streak to whatever your at
+    if (Attempts == RandomNumber) { 
  
         alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
  
@@ -77,60 +78,192 @@ while (Attempts != RandomNumber) {
  
         if (Correct == 3) {
             Number = 350;
-            alert("*Notice* The number has changed to 350.")
+            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
         }
  
         if (Correct == 5) {
             Number = 500;
-            MaxTries = 12;
-            TotalTries = 12;
-            alert("*Notice* The number has changed to 500 and you now have 12 tries from 10.")
+            MaxTries = 10;
+            TotalTries = 10;
+            alert("*Notice* The number has changed to 500 and you now have 10 tries from 9.")
         }
  
         if (Correct == 8) {
-            alert("*Notice* The number has changed to 750 and you now have 14 tries from 12.")
+            alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
             Number = 750;
-            MaxTries = 14;
-            TotalTries = 14;
+            MaxTries = 13;
+            TotalTries = 13;
         }
  
         if (Correct == 10) {
-            alert("*Notice* The number has changed to 30 and you have 5 tries from 14.")
+            alert("*Notice* The number has changed to 30 and you have 3 tries from 13.")
             Number = 30;
-            MaxTries = 5;
-            TotalTries = 5;
+            MaxTries = 3;
+            TotalTries = 3;
         }
  
-        if (Correct < 5) {
-           MaxTries = 11;
-           TotalTries = 11;
+        if (Correct < 3) {
+           MaxTries = 7;
+           TotalTries = 7;
         }
 
+        if (Correct >= 3 && Correct < 5) {
+            MaxTries = 9;
+            TotalTries = 9;
+        }
+
+
         if (Correct >= 5 && Correct < 8) {
-            MaxTries = 12;
-            TotalTries = 12;
+            MaxTries = 10;
+            TotalTries = 10;
         }
  
         if (Correct >= 8 && Correct < 10) {
-            MaxTries = 14;
-            TotalTries = 14;
+            MaxTries = 13;
+            TotalTries = 13;
         }
  
         if (Correct >= 10) {
-            MaxTries = 5;
-            TotalTries = 5;
+            MaxTries = 3;
+            TotalTries = 3;
         }
 
         alert("This is the start of a new round. You are now on round " + Round + ".")
  
        
         {
-            var RandomNumber = Math.floor(Math.random() * Number) + 0;
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
+            var RandomNumber = Math.floor(Math.random() * Number) + 1;
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
             Guesses += 1;
             TotalTries -=1;
+
+            if (Attempts == RandomNumber) {
+                alert("WHOA! You guessed it right on your first try. Nice job!")
+                Round +=1;
+                Correct +=1;
+                Guesses = 0;
+                if (Correct == 3) {
+                    Number = 350;
+                    alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                }
+         
+                if (Correct == 5) {
+                    Number = 500;
+                    MaxTries = 10;
+                    TotalTries = 10;
+                    alert("*Notice* The number has changed to 500 and you now have 10 tries from 9.")
+                }
+         
+                if (Correct == 8) {
+                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 750;
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct == 10) {
+                    alert("*Notice* The number has changed to 30 and you have 3 tries from 13.")
+                    Number = 30;
+                    MaxTries = 3;
+                    TotalTries = 3;
+                }
+         
+                if (Correct < 3) {
+                   MaxTries = 7;
+                   TotalTries = 7;
+                }
+        
+                if (Correct >= 3 && Correct < 5) {
+                    MaxTries = 9;
+                    TotalTries = 9;
+                }
+        
+        
+                if (Correct >= 5 && Correct < 8) {
+                    MaxTries = 10;
+                    TotalTries = 10;
+                }
+         
+                if (Correct >= 8 && Correct < 10) {
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct >= 10) {
+                    MaxTries = 3;
+                    TotalTries = 3;
+                }
+                alert("This is the start of a new round. You are now on round " + Round + ".")
+                var RandomNumber = Math.floor(Math.random() * Number) + 1;
+                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
+                Guesses += 1;
+            }
+
+            if (Attempts == RandomNumber) {
+                alert("WHOA! You guessed it right on your first try. Nice job!")
+                Round +=1;
+                Correct +=1;
+                Guesses = 0;
+                if (Correct == 3) {
+                    Number = 350;
+                    alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                }
+         
+                if (Correct == 5) {
+                    Number = 500;
+                    MaxTries = 10;
+                    TotalTries = 10;
+                    alert("*Notice* The number has changed to 500 and you now have 10 tries from 9.")
+                }
+         
+                if (Correct == 8) {
+                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 750;
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct == 10) {
+                    alert("*Notice* The number has changed to 30 and you have 3 tries from 13.")
+                    Number = 30;
+                    MaxTries = 3;
+                    TotalTries = 3;
+                }
+         
+                if (Correct < 3) {
+                   MaxTries = 7;
+                   TotalTries = 7;
+                }
+        
+                if (Correct >= 3 && Correct < 5) {
+                    MaxTries = 9;
+                    TotalTries = 9;
+                }
+        
+        
+                if (Correct >= 5 && Correct < 8) {
+                    MaxTries = 10;
+                    TotalTries = 10;
+                }
+         
+                if (Correct >= 8 && Correct < 10) {
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct >= 10) {
+                    MaxTries = 3;
+                    TotalTries = 3;
+                }
+                alert("This is the start of a new round. You are now on round " + Round + ".")
+                var RandomNumber = Math.floor(Math.random() * Number) + 1;
+                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
+                Guesses += 1;
+                TotalTries -=1;
+            }
         }
- 
+
+
     }
  
 
