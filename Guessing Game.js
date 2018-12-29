@@ -1,4 +1,4 @@
-console.log('Welcome to V.6 of my Guessing Game')
+console.log('Welcome to V.6.1 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -10,6 +10,7 @@ console.log('Welcome to V.6 of my Guessing Game')
 //Patch Notes: V.4.1 Only allowed ten letters in name and first letter of name is always capitilized
 //Patch Notes: V.5 Bug Fixes refer to github update description
 //Patch Notes: V.6 Refer to Github Update Descriptiom
+//Patch Notes: V.6.1 Bug Fixes
 
 var Number = 100
 var Guesses = 0
@@ -201,6 +202,11 @@ while (Attempts != RandomNumber) {
             alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
         }
  
+        if (Correct == 3) {
+            Number = 350;
+            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+        }
+ 
         if (Correct == 5) {
             alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
             Number = 500;
@@ -246,6 +252,8 @@ while (Attempts != RandomNumber) {
 
         if (Correct == 20) {
             alert("Congratulations!!! On not only passing the Master section but BEATING The Guessing Game.")
+            document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+            break
         }
  
         if (Correct < 3) {
@@ -300,6 +308,11 @@ while (Attempts != RandomNumber) {
             alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
         }
  
+        if (Correct == 3) {
+            Number = 350;
+            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+        }
+ 
         if (Correct == 5) {
             alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
             Number = 500;
@@ -345,6 +358,8 @@ while (Attempts != RandomNumber) {
 
         if (Correct == 20) {
             alert("Congratulations!!! On not only passing the Master section but BEATING The Guessing Game.")
+            document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+            break
         }
  
         if (Correct < 3) {
@@ -400,13 +415,11 @@ while (Attempts != RandomNumber) {
     }
  
     if(Attempts != "") {
-
     if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
         alert('Higher!');
     }
 }
-    if (Attempts != "") {
-        
+    if (Attempts != "") {  
     if (Attempts > RandomNumber) { //If user tpes in answer higher than the random number the system will tell them to guess lower
         alert('Lower!');
     }
