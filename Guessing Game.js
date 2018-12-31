@@ -1,4 +1,4 @@
-console.log('Welcome to V.6.1 of my Guessing Game')
+console.log('Welcome to V.6.5 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -9,8 +9,9 @@ console.log('Welcome to V.6.1 of my Guessing Game')
 //Patch Notes: V.4 Bug Fixes 
 //Patch Notes: V.4.1 Only allowed ten letters in name and first letter of name is always capitilized
 //Patch Notes: V.5 Bug Fixes refer to github update description
-//Patch Notes: V.6 Refer to Github Update Descriptiom
+//Patch Notes: V.6 Refer to Github Update Description
 //Patch Notes: V.6.1 Bug Fixes
+//Patch Notes: V.6.5 Refer to Github Update Description
 
 var Number = 100
 var Guesses = 0
@@ -65,6 +66,7 @@ while (Attempts != RandomNumber) {
     if (Guesses == -1) {
         Guesses +=1
     }
+
 
     if (Attempts == RandomNumber) { 
  
@@ -136,9 +138,22 @@ while (Attempts != RandomNumber) {
         }
 
         if (Correct == 20) {
-            alert("Congratulations!!! On not only passing the Master section but BEATING The Guessing Game.")
-            document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
-            break
+            var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
+
+        var YorN = Continue.slice(0,1);
+        var YorNtoUpperCase = YorN.toUpperCase();
+        var esORo = Continue.slice(1,3);
+        var LoweresORo = esORo.toLowerCase();
+        var Continue = (YorNtoUpperCase + LoweresORo);
+
+            if (Continue == "Yes") {
+                alert("You are on a streak of 20.");
+            }
+
+            if (Continue == "No") {
+                document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+                break
+            }
         }
  
         if (Correct < 3) {
@@ -167,11 +182,11 @@ while (Attempts != RandomNumber) {
             TotalTries = 16;
         }
 
-        if (Correct >=12 && Correct < 14) {
+        if (Correct >= 12 && Correct < 14) {
             MaxTries = 17;
             TotalTries = 17;
         }
-        if (Correct >= 14) {
+        if (Correct >= 16) {
             MaxTries = 20;
             TotalTries = 20;
         }
@@ -196,100 +211,109 @@ while (Attempts != RandomNumber) {
                 Round +=1;
                 Correct +=1;
                 Guesses = 0;
-
-                if (Correct == 3) {
-            Number = 350;
-            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
-        }
- 
-        if (Correct == 3) {
-            Number = 350;
-            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
-        }
- 
-        if (Correct == 5) {
-            alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
-            Number = 500;
-            MaxTries = 10;
-            TotalTries = 10;
             
-        }
  
-        if (Correct == 8) {
-            alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
-            Number = 750;
-            MaxTries = 13;
-            TotalTries = 13;
-        }
- 
-        if (Correct == 10) {
-            alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
-            Number = 1000;
-            MaxTries = 16;
-            TotalTries = 16;
-        }
-
-        if (Correct == 12) {
-            alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
-            Number = 1250;
-            MaxTries = 17;
-            TotalTries = 17;
-        }
-
-        if (Correct == 14) {
-            alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
-            Number = 1500;
-            MaxTries = 18;
-            TotalTries = 18;
-        }
-
-        if (Correct == 16) {
-            alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
-            Number = 2000
-            MaxTries = 20;
-            TotalTries = 20;
-        }
-
-        if (Correct == 20) {
-            alert("Congratulations!!! On not only passing the Master section but BEATING The Guessing Game.")
-            document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
-            break
-        }
- 
-        if (Correct < 3) {
-           MaxTries = 7;
-           TotalTries = 7;
-        }
-
-        if (Correct >= 3 && Correct < 5) {
-            MaxTries = 9;
-            TotalTries = 9;
-        }
-
-
-        if (Correct >= 5 && Correct < 8) {
-            MaxTries = 10;
-            TotalTries = 10;
-        }
- 
-        if (Correct >= 8 && Correct < 10) {
-            MaxTries = 13;
-            TotalTries = 13;
-        }
- 
-        if (Correct >= 10 && Correct < 12) {
-            MaxTries = 16;
-            TotalTries = 16;
-        }
-
-        if (Correct >=12 && Correct < 14) {
-            MaxTries = 17;
-            TotalTries = 17;
-        }
-        if (Correct >= 14) {
-            MaxTries = 20;
-            TotalTries = 20;
-        }
+                if (Correct == 3) {
+                    Number = 350;
+                    alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                }
+         
+                if (Correct == 5) {
+                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 500;
+                    MaxTries = 10;
+                    TotalTries = 10;
+                    
+                }
+         
+                if (Correct == 8) {
+                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 750;
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct == 10) {
+                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
+                    Number = 1000;
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+        
+                if (Correct == 12) {
+                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
+                    Number = 1250;
+                    MaxTries = 17;
+                    TotalTries = 17;
+                }
+        
+                if (Correct == 14) {
+                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
+                    Number = 1500;
+                    MaxTries = 18;
+                    TotalTries = 18;
+                }
+        
+                if (Correct == 16) {
+                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
+                    Number = 2000
+                    MaxTries = 20;
+                    TotalTries = 20;
+                }
+        
+                if (Correct == 20) {
+                    var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
+        
+                var YorN = Continue.slice(0,1);
+                var YorNtoUpperCase = YorN.toUpperCase();
+                var esORo = Continue.slice(1,3);
+                var LoweresORo = esORo.toLowerCase();
+                var Continue = (YorNtoUpperCase + LoweresORo);
+        
+                    if (Continue == "Yes") {
+                        alert("You are on a streak of 20.");
+                    }
+        
+                    if (Continue == "No") {
+                        document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+                        break
+                    }
+                }
+         
+                if (Correct < 3) {
+                   MaxTries = 7;
+                   TotalTries = 7;
+                }
+        
+                if (Correct >= 3 && Correct < 5) {
+                    MaxTries = 9;
+                    TotalTries = 9;
+                }
+        
+        
+                if (Correct >= 5 && Correct < 8) {
+                    MaxTries = 10;
+                    TotalTries = 10;
+                }
+         
+                if (Correct >= 8 && Correct < 10) {
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct >= 10 && Correct < 12) {
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+        
+                if (Correct >= 12 && Correct < 14) {
+                    MaxTries = 17;
+                    TotalTries = 17;
+                }
+                if (Correct >= 16) {
+                    MaxTries = 20;
+                    TotalTries = 20;
+                }
 
                 alert("This is the start of a new round. You are now on round " + Round + ".")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
@@ -302,100 +326,108 @@ while (Attempts != RandomNumber) {
                 Round +=1;
                 Correct +=1;
                 Guesses = 0;
-
+ 
                 if (Correct == 3) {
-            Number = 350;
-            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
-        }
- 
-        if (Correct == 3) {
-            Number = 350;
-            alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
-        }
- 
-        if (Correct == 5) {
-            alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
-            Number = 500;
-            MaxTries = 10;
-            TotalTries = 10;
-            
-        }
- 
-        if (Correct == 8) {
-            alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
-            Number = 750;
-            MaxTries = 13;
-            TotalTries = 13;
-        }
- 
-        if (Correct == 10) {
-            alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
-            Number = 1000;
-            MaxTries = 16;
-            TotalTries = 16;
-        }
-
-        if (Correct == 12) {
-            alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
-            Number = 1250;
-            MaxTries = 17;
-            TotalTries = 17;
-        }
-
-        if (Correct == 14) {
-            alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
-            Number = 1500;
-            MaxTries = 18;
-            TotalTries = 18;
-        }
-
-        if (Correct == 16) {
-            alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
-            Number = 2000
-            MaxTries = 20;
-            TotalTries = 20;
-        }
-
-        if (Correct == 20) {
-            alert("Congratulations!!! On not only passing the Master section but BEATING The Guessing Game.")
-            document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
-            break
-        }
- 
-        if (Correct < 3) {
-           MaxTries = 7;
-           TotalTries = 7;
-        }
-
-        if (Correct >= 3 && Correct < 5) {
-            MaxTries = 9;
-            TotalTries = 9;
-        }
-
-
-        if (Correct >= 5 && Correct < 8) {
-            MaxTries = 10;
-            TotalTries = 10;
-        }
- 
-        if (Correct >= 8 && Correct < 10) {
-            MaxTries = 13;
-            TotalTries = 13;
-        }
- 
-        if (Correct >= 10 && Correct < 12) {
-            MaxTries = 16;
-            TotalTries = 16;
-        }
-
-        if (Correct >=12 && Correct < 14) {
-            MaxTries = 17;
-            TotalTries = 17;
-        }
-        if (Correct >= 14) {
-            MaxTries = 20;
-            TotalTries = 20;
-        }
+                    Number = 350;
+                    alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                }
+         
+                if (Correct == 5) {
+                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 500;
+                    MaxTries = 10;
+                    TotalTries = 10;
+                    
+                }
+         
+                if (Correct == 8) {
+                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    Number = 750;
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct == 10) {
+                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
+                    Number = 1000;
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+        
+                if (Correct == 12) {
+                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
+                    Number = 1250;
+                    MaxTries = 17;
+                    TotalTries = 17;
+                }
+        
+                if (Correct == 14) {
+                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
+                    Number = 1500;
+                    MaxTries = 18;
+                    TotalTries = 18;
+                }
+        
+                if (Correct == 16) {
+                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
+                    Number = 2000
+                    MaxTries = 20;
+                    TotalTries = 20;
+                }
+        
+                if (Correct == 20) {
+                    var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
+        
+                var YorN = Continue.slice(0,1);
+                var YorNtoUpperCase = YorN.toUpperCase();
+                var esORo = Continue.slice(1,3);
+                var LoweresORo = esORo.toLowerCase();
+                var Continue = (YorNtoUpperCase + LoweresORo);
+        
+                    if (Continue == "Yes") {
+                        alert("You are on a streak of 20.");
+                    }
+        
+                    if (Continue == "No") {
+                        document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+                        break
+                    }
+                }
+         
+                if (Correct < 3) {
+                   MaxTries = 7;
+                   TotalTries = 7;
+                }
+        
+                if (Correct >= 3 && Correct < 5) {
+                    MaxTries = 9;
+                    TotalTries = 9;
+                }
+        
+        
+                if (Correct >= 5 && Correct < 8) {
+                    MaxTries = 10;
+                    TotalTries = 10;
+                }
+         
+                if (Correct >= 8 && Correct < 10) {
+                    MaxTries = 13;
+                    TotalTries = 13;
+                }
+         
+                if (Correct >= 10 && Correct < 12) {
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+        
+                if (Correct >= 12 && Correct < 14) {
+                    MaxTries = 17;
+                    TotalTries = 17;
+                }
+                if (Correct >= 16) {
+                    MaxTries = 20;
+                    TotalTries = 20;
+                }
 
                 alert("This is the start of a new round. You are now on round " + Round + ".")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
@@ -409,9 +441,18 @@ while (Attempts != RandomNumber) {
     }
  
 
-    if (Attempts == null) {   //If user presses the "Cancel" button it will end the code and display the messages below.
+    if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
+        
+    if (Correct <= 19) {
         document.write("You have ended the game with a streak of " + Correct + ".")
         break
+    }
+
+    if (Correct > 19) {
+        document.write("Congrats on beating the game and scoring some more points. You ended the game with a streak of " + Correct + ".")
+        break
+    }
+
     }
  
     if(Attempts != "") {
