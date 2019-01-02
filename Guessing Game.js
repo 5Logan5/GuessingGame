@@ -1,4 +1,4 @@
-console.log('Welcome to V.6.6 of my Guessing Game')
+console.log('Welcome to V.7 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -13,6 +13,7 @@ console.log('Welcome to V.6.6 of my Guessing Game')
 //Patch Notes: V.6.1 Bug Fixes
 //Patch Notes: V.6.5 Refer to Github Update Description
 //Patch Notes: V.6.6 Bug Fixes --> Github Update Description
+//Patch Notes: V.7 Made game harder
 
 var Number = 100
 var Guesses = 0
@@ -32,9 +33,10 @@ var restOfNameLowerCase = restOfName.toLowerCase();
 var Name = (upperCaseName + restOfNameLowerCase);
 }
 
+if (Name != null) {
 alert("Welcome, " + Name + ". There are 6 ranks to this game. Bronze, Silver, Gold, Platinum, Diamond, and lastly Master. Beating Master will earn you... (Click 'OK')")
 alert("Nothing. Literally nothing. But it's a fun game.")
-
+}
 
 
 while (Attempts != RandomNumber) {
@@ -104,38 +106,38 @@ while (Attempts != RandomNumber) {
         }
  
         if (Correct == 8) {
-            alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+            alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
             Number = 750;
-            MaxTries = 13;
-            TotalTries = 13;
+            MaxTries = 11;
+            TotalTries = 11;
         }
  
         if (Correct == 10) {
-            alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
+            alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 14 tries from 11.")
             Number = 1000;
+            MaxTries = 14;
+            TotalTries = 14;
+        }
+
+        if (Correct == 12) {
+            alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 16 tries from 14.")
+            Number = 1250;
             MaxTries = 16;
             TotalTries = 16;
         }
 
-        if (Correct == 12) {
-            alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
-            Number = 1250;
+        if (Correct == 14) {
+            alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 17 tries from 16.")
+            Number = 1500;
             MaxTries = 17;
             TotalTries = 17;
         }
 
-        if (Correct == 14) {
-            alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
-            Number = 1500;
-            MaxTries = 18;
-            TotalTries = 18;
-        }
-
         if (Correct == 16) {
-            alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
+            alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 19 tries from 17.")
             Number = 2000
-            MaxTries = 20;
-            TotalTries = 20;
+            MaxTries = 19;
+            TotalTries = 19;
         }
 
         if (Correct == 20) {
@@ -174,22 +176,27 @@ while (Attempts != RandomNumber) {
         }
  
         if (Correct >= 8 && Correct < 10) {
-            MaxTries = 13;
-            TotalTries = 13;
+            MaxTries = 11;
+            TotalTries = 11;
         }
  
         if (Correct >= 10 && Correct < 12) {
+            MaxTries = 14;
+            TotalTries = 14;
+        }
+
+        if (Correct >= 12 && Correct < 14) {
             MaxTries = 16;
             TotalTries = 16;
         }
-
-        if (Correct >= 12 && Correct < 15) {
-            MaxTries = 17;
+        if (Correct >= 14 && Correct < 16) {
+            MaxTries =  17;
             TotalTries = 17;
         }
+
         if (Correct >= 16) {
-            MaxTries = 20;
-            TotalTries = 20;
+            MaxTries = 19;
+            TotalTries = 19;
         }
 
         alert("This is the start of a new round. You are now on round " + Round + ".")
@@ -228,38 +235,38 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct == 8) {
-                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
                     Number = 750;
-                    MaxTries = 13;
-                    TotalTries = 13;
+                    MaxTries = 11;
+                    TotalTries = 11;
                 }
          
                 if (Correct == 10) {
-                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
+                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 14 tries from 11.")
                     Number = 1000;
+                    MaxTries = 14;
+                    TotalTries = 14;
+                }
+        
+                if (Correct == 12) {
+                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 16 tries from 14.")
+                    Number = 1250;
                     MaxTries = 16;
                     TotalTries = 16;
                 }
         
-                if (Correct == 12) {
-                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
-                    Number = 1250;
+                if (Correct == 14) {
+                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 17 tries from 16.")
+                    Number = 1500;
                     MaxTries = 17;
                     TotalTries = 17;
                 }
         
-                if (Correct == 14) {
-                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
-                    Number = 1500;
-                    MaxTries = 18;
-                    TotalTries = 18;
-                }
-        
                 if (Correct == 16) {
-                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
+                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 19 tries from 17.")
                     Number = 2000
-                    MaxTries = 20;
-                    TotalTries = 20;
+                    MaxTries = 19;
+                    TotalTries = 19;
                 }
         
                 if (Correct == 20) {
@@ -298,22 +305,27 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct >= 8 && Correct < 10) {
-                    MaxTries = 13;
-                    TotalTries = 13;
+                    MaxTries = 11;
+                    TotalTries = 11;
                 }
          
                 if (Correct >= 10 && Correct < 12) {
-                    MaxTries = 16;
-                    TotalTries = 16;
+                    MaxTries = 14;
+                    TotalTries = 14;
                 }
         
                 if (Correct >= 12 && Correct < 14) {
-                    MaxTries = 17;
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+                if (Correct >= 14 && Correct < 16) {
+                    MaxTries =  17;
                     TotalTries = 17;
                 }
+        
                 if (Correct >= 16) {
-                    MaxTries = 20;
-                    TotalTries = 20;
+                    MaxTries = 19;
+                    TotalTries = 19;
                 }
 
                 alert("This is the start of a new round. You are now on round " + Round + ".")
@@ -334,7 +346,7 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct == 5) {
-                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 500 and you now have 10 tries from 9.")
                     Number = 500;
                     MaxTries = 10;
                     TotalTries = 10;
@@ -342,38 +354,38 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct == 8) {
-                    alert("*Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
                     Number = 750;
-                    MaxTries = 13;
-                    TotalTries = 13;
+                    MaxTries = 11;
+                    TotalTries = 11;
                 }
          
                 if (Correct == 10) {
-                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 16 tries from 13.")
+                    alert("Congrats on passing the Silver section of The Guessing Game. *Notice* The number has changed to 1,000 and you have 14 tries from 11.")
                     Number = 1000;
+                    MaxTries = 14;
+                    TotalTries = 14;
+                }
+        
+                if (Correct == 12) {
+                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 16 tries from 14.")
+                    Number = 1250;
                     MaxTries = 16;
                     TotalTries = 16;
                 }
         
-                if (Correct == 12) {
-                    alert("Congrats on passing the Gold section of The Guessing Game. *Notice* The number has changed to 1,250 and you have 17 tries from 16.")
-                    Number = 1250;
+                if (Correct == 14) {
+                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 17 tries from 16.")
+                    Number = 1500;
                     MaxTries = 17;
                     TotalTries = 17;
                 }
         
-                if (Correct == 14) {
-                    alert("Congrats on passing the Platinum section of The Guessing Game. *Notice* The number has changed to 1,500 and you have 18 tries from 17.")
-                    Number = 1500;
-                    MaxTries = 18;
-                    TotalTries = 18;
-                }
-        
                 if (Correct == 16) {
-                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 20 tries from 18.")
+                    alert("Congrats on passing the Diamond section of The Guessing Game. *Notice* The number has changed to 2,000 and you have 19 tries from 17.")
                     Number = 2000
-                    MaxTries = 20;
-                    TotalTries = 20;
+                    MaxTries = 19;
+                    TotalTries = 19;
                 }
         
                 if (Correct == 20) {
@@ -393,8 +405,14 @@ while (Attempts != RandomNumber) {
                         document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
                         break
                     }
+
+                    if (Continue == "") {
+                        alert("I'm assuming you want to continue.")
+                    }
+             
                 }
-         
+
+              
                 if (Correct < 3) {
                    MaxTries = 7;
                    TotalTries = 7;
@@ -412,22 +430,27 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct >= 8 && Correct < 10) {
-                    MaxTries = 13;
-                    TotalTries = 13;
+                    MaxTries = 11;
+                    TotalTries = 11;
                 }
          
                 if (Correct >= 10 && Correct < 12) {
-                    MaxTries = 16;
-                    TotalTries = 16;
+                    MaxTries = 14;
+                    TotalTries = 14;
                 }
         
                 if (Correct >= 12 && Correct < 14) {
-                    MaxTries = 17;
+                    MaxTries = 16;
+                    TotalTries = 16;
+                }
+                if (Correct >= 14 && Correct < 16) {
+                    MaxTries =  17;
                     TotalTries = 17;
                 }
+        
                 if (Correct >= 16) {
-                    MaxTries = 20;
-                    TotalTries = 20;
+                    MaxTries = 19;
+                    TotalTries = 19;
                 }
 
                 alert("This is the start of a new round. You are now on round " + Round + ".")
@@ -462,7 +485,7 @@ while (Attempts != RandomNumber) {
     }
 }
     if (Attempts != "") {  
-    if (Attempts > RandomNumber) { //If user tpes in answer higher than the random number the system will tell them to guess lower
+    if (Attempts > RandomNumber) { //If user types in answer higher than the random number the system will tell them to guess lower
         alert('Lower!');
     }
 }
@@ -477,7 +500,6 @@ while (Attempts != RandomNumber) {
     if (Guesses >= MaxTries) { //If the user reaches its max tries the game will end
         alert('You have no more tries left. The correct answer was ' + RandomNumber + ". Better luck next time! :)")
         document.write(" You went on a streak of " + Correct + ". Try to beat it next time. GOOD LUCK! :)")
-        document.write(' Thanks for playing my guessing game. ')
         break
     }
    
