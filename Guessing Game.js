@@ -1,4 +1,4 @@
-console.log('Welcome to V.6.5 of my Guessing Game')
+console.log('Welcome to V.6.6 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -12,6 +12,7 @@ console.log('Welcome to V.6.5 of my Guessing Game')
 //Patch Notes: V.6 Refer to Github Update Description
 //Patch Notes: V.6.1 Bug Fixes
 //Patch Notes: V.6.5 Refer to Github Update Description
+//Patch Notes: V.6.6 Bug Fixes --> Github Update Description
 
 var Number = 100
 var Guesses = 0
@@ -95,7 +96,7 @@ while (Attempts != RandomNumber) {
         }
  
         if (Correct == 5) {
-            alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
+            alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 500 and you now have 10 tries from 9.")
             Number = 500;
             MaxTries = 10;
             TotalTries = 10;
@@ -182,7 +183,7 @@ while (Attempts != RandomNumber) {
             TotalTries = 16;
         }
 
-        if (Correct >= 12 && Correct < 14) {
+        if (Correct >= 12 && Correct < 15) {
             MaxTries = 17;
             TotalTries = 17;
         }
@@ -219,7 +220,7 @@ while (Attempts != RandomNumber) {
                 }
          
                 if (Correct == 5) {
-                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 750 and you now have 13 tries from 10.")
+                    alert("Congrats on passing the Bronze section of The Guessing Game. *Notice* The number has changed to 500 and you now have 10 tries from 9.")
                     Number = 500;
                     MaxTries = 10;
                     TotalTries = 10;
