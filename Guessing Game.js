@@ -1,4 +1,4 @@
-console.log('Welcome to V.7 of my Guessing Game')
+console.log('Welcome to V.8 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -14,6 +14,7 @@ console.log('Welcome to V.7 of my Guessing Game')
 //Patch Notes: V.6.5 Refer to Github Update Description
 //Patch Notes: V.6.6 Bug Fixes --> Github Update Description
 //Patch Notes: V.7 Made game harder
+//Patch Notes: V.8 Github update description
 
 var Number = 100
 var Guesses = 0
@@ -55,7 +56,7 @@ while (Attempts != RandomNumber) {
     }
 
     (Attempts != RandomNumber); {
-    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
+    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left." + RandomNumber);
     Guesses += 1;
     TotalTries -=1;
     }
@@ -75,6 +76,85 @@ while (Attempts != RandomNumber) {
  
         alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
  
+        if (Round == 1) {
+            var Round1 = Guesses;
+        }
+
+        if (Round == 2) {
+            var Round2 = Guesses;
+        }
+
+        if (Round == 3) {
+            var Round3 = Guesses;
+        }
+
+        if (Round == 4) {
+            var Round4 = Guesses;
+        }
+
+        if (Round == 5) {
+            var Round5 = Guesses;
+        }
+
+        if (Round == 6) {
+            var Round6 = Guesses;
+        }
+
+        if (Round == 7) {
+            var Round7 = Guesses;
+        }
+
+        if (Round == 8) {
+            var Round8 = Guesses;
+        }
+
+        if (Round == 9) {
+            var Round9 = Guesses;
+        }
+
+        if (Round == 10) {
+            var Round10 = Guesses;
+        }
+
+        if (Round == 11) {
+            var Round11 = Guesses;
+        }
+
+        if (Round == 12) {
+            var Round12 = Guesses;
+        }
+
+        if (Round == 13) {
+            var Round13 = Guesses;
+        }
+
+        if (Round == 14) {
+            var Round14 = Guesses;
+        }
+
+        if (Round == 15) {
+            var Round15 = Guesses;
+        }
+
+        if (Round == 16) {
+            var Round16 = Guesses;
+        }
+
+        if (Round == 17) {
+            var Round17 = Guesses;
+        }
+
+        if (Round == 18) {
+            var Round18 = Guesses;
+        }
+
+        if (Round == 19) {
+            var Round19 = Guesses;
+        }
+
+        if (Round == 20) {
+            var Round20 = Guesses;
+        }
 
         if (Guesses <= 5 && Guesses > 1) {
             alert("Congrats on guessing " + RandomNumber + " in 5 tries or less.")
@@ -85,7 +165,6 @@ while (Attempts != RandomNumber) {
         }
  
         Correct += 1;
-        Round += 1;
         Guesses = 0;
 
         if (Correct != 20) {
@@ -143,9 +222,9 @@ while (Attempts != RandomNumber) {
         if (Correct == 20) {
             var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
 
-        var YorN = Continue.slice(0,1);
+        var YorN = Continue.slice(0,1); //YorN means Yes or No
         var YorNtoUpperCase = YorN.toUpperCase();
-        var esORo = Continue.slice(1,3);
+        var esORo = Continue.slice(1,3); //esORo means Y(es) OR N(o)
         var LoweresORo = esORo.toLowerCase();
         var Continue = (YorNtoUpperCase + LoweresORo);
 
@@ -154,8 +233,13 @@ while (Attempts != RandomNumber) {
             }
 
             if (Continue == "No") {
-                document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
+                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                document.write("CONGRATULATIONS ON BEATING THE GAME!!! You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
+            }
+
+            if (Continue == "") {
+                alert("I'm assuming you want to continue.")
             }
         }
  
@@ -199,6 +283,7 @@ while (Attempts != RandomNumber) {
             TotalTries = 19;
         }
 
+        Round += 1;
         alert("This is the start of a new round. You are now on round " + Round + ".")
  
        
@@ -216,9 +301,89 @@ while (Attempts != RandomNumber) {
 
             if (Attempts == RandomNumber) {
                 alert("WHOA! You guessed it right on your first try. Nice job!")
-                Round +=1;
                 Correct +=1;
                 Guesses = 0;
+
+                if (Round == 1) {
+                    var Round1 = Guesses;
+                }
+        
+                if (Round == 2) {
+                    var Round2 = Guesses;
+                }
+        
+                if (Round == 3) {
+                    var Round3 = Guesses;
+                }
+        
+                if (Round == 4) {
+                    var Round4 = Guesses;
+                }
+        
+                if (Round == 5) {
+                    var Round5 = Guesses;
+                }
+        
+                if (Round == 6) {
+                    var Round6 = Guesses;
+                }
+        
+                if (Round == 7) {
+                    var Round7 = Guesses;
+                }
+        
+                if (Round == 8) {
+                    var Round8 = Guesses;
+                }
+        
+                if (Round == 9) {
+                    var Round9 = Guesses;
+                }
+        
+                if (Round == 10) {
+                    var Round10 = Guesses;
+                }
+        
+                if (Round == 11) {
+                    var Round11 = Guesses;
+                }
+        
+                if (Round == 12) {
+                    var Round12 = Guesses;
+                }
+        
+                if (Round == 13) {
+                    var Round13 = Guesses;
+                }
+        
+                if (Round == 14) {
+                    var Round14 = Guesses;
+                }
+        
+                if (Round == 15) {
+                    var Round15 = Guesses;
+                }
+        
+                if (Round == 16) {
+                    var Round16 = Guesses;
+                }
+        
+                if (Round == 17) {
+                    var Round17 = Guesses;
+                }
+        
+                if (Round == 18) {
+                    var Round18 = Guesses;
+                }
+        
+                if (Round == 19) {
+                    var Round19 = Guesses;
+                }
+        
+                if (Round == 20) {
+                    var Round20 = Guesses;
+                }
+        
             
  
                 if (Correct == 3) {
@@ -272,9 +437,9 @@ while (Attempts != RandomNumber) {
                 if (Correct == 20) {
                     var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
         
-                var YorN = Continue.slice(0,1);
+                var YorN = Continue.slice(0,1); //YorN means Yes or No
                 var YorNtoUpperCase = YorN.toUpperCase();
-                var esORo = Continue.slice(1,3);
+                var esORo = Continue.slice(1,3); //esORo means Y(es) OR N(o)
                 var LoweresORo = esORo.toLowerCase();
                 var Continue = (YorNtoUpperCase + LoweresORo);
         
@@ -283,8 +448,13 @@ while (Attempts != RandomNumber) {
                     }
         
                     if (Continue == "No") {
+                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
                         document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
                         break
+                    }
+
+                    if (Continue == "") {
+                        alert("i'm assuming you want to continue.")
                     }
                 }
          
@@ -327,7 +497,7 @@ while (Attempts != RandomNumber) {
                     MaxTries = 19;
                     TotalTries = 19;
                 }
-
+                Round += 1;
                 alert("This is the start of a new round. You are now on round " + Round + ".")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
                 var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
@@ -336,10 +506,90 @@ while (Attempts != RandomNumber) {
 
             if (Attempts == RandomNumber) {
                 alert("WHOA! You guessed it right on your first try. Nice job!")
-                Round +=1;
                 Correct +=1;
                 Guesses = 0;
  
+                if (Round == 1) {
+                    var Round1 = Guesses;
+                }
+        
+                if (Round == 2) {
+                    var Round2 = Guesses;
+                }
+        
+                if (Round == 3) {
+                    var Round3 = Guesses;
+                }
+        
+                if (Round == 4) {
+                    var Round4 = Guesses;
+                }
+        
+                if (Round == 5) {
+                    var Round5 = Guesses;
+                }
+        
+                if (Round == 6) {
+                    var Round6 = Guesses;
+                }
+        
+                if (Round == 7) {
+                    var Round7 = Guesses;
+                }
+        
+                if (Round == 8) {
+                    var Round8 = Guesses;
+                }
+        
+                if (Round == 9) {
+                    var Round9 = Guesses;
+                }
+        
+                if (Round == 10) {
+                    var Round10 = Guesses;
+                }
+        
+                if (Round == 11) {
+                    var Round11 = Guesses;
+                }
+        
+                if (Round == 12) {
+                    var Round12 = Guesses;
+                }
+        
+                if (Round == 13) {
+                    var Round13 = Guesses;
+                }
+        
+                if (Round == 14) {
+                    var Round14 = Guesses;
+                }
+        
+                if (Round == 15) {
+                    var Round15 = Guesses;
+                }
+        
+                if (Round == 16) {
+                    var Round16 = Guesses;
+                }
+        
+                if (Round == 17) {
+                    var Round17 = Guesses;
+                }
+        
+                if (Round == 18) {
+                    var Round18 = Guesses;
+                }
+        
+                if (Round == 19) {
+                    var Round19 = Guesses;
+                }
+        
+                if (Round == 20) {
+                    var Round20 = Guesses;
+                }
+        
+
                 if (Correct == 3) {
                     Number = 350;
                     alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
@@ -391,9 +641,9 @@ while (Attempts != RandomNumber) {
                 if (Correct == 20) {
                     var Continue = prompt("Congratulations on not only passing the Master section but BEATING The Guessing Game. Would you like to continue to get a higher score? 'Yes' or 'No'")
         
-                var YorN = Continue.slice(0,1);
+                var YorN = Continue.slice(0,1); //YorN means Yes or No
                 var YorNtoUpperCase = YorN.toUpperCase();
-                var esORo = Continue.slice(1,3);
+                var esORo = Continue.slice(1,3); //esORo means Y(es) OR N(o)   
                 var LoweresORo = esORo.toLowerCase();
                 var Continue = (YorNtoUpperCase + LoweresORo);
         
@@ -402,6 +652,7 @@ while (Attempts != RandomNumber) {
                     }
         
                     if (Continue == "No") {
+                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
                         document.write("CONGRATULATIONS ON BEATING THE GAME!!!");
                         break
                     }
@@ -452,7 +703,7 @@ while (Attempts != RandomNumber) {
                     MaxTries = 19;
                     TotalTries = 19;
                 }
-
+                Round += 1;
                 alert("This is the start of a new round. You are now on round " + Round + ".")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
                 var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
@@ -463,6 +714,8 @@ while (Attempts != RandomNumber) {
 
 
     }
+
+    
  
 
     if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
@@ -473,18 +726,19 @@ while (Attempts != RandomNumber) {
     }
 
     if (Correct > 19) {
-        document.write("Congrats on beating the game and scoring some more points. You ended the game with a streak of " + Correct + ".")
+        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+        document.write("Congrats on beating the game with a total of " + endGameTries +" guesses. You ended the game with a streak of " + Correct + ".")
         break
     }
 
     }
  
-    if(Attempts != "") {
+    if(Attempts != "" && Attempts <= Number && Attempts > 0) {
     if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
         alert('Higher!');
     }
 }
-    if (Attempts != "") {  
+    if (Attempts != "" && Attempts <= Number && Attempts > 0) {  
     if (Attempts > RandomNumber) { //If user types in answer higher than the random number the system will tell them to guess lower
         alert('Lower!');
     }
@@ -509,12 +763,13 @@ while (Attempts != RandomNumber) {
         TotalTries += 1;
         alert("Whoa. That's a bit too high of a guess. Try a number below " + Number + " next time.")
     }
- 
-    if (Attempts < 0) { //If the user typed a number lower than 0 the system will display the message below
+    if (Attempts != "") {
+    if (Attempts < 1) { //If the user typed a number lower than 0 the system will display the message below
         Guesses -= 1;
         TotalTries += 1;
         alert("Yikes! You entered a number below what was possible. Try a number higher than 0 this time.")
     }
+}
  
 
 }
