@@ -1,4 +1,4 @@
-console.log('Welcome to V.8 of my Guessing Game')
+console.log('Welcome to V.8.2 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -15,6 +15,7 @@ console.log('Welcome to V.8 of my Guessing Game')
 //Patch Notes: V.6.6 Bug Fixes --> Github Update Description
 //Patch Notes: V.7 Made game harder
 //Patch Notes: V.8 Github update description
+//Patch Notes: V.8.2 Bug Fixes
 
 var Number = 100
 var Guesses = 0
@@ -35,8 +36,10 @@ var Name = (upperCaseName + restOfNameLowerCase);
 }
 
 if (Name != null) {
+if (Name != "") {
 alert("Welcome, " + Name + ". There are 6 ranks to this game. Bronze, Silver, Gold, Platinum, Diamond, and lastly Master. Beating Master will earn you... (Click 'OK')")
 alert("Nothing. Literally nothing. But it's a fun game.")
+}
 }
 
 
@@ -44,19 +47,17 @@ while (Attempts != RandomNumber) {
    
 
     if (Name == null) {
-        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :(");
-        document.write("Please reload and enter a name.");
+        document.write("Please reload.")
         break
     }
  
-    if (Name == "") {
-        alert("Reload the page and MAKE SURE you enter a name or the game won't start. Sorry. :("); 
+    if (Name == "") { 
         document.write("Please reload and enter a name.");
         break
     }
 
     (Attempts != RandomNumber); {
-    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left." + RandomNumber);
+    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
     Guesses += 1;
     TotalTries -=1;
     }
@@ -454,7 +455,7 @@ while (Attempts != RandomNumber) {
                     }
 
                     if (Continue == "") {
-                        alert("i'm assuming you want to continue.")
+                        alert("I'm assuming you want to continue.")
                     }
                 }
          
@@ -727,7 +728,7 @@ while (Attempts != RandomNumber) {
 
     if (Correct > 19) {
         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-        document.write("Congrats on beating the game with a total of " + endGameTries +" guesses. You ended the game with a streak of " + Correct + ".")
+        document.write("Congrats on beating the game. In 20 rounds you ended up with a total of " + endGameTries +" guesses. You ended the game with a streak of " + Correct + ".")
         break
     }
 
