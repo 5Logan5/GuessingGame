@@ -1,4 +1,4 @@
-console.log('Welcome to V.8.2 of my Guessing Game')
+console.log('Welcome to V.8.3 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -16,6 +16,7 @@ console.log('Welcome to V.8.2 of my Guessing Game')
 //Patch Notes: V.7 Made game harder
 //Patch Notes: V.8 Github update description
 //Patch Notes: V.8.2 Bug Fixes
+//Patch Notes: V.8.3 Made the game neater
 
 var Number = 100
 var Guesses = 0
@@ -25,6 +26,7 @@ var Correct = 0
 var Round = 1
 var TotalTries = 7
 var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
+
 
 if (Name != null) {
 // Capitilizing the first letter of name
@@ -37,10 +39,10 @@ var Name = (upperCaseName + restOfNameLowerCase);
 
 if (Name != null) {
 if (Name != "") {
-alert("Welcome, " + Name + ". There are 6 ranks to this game. Bronze, Silver, Gold, Platinum, Diamond, and lastly Master. Beating Master will earn you... (Click 'OK')")
-alert("Nothing. Literally nothing. But it's a fun game.")
+alert("Welcome, " + Name + ". There are 6 ranks to this game. Bronze, Silver, Gold, Platinum, Diamond, and lastly Master.")
 }
 }
+
 
 
 while (Attempts != RandomNumber) {
@@ -57,13 +59,13 @@ while (Attempts != RandomNumber) {
     }
 
     (Attempts != RandomNumber); {
-    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left.");
+    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 0 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
     Guesses += 1;
     TotalTries -=1;
     }
  
     if (Attempts == "") {
-        alert("Whoops! You entered nothing. Certainly it was a mistake so I have taken off a try so you can try again. Aren't I nice.")
+        alert("Whoops! You entered nothing. I have taken off a try for you.")
         Guesses -= 1;
         TotalTries +=1;
     }
@@ -71,6 +73,7 @@ while (Attempts != RandomNumber) {
     if (Guesses == -1) {
         Guesses +=1
     }
+
 
 
     if (Attempts == RandomNumber) { 
@@ -157,10 +160,6 @@ while (Attempts != RandomNumber) {
             var Round20 = Guesses;
         }
 
-        if (Guesses <= 5 && Guesses > 1) {
-            alert("Congrats on guessing " + RandomNumber + " in 5 tries or less.")
-        }
- 
         if (Guesses == 1) {
             alert('Whoa! Hold on there cheater! ;) It took you only one try to correctly guess ' + RandomNumber + '.' + ' Do you know the odds of doing that again?')
         }
@@ -240,7 +239,7 @@ while (Attempts != RandomNumber) {
             }
 
             if (Continue == "") {
-                alert("I'm assuming you want to continue.")
+                alert("I'm assuming you want to continue. You are on a streak of 20")
             }
         }
  
@@ -285,17 +284,17 @@ while (Attempts != RandomNumber) {
         }
 
         Round += 1;
-        alert("This is the start of a new round. You are now on round " + Round + ".")
+        alert("This is the start of a new round.")
  
        
         {
             var RandomNumber = Math.floor(Math.random() * Number) + 1;
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
             Guesses += 1;
             TotalTries -=1;
 
             if (Attempts == "") {
-                alert("Whoops! You entered nothing. Certainly it was a mistake so I have taken off a try so you can try again. Aren't I nice.")
+                alert("Whoops! You entered nothing. I have taken off a try for you.")
                 Guesses -= 1;
                 TotalTries +=1;
             }
@@ -455,7 +454,7 @@ while (Attempts != RandomNumber) {
                     }
 
                     if (Continue == "") {
-                        alert("I'm assuming you want to continue.")
+                        alert("I'm assuming you want to continue. You are on a streak of 20.")
                     }
                 }
          
@@ -499,9 +498,9 @@ while (Attempts != RandomNumber) {
                     TotalTries = 19;
                 }
                 Round += 1;
-                alert("This is the start of a new round. You are now on round " + Round + ".")
+                alert("This is the start of a new round.")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
+                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
                 Guesses += 1;
             }
 
@@ -659,7 +658,7 @@ while (Attempts != RandomNumber) {
                     }
 
                     if (Continue == "") {
-                        alert("I'm assuming you want to continue.")
+                        alert("I'm assuming you want to continue. You are on a streak of 20.")
                     }
              
                 }
@@ -705,9 +704,9 @@ while (Attempts != RandomNumber) {
                     TotalTries = 19;
                 }
                 Round += 1;
-                alert("This is the start of a new round. You are now on round " + Round + ".")
+                alert("This is the start of a new round.")
                 var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.");
+                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.  You are on round " + Round + ".");
                 Guesses += 1;
                 TotalTries -=1;
             }
