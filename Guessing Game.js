@@ -1,4 +1,4 @@
-console.log('Welcome to V.9 of my Guessing Game')
+console.log('Welcome to V.9.1 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -18,6 +18,7 @@ console.log('Welcome to V.9 of my Guessing Game')
 //Patch Notes: V.8.2 Bug Fixes
 //Patch Notes: V.8.3 Made the game neater
 //Patch Notes: V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater.
+//Patch Notes: V.9.1 Changed picture for tab art. Bug Fixes.
 
 var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
 
@@ -767,8 +768,8 @@ if (Answer == "1") {
 
 
         if (Guesses >= MaxTries) { //If the user reaches its max tries the game will end
-            alert('You have no more tries left. The correct answer was ' + RandomNumber + ". Better luck next time! :)")
-            document.write(" You went on a streak of " + Correct + ". Try to beat it next time. GOOD LUCK! :)")
+            alert('You have no more tries left. The correct answer was ' + RandomNumber + ".")
+            document.write(" You went on a streak of " + Correct + ".")
             break
         }
 
@@ -804,12 +805,12 @@ if (Answer == "2") {
 
         if (Tries != null && Tries != "") {
             if (TotalTries > 500) {
-                document.write("Please reload and enter a number between 1 and 500.")
+                document.write("Please reload and enter a number between 30 and 500.")
                 break
             }
 
             if (TotalTries < 30) {
-                document.write("Please reload and enter a number between 1 and 500.")
+                document.write("Please reload and enter a number between 30 and 500.")
                 break
             }
         }
@@ -1089,7 +1090,7 @@ if (Answer == "2") {
 
             }
         }
-        if (Guesses == TotalTries) {
+        if (Guesses >= TotalTries) {
             alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + TotalTries + " tries.")
             document.write("Nice! You got to Round " + Round + " in " + TotalTries + " tries.")
             break
