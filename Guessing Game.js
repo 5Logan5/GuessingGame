@@ -1,4 +1,4 @@
-console.log('Welcome to V.9.1 of my Guessing Game')
+console.log('Welcome to V.9.4 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -19,6 +19,7 @@ console.log('Welcome to V.9.1 of my Guessing Game')
 //Patch Notes: V.8.3 Made the game neater
 //Patch Notes: V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater.
 //Patch Notes: V.9.1 Changed picture for tab art. Bug Fixes.
+//Patch Notes: V.9.4 Removed/changed some things and fixed some bugs
 
 var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
 
@@ -46,11 +47,6 @@ if (Name != null) {
     }
 }
 
-if (Answer == null && Name != null) {
-    document.write("Please reload.")
-}
-
-
 if (Answer == "1") {
 
     var Number = 100
@@ -63,17 +59,6 @@ if (Answer == "1") {
 
     while (Attempts != RandomNumber) {
 
-
-        if (Name == null) {
-            document.write("Please reload.")
-            break
-        }
-
-        if (Name == "") {
-            document.write("Please reload and enter a name.");
-            break
-        }
-
         (Attempts != RandomNumber); {
             var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
             Guesses += 1;
@@ -81,9 +66,9 @@ if (Answer == "1") {
         }
 
         if (Attempts == "") {
-            alert("Whoops! You entered nothing. I have taken off a try for you.")
             Guesses -= 1;
             TotalTries += 1;
+            alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
         }
 
         if (Guesses == -1) {
@@ -236,7 +221,7 @@ if (Answer == "1") {
             }
 
             if (Correct == 20) {
-                var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
+                var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                 var YorN = Continue.slice(0, 1); //YorN means Yes or No
                 var YorNtoUpperCase = YorN.toUpperCase();
@@ -250,12 +235,28 @@ if (Answer == "1") {
 
                 if (Continue == "No") {
                     var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                    document.write("CONGRATULATIONS ON BEATING THE GAME!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                    document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
                     break
                 }
 
                 if (Continue == "") {
-                    alert("I'm assuming you want to continue. You are on a streak of 20")
+                    var Continue2 = prompt("Oops! You entered nothing. As I was saying, Congrats on beating the Guessing Game. Would you like to continue to get a higher score. Type 'Yes' or 'No'. ")
+
+                    var YorN2 = Continue2.slice(0, 1); //YorN means Yes or No
+                    var YorNtoUpperCase2 = YorN2.toUpperCase();
+                    var esORo2 = Continue2.slice(1, 3); //esORo means Y(es) OR N(o)
+                    var LoweresORo2 = esORo2.toLowerCase();
+                    var Continue2 = (YorNtoUpperCase2 + LoweresORo2);
+
+                    if (Continue2 == "Yes") {
+                        alert("You are on a streak of 20.")
+                    }
+
+                    if (Continue2 == "No") {
+                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                        document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                        break
+                    }
                 }
             }
 
@@ -310,9 +311,9 @@ if (Answer == "1") {
                 TotalTries -= 1;
 
                 if (Attempts == "") {
-                    alert("Whoops! You entered nothing. I have taken off a try for you.")
                     Guesses -= 1;
                     TotalTries += 1;
+                    alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
                 }
 
                 if (Attempts == RandomNumber) {
@@ -451,7 +452,7 @@ if (Answer == "1") {
                     }
 
                     if (Correct == 20) {
-                        var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
+                        var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                         var YorN = Continue.slice(0, 1); //YorN means Yes or No
                         var YorNtoUpperCase = YorN.toUpperCase();
@@ -465,12 +466,27 @@ if (Answer == "1") {
 
                         if (Continue == "No") {
                             var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("CONGRATULATIONS ON BEATING THE GAME!!! You beat the game in " + endGameTries + " tries.");
+                            document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
                             break
                         }
 
                         if (Continue == "") {
-                            alert("I'm assuming you want to continue. You are on a streak of 20.")
+                            var Continue2 = prompt("You enterd nothing. Would you like to continue to get a higher score? Type 'Yes' or 'No'. ")
+                            var YorN2 = Continue2.slice(0, 1); //YorN means Yes or No
+                            var YorNtoUpperCase2 = YorN2.toUpperCase();
+                            var esORo2 = Continue2.slice(1, 3); //esORo means Y(es) OR N(o)
+                            var LoweresORo2 = esORo2.toLowerCase();
+                            var Continue2 = (YorNtoUpperCase2 + LoweresORo2);
+
+                            if (Continue2 == "Yes") {
+                                alert("You are on a streak of 20.")
+                            }
+
+                            if (Continue2 == "No") {
+                                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                                document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                                break
+                            }
                         }
                     }
 
@@ -669,12 +685,28 @@ if (Answer == "1") {
 
                         if (Continue == "No") {
                             var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("CONGRATULATIONS ON BEATING THE GAME!!! You beat the game in " + endGameTries + " tries.");
+                            document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
                             break
                         }
 
                         if (Continue == "") {
-                            alert("I'm assuming you want to continue. You are on a streak of 20.")
+                            var Continue2 = prompt("Would you like to continue to get a higher score? Type 'Yes' or 'No'. ")
+                            var YorN2 = Continue2.slice(0, 1); //YorN means Yes or No
+                            var YorNtoUpperCase2 = YorN2.toUpperCase();
+                            var esORo2 = Continue2.slice(1, 3); //esORo means Y(es) OR N(o)   
+                            var LoweresORo2 = esORo2.toLowerCase();
+                            var Continue2 = (YorNtoUpperCase2 + LoweresORo2);
+
+                            if (Continue2 == "Yes") {
+                                alert("You are on a streak of 20.");
+                            }
+
+                            if (Continue2 == "No") {
+                                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                                document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                                break
+                            }
+
                         }
 
                     }
@@ -1102,17 +1134,12 @@ if (Answer == "2") {
 
 
 /*
-
  For playing offline to paste in the HTML "Body" Section to make the font arial, font color orange, and size 25px
-
 <font color="Orange"</font>
-<font face="Arial"</font>
+<font face="plain"</font>
 <font size="25"</font>
-
 */
 
 /*
-
  <script src="Guessing Game.js"></script>
-
  */
