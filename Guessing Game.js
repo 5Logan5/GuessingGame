@@ -1,4 +1,4 @@
-console.log('Welcome to V.9.4 of my Guessing Game')
+console.log('Welcome to V.10 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -20,30 +20,47 @@ console.log('Welcome to V.9.4 of my Guessing Game')
 //Patch Notes: V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater.
 //Patch Notes: V.9.1 Changed picture for tab art. Bug Fixes.
 //Patch Notes: V.9.4 Removed/changed some things and fixed some bugs
+//Patch Notes: V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.)
 
-var Name = prompt("Before we begin the game, what is your name? (Max = 10 Letters)");
+var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
 
 if (Name != null) {
     // Capitilizing the first letter of name
     var firstChar = Name.slice(0, 1);
     var upperCaseName = firstChar.toUpperCase();
-    var restOfName = Name.slice(1, 10);
+    var restOfName = Name.slice(1, 30);
     var restOfNameLowerCase = restOfName.toLowerCase();
     var Name = (upperCaseName + restOfNameLowerCase);
 }
 
 if (Name == null) {
-    document.write("Please reload.")
+    document.write("Please reload and enter a name.")
+    console.error("Please enter a name.")
 }
 
 if (Name == "") {
-    document.write("Please reload.")
+    document.write("Please reload and enter a name.")
+    console.error("Please enter a name.")
 }
 
 if (Name != null) {
     if (Name != "") {
-        var Answer = prompt("Hello, " + Name + ". There are 2 ways to play this game #1 is to try and beat 20 rounds and try to get the lowest amount of tries or #2 is you can pick how many tries you have and you try to get to the farthest round with the amount of tries that you have. Type '1' for #1 and '2' for #2.")
+        var Answer = prompt("Hello, " + Name + ". Welcome to the Guessing Game, pretty much explains the rules in the title so, type '1' to start.")
+    }
+}
+
+if (Name != null && Name != "") {
+    if (Answer == "") {
+        document.write("Please reload and enter a game mode.")
+        console.error("Please enter a game mode.")
+    }
+}
+
+if (Name != null && Name != "") {
+    if (Answer == null) {
+        document.write("Please reload and enter a game mode.")
+        console.error("Please enter a game mode.")
     }
 }
 
@@ -51,16 +68,16 @@ if (Answer == "1") {
 
     var Number = 100
     var Guesses = 0
-    var MaxTries = 7
+    var MaxTries = 8
     var RandomNumber = Math.floor(Math.random() * Number) + 1;
     var Correct = 0
     var Round = 1
-    var TotalTries = 7
+    var TotalTries = 8
 
     while (Attempts != RandomNumber) {
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + "." + RandomNumber);
             Guesses += 1;
             TotalTries -= 1;
         }
@@ -174,7 +191,7 @@ if (Answer == "1") {
 
             if (Correct == 3) {
                 Number = 350;
-                alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                alert("*Notice* The number has changed to 350 and you have 9 tries from 8.")
             }
 
             if (Correct == 5) {
@@ -186,14 +203,14 @@ if (Answer == "1") {
             }
 
             if (Correct == 8) {
-                alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
+                alert("*Notice* The number has changed to 750 and you now have 12 tries from 10.")
                 Number = 750;
-                MaxTries = 11;
-                TotalTries = 11;
+                MaxTries = 12;
+                TotalTries = 12;
             }
 
             if (Correct == 10) {
-                alert("*Notice* The number has changed to 1,000 and you have 14 tries from 11.")
+                alert("*Notice* The number has changed to 1,000 and you have 14 tries from 12.")
                 Number = 1000;
                 MaxTries = 14;
                 TotalTries = 14;
@@ -221,6 +238,9 @@ if (Answer == "1") {
             }
 
             if (Correct == 20) {
+
+                document.cookie = "Achievement = Congrats You Win; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                 var YorN = Continue.slice(0, 1); //YorN means Yes or No
@@ -261,8 +281,8 @@ if (Answer == "1") {
             }
 
             if (Correct < 3) {
-                MaxTries = 7;
-                TotalTries = 7;
+                MaxTries = 8;
+                TotalTries = 8;
             }
 
             if (Correct >= 3 && Correct < 5) {
@@ -277,8 +297,8 @@ if (Answer == "1") {
             }
 
             if (Correct >= 8 && Correct < 10) {
-                MaxTries = 11;
-                TotalTries = 11;
+                MaxTries = 12;
+                TotalTries = 12;
             }
 
             if (Correct >= 10 && Correct < 12) {
@@ -405,7 +425,7 @@ if (Answer == "1") {
 
                     if (Correct == 3) {
                         Number = 350;
-                        alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                        alert("*Notice* The number has changed to 350 and you have 9 tries from 8.")
                     }
 
                     if (Correct == 5) {
@@ -417,14 +437,14 @@ if (Answer == "1") {
                     }
 
                     if (Correct == 8) {
-                        alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
+                        alert("*Notice* The number has changed to 750 and you now have 12 tries from 10.")
                         Number = 750;
-                        MaxTries = 11;
-                        TotalTries = 11;
+                        MaxTries = 12;
+                        TotalTries = 12;
                     }
 
                     if (Correct == 10) {
-                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 11.")
+                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 12.")
                         Number = 1000;
                         MaxTries = 14;
                         TotalTries = 14;
@@ -452,6 +472,9 @@ if (Answer == "1") {
                     }
 
                     if (Correct == 20) {
+
+                        document.cookie = "Achievement = Congrats You Win; expires=Thu, 31 Dec 2030 12:00:00 UTC";
+
                         var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                         var YorN = Continue.slice(0, 1); //YorN means Yes or No
@@ -491,8 +514,8 @@ if (Answer == "1") {
                     }
 
                     if (Correct < 3) {
-                        MaxTries = 7;
-                        TotalTries = 7;
+                        MaxTries = 8;
+                        TotalTries = 8;
                     }
 
                     if (Correct >= 3 && Correct < 5) {
@@ -507,8 +530,8 @@ if (Answer == "1") {
                     }
 
                     if (Correct >= 8 && Correct < 10) {
-                        MaxTries = 11;
-                        TotalTries = 11;
+                        MaxTries = 12;
+                        TotalTries = 12;
                     }
 
                     if (Correct >= 10 && Correct < 12) {
@@ -624,7 +647,7 @@ if (Answer == "1") {
 
                     if (Correct == 3) {
                         Number = 350;
-                        alert("*Notice* The number has changed to 350 and you have 9 tries from 7.")
+                        alert("*Notice* The number has changed to 350 and you have 9 tries from 8.")
                     }
 
                     if (Correct == 5) {
@@ -636,14 +659,14 @@ if (Answer == "1") {
                     }
 
                     if (Correct == 8) {
-                        alert("*Notice* The number has changed to 750 and you now have 11 tries from 10.")
+                        alert("*Notice* The number has changed to 750 and you now have 12 tries from 10.")
                         Number = 750;
-                        MaxTries = 11;
-                        TotalTries = 11;
+                        MaxTries = 12;
+                        TotalTries = 12;
                     }
 
                     if (Correct == 10) {
-                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 11.")
+                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 12.")
                         Number = 1000;
                         MaxTries = 14;
                         TotalTries = 14;
@@ -671,6 +694,9 @@ if (Answer == "1") {
                     }
 
                     if (Correct == 20) {
+
+                        document.cookie = "Achievement = Congrats You Win; expires=Thu, 31 Dec 2030 12:00:00 UTC";
+
                         var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                         var YorN = Continue.slice(0, 1); //YorN means Yes or No
@@ -713,8 +739,8 @@ if (Answer == "1") {
 
 
                     if (Correct < 3) {
-                        MaxTries = 7;
-                        TotalTries = 7;
+                        MaxTries = 8;
+                        TotalTries = 8;
                     }
 
                     if (Correct >= 3 && Correct < 5) {
@@ -729,8 +755,8 @@ if (Answer == "1") {
                     }
 
                     if (Correct >= 8 && Correct < 10) {
-                        MaxTries = 11;
-                        TotalTries = 11;
+                        MaxTries = 12;
+                        TotalTries = 12;
                     }
 
                     if (Correct >= 10 && Correct < 12) {
@@ -821,316 +847,6 @@ if (Answer == "1") {
 
     }
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-if (Answer == "2") {
-
-    var Tries = prompt("How much tries would you like? Please type 30 through 500.")
-    var Number = 100
-    var Guesses = 0
-    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-    var Round = 1
-    var TotalTries = Tries
-
-    while (Attempts != RandomNumber) {
-
-        if (Tries != null && Tries != "") {
-            if (TotalTries > 500) {
-                document.write("Please reload and enter a number between 30 and 500.")
-                break
-            }
-
-            if (TotalTries < 30) {
-                document.write("Please reload and enter a number between 30 and 500.")
-                break
-            }
-        }
-
-        if (Guesses == TotalTries - 1) {
-            alert("This is your last try! Make it a good one.")
-        }
-
-
-        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + Tries + " tries left. You are on round " + Round + ".");
-
-
-        if (Attempts == null) {
-            document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
-            break
-        }
-
-        Guesses += 1;
-        Tries -= 1;
-
-        if (Attempts == "") {
-            alert("Whoops! You entered nothing. I have taken off a try for you.")
-            Guesses -= 1;
-            Tries += 1;
-        }
-
-        if (Attempts > RandomNumber && Guesses != TotalTries) {
-            if (Attempts != null) {
-                if (Attempts != "") {
-                    alert("Lower!")
-                }
-            }
-        }
-
-        if (Attempts < RandomNumber && Guesses != TotalTries) {
-            if (Attempts != null) {
-                if (Attempts != "") {
-                    alert("Higher!")
-                }
-            }
-        }
-
-        if (Attempts == RandomNumber) {
-            Round += 1;
-            {
-                alert('Nice! You correctly guessed ' + RandomNumber + ".")
-            }
-
-            if (Round == 3) {
-                Number = 350;
-                alert("*Notice* The number has changed to 350.")
-            }
-
-            if (Round == 5) {
-                alert("*Notice* The number has changed to 500.")
-                Number = 500;
-            }
-
-            if (Round == 8) {
-                alert("*Notice* The number has changed to 750.")
-                Number = 750;
-            }
-
-            if (Round == 10) {
-                alert("*Notice* The number has changed to 1,000")
-                Number = 1000;
-            }
-
-            if (Round == 12) {
-                alert("*Notice* The number has changed to 1,250.")
-                Number = 1250;
-            }
-
-            if (Round == 14) {
-                alert("*Notice* The number has changed to 1,500.")
-                Number = 1500;
-            }
-
-            if (Round == 16) {
-                alert("*Notice* The number has changed to 2,000.")
-                Number = 2000
-            }
-
-            alert("This is the start of a new round.")
-
-            var RandomNumber = Math.floor(Math.random() * Number) + 1;
-
-            if (Guesses == TotalTries - 1) {
-                alert("This is your last try! Make it a good one.")
-            }
-
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + Tries + " tries left. You are on round " + Round + ".");
-
-            if (Attempts == null) {
-                document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
-                break
-            }
-            Guesses += 1;
-            Tries -= 1;
-
-            if (Attempts == "") {
-                alert("Whoops! You entered nothing. I have taken off a try for you.")
-                Guesses -= 1;
-                Tries += 1;
-            }
-
-            if (Attempts > RandomNumber && Guesses != TotalTries) {
-                if (Attempts != null) {
-                    if (Attempts != "") {
-                        alert("Lower!")
-                    }
-                }
-            }
-
-            if (Attempts < RandomNumber && Guesses != TotalTries) {
-                if (Attempts != null) {
-                    if (Attempts != "") {
-                        alert("Higher!")
-                    }
-                }
-            }
-            if (Attempts == RandomNumber) {
-                alert("WHOA! You guessed it right on your first try. Nice job!")
-                Round += 1;
-
-                if (Round == 3) {
-                    Number = 350;
-                    alert("*Notice* The number has changed to 350.")
-                }
-
-                if (Round == 5) {
-                    alert("*Notice* The number has changed to 500.")
-                    Number = 500;
-                }
-
-                if (Round == 8) {
-                    alert("*Notice* The number has changed to 750.")
-                    Number = 750;
-                }
-
-                if (Round == 10) {
-                    alert("*Notice* The number has changed to 1,000")
-                    Number = 1000;
-                }
-
-                if (Round == 12) {
-                    alert("*Notice* The number has changed to 1,250.")
-                    Number = 1250;
-                }
-
-                if (Round == 14) {
-                    alert("*Notice* The number has changed to 1,500.")
-                    Number = 1500;
-                }
-
-                if (Round == 16) {
-                    alert("*Notice* The number has changed to 2,000.")
-                    Number = 2000
-                }
-
-                alert("This is the start of a new round.")
-
-                var RandomNumber = Math.floor(Math.random() * Number) + 1;
-
-                if (Guesses == TotalTries - 1) {
-                    alert("This is your last try! Make it a good one.")
-                }
-
-                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + Tries + " tries left. You are on round " + Round + ".");
-
-                if (Attempts == null) {
-                    document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
-                    break
-                }
-                Guesses += 1;
-                Tries -= 1;
-
-                if (Attempts == "") {
-                    alert("Whoops! You entered nothing. I have taken off a try for you.")
-                    Guesses -= 1;
-                    Tries += 1;
-                }
-
-                if (Attempts > RandomNumber && Guesses != TotalTries) {
-                    if (Attempts != null) {
-                        if (Attempts != "") {
-                            alert("Lower!")
-                        }
-                    }
-                }
-
-                if (Attempts < RandomNumber && Guesses != TotalTries) {
-                    if (Attempts != null) {
-                        if (Attempts != "") {
-                            alert("Higher!")
-                        }
-                    }
-                }
-
-                if (Attempts == RandomNumber) {
-                    alert("WHOA! You guessed it right on your first try. Nice job!")
-                    Round += 1;
-
-                    if (Round == 3) {
-                        Number = 350;
-                        alert("*Notice* The number has changed to 350.")
-                    }
-
-                    if (Round == 5) {
-                        alert("*Notice* The number has changed to 500.")
-                        Number = 500;
-                    }
-
-                    if (Round == 8) {
-                        alert("*Notice* The number has changed to 750.")
-                        Number = 750;
-                    }
-
-                    if (Round == 10) {
-                        alert("*Notice* The number has changed to 1,000")
-                        Number = 1000;
-                    }
-
-                    if (Round == 12) {
-                        alert("*Notice* The number has changed to 1,250.")
-                        Number = 1250;
-                    }
-
-                    if (Round == 14) {
-                        alert("*Notice* The number has changed to 1,500.")
-                        Number = 1500;
-                    }
-
-                    if (Round == 16) {
-                        alert("*Notice* The number has changed to 2,000.")
-                        Number = 2000
-                    }
-                    alert("This is the start of a new round.")
-
-                    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-
-                    if (Guesses == TotalTries - 1) {
-                        alert("This is your last try! Make it a good one.")
-                    }
-
-                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + Tries + " tries left. You are on round " + Round + ".");
-
-                    if (Attempts == null) {
-                        document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
-                        break
-                    }
-                    Guesses += 1;
-                    Tries -= 1;
-
-                    if (Attempts == "") {
-                        alert("Whoops! You entered nothing. I have taken off a try for you.")
-                        Guesses -= 1;
-                        Tries += 1;
-                    }
-
-                    if (Attempts > RandomNumber && Guesses != TotalTries) {
-                        if (Attempts != null) {
-                            if (Attempts != "") {
-                                alert("Lower!")
-                            }
-                        }
-                    }
-
-                    if (Attempts < RandomNumber && Guesses != TotalTries) {
-                        if (Attempts != null) {
-                            if (Attempts != "") {
-                                alert("Higher!")
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-        if (Guesses >= TotalTries) {
-            alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + TotalTries + " tries.")
-            document.write("Nice! You got to Round " + Round + " in " + TotalTries + " tries.")
-            break
-        }
-    }
-}
-
-
 
 
 /*
