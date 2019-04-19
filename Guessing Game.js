@@ -1,4 +1,4 @@
-console.log('Welcome to V.10 of my Guessing Game')
+console.log('Welcome to V.10.2 of my Guessing Game')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -21,6 +21,7 @@ console.log('Welcome to V.10 of my Guessing Game')
 //Patch Notes: V.9.1 Changed picture for tab art. Bug Fixes.
 //Patch Notes: V.9.4 Removed/changed some things and fixed some bugs
 //Patch Notes: V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.)
+//Patch Notes: V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered
 
 var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -92,7 +93,11 @@ if (Answer == "1") {
             Guesses += 1
         }
 
-
+        if (Attempts == "CheckVersion"){
+            Guesses -= 1;
+            TotalTries += 1;
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.10.2\nPatch Notes: V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered")
+        }
 
         if (Attempts == RandomNumber) {
 
@@ -238,8 +243,8 @@ if (Answer == "1") {
             }
 
             if (Correct == 20) {
-
-                document.cookie = "Achievement = Congrats You Win; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                document.cookie = 'Achievement V.10.2= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC';
 
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -254,7 +259,6 @@ if (Answer == "1") {
                 }
 
                 if (Continue == "No") {
-                    var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
                     document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
                     break
                 }
@@ -473,7 +477,8 @@ if (Answer == "1") {
 
                     if (Correct == 20) {
 
-                        document.cookie = "Achievement = Congrats You Win; expires=Thu, 31 Dec 2030 12:00:00 UTC";
+                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                        document.cookie = 'Achievement V.10.2= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC';
 
                         var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -695,7 +700,8 @@ if (Answer == "1") {
 
                     if (Correct == 20) {
 
-                        document.cookie = "Achievement = Congrats You Win; expires=Thu, 31 Dec 2030 12:00:00 UTC";
+                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
+                        document.cookie = 'Achievement V.10.2= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC';
 
                         var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -847,7 +853,6 @@ if (Answer == "1") {
 
     }
 }
-
 
 /*
  For playing offline to paste in the HTML "Body" Section to make the font arial, font color orange, and size 25px
