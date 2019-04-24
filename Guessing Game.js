@@ -79,7 +79,7 @@ if (Answer == "1") {
     while (Attempts != RandomNumber) {
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + "." + RandomNumber);
             Guesses += 1;
             TotalTries -= 1;
         }
