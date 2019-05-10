@@ -1,4 +1,4 @@
-console.log('Welcome to V.11.2 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.')
+console.log('Welcome to V.11.5 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.')
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -26,6 +26,7 @@ console.log('Welcome to V.11.2 of my Guessing Game, you better of not have come 
 //Patch Notes: V.10.6 Cookies will no longer get deleted when winning more than 1 game and fixed a bug when you type nothing once you get the number correct and an extry try would be added
 //Patch Notes: V.11 Changed picture for tab art (Credit: https://pixabay.com/users/io-images-1096650/), added a different game mode (Fast Pace; only 10 rounds instead of 20)
 //Patch Notes: V.11.2 Fixed a bug with the achievement cookie and added a "So close but yet so far" achievement when you lose all your turns on the last round
+//Patch Notes: V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode
 
 var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -80,6 +81,7 @@ if (Answer == "1") {
     var TotalTries = 8
     var Time = new Date();
 
+
     while (Attempts != RandomNumber) {
 
         if (Attempts == "") {
@@ -102,7 +104,7 @@ if (Answer == "1") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.2\nFixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
         }
 
         if (Attempts == RandomNumber) {
@@ -249,7 +251,7 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = 'Achievement V.11.2 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                document.cookie = 'Achievement V.11.5 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
 
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -264,7 +266,7 @@ if (Answer == "1") {
                 }
 
                 if (Continue == "No") {
-                    document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                    document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                     break
                 }
 
@@ -283,7 +285,7 @@ if (Answer == "1") {
 
                     if (Continue2 == "No") {
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                         break
                     }
                 }
@@ -327,6 +329,7 @@ if (Answer == "1") {
             if (Correct >= 16) {
                 MaxTries = 19;
                 TotalTries = 19;
+                Number = 2000
             }
 
             Round += 1;
@@ -477,7 +480,7 @@ if (Answer == "1") {
                     if (Correct == 20) {
 
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = 'Achievement V.11.2 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                        document.cookie = 'Achievement V.11.5 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
 
                         var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -493,7 +496,7 @@ if (Answer == "1") {
 
                         if (Continue == "No") {
                             var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                            document.write("You beat the game in " + endGameTries + " tries.");
                             break
                         }
 
@@ -511,7 +514,7 @@ if (Answer == "1") {
 
                             if (Continue2 == "No") {
                                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                                document.write("You beat the game in " + endGameTries + " tries.");
                                 break
                             }
                         }
@@ -700,7 +703,7 @@ if (Answer == "1") {
                     if (Correct == 20) {
 
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = 'Achievement V.11.2 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                        document.cookie = 'Achievement V.11.5 (Normal Mode) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
 
                         var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -716,7 +719,7 @@ if (Answer == "1") {
 
                         if (Continue == "No") {
                             var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                            document.write("You beat the game in " + endGameTries + " tries.");
                             break
                         }
 
@@ -734,7 +737,7 @@ if (Answer == "1") {
 
                             if (Continue2 == "No") {
                                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                document.write("Congrats on beating the game!!! You beat the game in " + endGameTries + " tries.");
+                                document.write("You beat the game in " + endGameTries + " tries.");
                                 break
                             }
 
@@ -810,6 +813,9 @@ if (Answer == "1") {
             if (Correct > 19) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
                 document.write("Congrats on beating the game. In 20 rounds you ended up with a total of " + endGameTries + " guesses. You ended the game with a streak of " + Correct + ".")
+                if (Correct >= 30) {
+                    document.cookie = "Extra Innings = Get a score of 30 or more; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+                }
                 break
             }
 
@@ -837,8 +843,13 @@ if (Answer == "1") {
             alert('You have no more tries left. The correct answer was ' + RandomNumber + ".")
             document.write(" You went on a streak of " + Correct + ".")
             if (Correct == 19) {
-                document.cookie = "So Close But Yet So Far (Normal Mode) = End the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+                document.cookie = "So Close But Yet So Far (Normal Mode) = Lose the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
             }
+
+            if (Correct >= 30) {
+                document.cookie = "Extra Innings = Get a score of 30 or more; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+            }
+
             break
         }
 
@@ -893,7 +904,7 @@ if (Answer == "2") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.2\nFixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
         }
 
         if (Attempts == RandomNumber) {
@@ -969,8 +980,8 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = 'Achievement V.11.2 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
-                document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                document.cookie = 'Achievement V.11.5 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
 
@@ -994,7 +1005,7 @@ if (Answer == "2") {
                 TotalTries = 19
             }
 
-            
+
 
             Round += 1;
             alert("This is the start of a new round.")
@@ -1009,96 +1020,96 @@ if (Answer == "2") {
                 if (Attempts == RandomNumber) {
 
                     alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
-        
+
                     if (Round == 1) {
                         var Round1 = Guesses;
                     }
-        
+
                     if (Round == 2) {
                         var Round2 = Guesses;
                     }
-        
+
                     if (Round == 3) {
                         var Round3 = Guesses;
                     }
-        
+
                     if (Round == 4) {
                         var Round4 = Guesses;
                     }
-        
+
                     if (Round == 5) {
                         var Round5 = Guesses;
                     }
-        
+
                     if (Round == 6) {
                         var Round6 = Guesses;
                     }
-        
+
                     if (Round == 7) {
                         var Round7 = Guesses;
                     }
-        
+
                     if (Round == 8) {
                         var Round8 = Guesses;
                     }
-        
+
                     if (Round == 9) {
                         var Round9 = Guesses;
                     }
-        
+
                     if (Round == 10) {
                         var Round10 = Guesses;
                     }
-        
+
                     if (Guesses == 1) {
                         alert('Whoa! Hold on there cheater! ;) It took you only one try to correctly guess ' + RandomNumber + '.' + ' Do you know the odds of doing that again?')
                     }
-        
+
                     Correct += 1;
                     Guesses = 0;
-        
+
                     if (Correct == 3) {
                         Number = 1000;
                         alert("*Notice* The number has changed to 1000 and you have 14 tries from 10.")
                     }
-        
+
                     if (Correct == 5) {
                         alert("*Notice* The number has changed to 1500 and you now have 17 tries from 14.")
                         Number = 1500;
                         MaxTries = 17;
                         TotalTries = 17;
                     }
-        
+
                     if (Correct == 7) {
                         alert("*Notice* The number has changed to 2000 and you now have 19 tries from 17.")
                         Number = 2000;
                         MaxTries = 19;
                         TotalTries = 19;
                     }
-        
-        
+
+
                     if (Correct == 10) {
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = 'Achievement V.11.2 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
-                        document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                        document.cookie = 'Achievement V.11.5 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                         break
                     }
-        
+
                     if (Correct < 3) {
                         MaxTries = 10;
                         TotalTries = 10;
                     }
-        
+
                     if (Correct >= 3 && Correct < 5) {
                         MaxTries = 14;
                         TotalTries = 14;
                     }
-        
+
                     if (Correct >= 5 && Correct < 7) {
                         MaxTries = 17;
                         TotalTries = 17;
                     }
-        
+
                     if (Correct >= 7) {
                         MaxTries = 19
                         TotalTries = 19
@@ -1113,96 +1124,96 @@ if (Answer == "2") {
                 if (Attempts == RandomNumber) {
 
                     alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
-        
+
                     if (Round == 1) {
                         var Round1 = Guesses;
                     }
-        
+
                     if (Round == 2) {
                         var Round2 = Guesses;
                     }
-        
+
                     if (Round == 3) {
                         var Round3 = Guesses;
                     }
-        
+
                     if (Round == 4) {
                         var Round4 = Guesses;
                     }
-        
+
                     if (Round == 5) {
                         var Round5 = Guesses;
                     }
-        
+
                     if (Round == 6) {
                         var Round6 = Guesses;
                     }
-        
+
                     if (Round == 7) {
                         var Round7 = Guesses;
                     }
-        
+
                     if (Round == 8) {
                         var Round8 = Guesses;
                     }
-        
+
                     if (Round == 9) {
                         var Round9 = Guesses;
                     }
-        
+
                     if (Round == 10) {
                         var Round10 = Guesses;
                     }
-        
+
                     if (Guesses == 1) {
                         alert('Whoa! Hold on there cheater! ;) It took you only one try to correctly guess ' + RandomNumber + '.' + ' Do you know the odds of doing that again?')
                     }
-        
+
                     Correct += 1;
                     Guesses = 0;
-        
+
                     if (Correct == 3) {
                         Number = 1000;
                         alert("*Notice* The number has changed to 1000 and you have 14 tries from 10.")
                     }
-        
+
                     if (Correct == 5) {
                         alert("*Notice* The number has changed to 1500 and you now have 17 tries from 14.")
                         Number = 1500;
                         MaxTries = 17;
                         TotalTries = 17;
                     }
-        
+
                     if (Correct == 7) {
                         alert("*Notice* The number has changed to 2000 and you now have 19 tries from 17.")
                         Number = 2000;
                         MaxTries = 19;
                         TotalTries = 19;
                     }
-        
-        
+
+
                     if (Correct == 10) {
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = 'Achievement V.11.2 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
-                        document.write("Congrats on beating the game!!! You beat the game with a total amount of " + endGameTries + " guesses.");
+                        document.cookie = 'Achievement V.11.5 (Fast Pace) (' + Time + ')= Nice, ' + Name + ', you beat the game in ' + endGameTries + ' tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;'
+                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                         break
                     }
-        
+
                     if (Correct < 3) {
                         MaxTries = 10;
                         TotalTries = 10;
                     }
-        
+
                     if (Correct >= 3 && Correct < 5) {
                         MaxTries = 14;
                         TotalTries = 14;
                     }
-        
+
                     if (Correct >= 5 && Correct < 7) {
                         MaxTries = 17;
                         TotalTries = 17;
                     }
-        
+
                     if (Correct >= 7) {
                         MaxTries = 19
                         TotalTries = 19
@@ -1262,7 +1273,7 @@ if (Answer == "2") {
             alert('You have no more tries left. The correct answer was ' + RandomNumber + ".")
             document.write(" You went on a streak of " + Correct + ".")
             if (Correct == 9) {
-                document.cookie = "So Close But Yet So Far (Fast Pace) = End the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
+                document.cookie = "So Close But Yet So Far (Fast Pace) = Lose the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
             }
             break
         }
@@ -1284,11 +1295,95 @@ if (Answer == "2") {
     }
 }
 
+///Beat The Clock///////////////////// still trying to figure this out
+/*
+if (Answer == "3") {
+
+    var Number = 500
+    var Guesses = 0
+    var RandomNumber = Math.floor(Math.random() * Number) + 1;
+    var Correct = 0
+    var Round = 1
+    var TotalTries = 10
+    var D = new Date();
+    var Minutes = D.getMinutes();
+
+    var EndTime = Minutes + 5
+
+    if (EndTime ==  "60") {
+        var EndTime = 0;
+    }
+
+    if (EndTime == "61"){
+        var EndTime = 1;
+    }
+
+    if (EndTime == "62"){
+        var EndTime = 2;
+
+    }
+
+    if (EndTime == "63"){
+        var EndTime = 3;
+    }
+
+    if (EndTime == "64"){
+        var EndTime = 4;
+    }
+
+    var D = null
+    var Minutes = null
+
+    while (Attempts != RandomNumber){
+
+    (Attempts != RandomNumber); {
+        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You are on round " + Round + "." + RandomNumber);
+        Guesses += 1;
+    }
+
+    if (Attempts == null){
+        document.write("You ended the game.")
+        break
+    }
+
+    if (Attempts != "" && Attempts <= Number && Attempts > 0) {
+        if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
+            alert('Higher than ' + Attempts + "!");
+        }
+    }
+    if (Attempts != "" && Attempts <= Number && Attempts > 0) {
+        if (Attempts > RandomNumber) { //If user types in answer higher than the random number the system will tell them to guess lower
+            alert('Lower than ' + Attempts + "!");
+        }
+    }
+
+    if (Attempts == "CheckVersion") {
+        Guesses -= 1;
+        alert("Wow, " + Name + " aren't you glad to be happily playing V.11.2\nFixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round")
+    }
+
+    if (Attempts == RandomNumber) {
+
+        var ND = new Date();
+        var UpdatedTime = ND.getMinutes;
+        alert (UpdatedTime)
+
+        alert("Nice, you guessed " + RandomNumber + " correctly. You have minutes left.")
+    }
+}
+
+
+}
+/*
+
+
+
+
 /*
  For playing offline to paste in the HTML "Body" Section to make the font arial, font color orange, and size 25px
-<font color="Orange"</font>
+<font color="White"</font>
 <font face="plain"</font>
-<font size="25"</font>
+<font size="30"</font>
 */
 
 /*
