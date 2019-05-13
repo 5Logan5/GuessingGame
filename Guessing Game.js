@@ -1,4 +1,4 @@
-console.log("Welcome to the Mother's Day Edition of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
+console.log("Welcome to V.11.5 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -105,7 +105,7 @@ if (Answer == "1") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing the Mother's Day Edition\nHappy Mother's Day")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
         }
 
         if (Attempts == RandomNumber) {
@@ -252,7 +252,7 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = "Mother's Day Dub (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -481,7 +481,7 @@ if (Answer == "1") {
                     if (Correct == 20) {
 
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = "Mother's Day Dub (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                        document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                         var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -704,7 +704,7 @@ if (Answer == "1") {
                     if (Correct == 20) {
 
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = "Mother's Day Dub (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                        document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                         var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -905,7 +905,7 @@ if (Answer == "2") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing the Mother's Day Edtion\nHappy Mother's Day")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
         }
 
         if (Attempts == RandomNumber) {
@@ -981,7 +981,7 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = "Mother's Day Dub (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                 document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
@@ -1091,7 +1091,7 @@ if (Answer == "2") {
 
                     if (Correct == 10) {
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = "Mother's Day Dub (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                        document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                         document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                         break
                     }
@@ -1195,7 +1195,7 @@ if (Answer == "2") {
 
                     if (Correct == 10) {
                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = "Mother's Day Dub (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                        document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                         document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                         break
                     }
