@@ -187,164 +187,164 @@ if (Answer == "1") {
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
 
             if (Guesses == 1) {
-                if (Attempts > Number) {
-                    var Attempt1 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt1 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt1 = Attempts + "<"
                 }
             }
 
             if (Guesses == 2) {
-                if (Attempts > Number) {
-                    var Attempt2 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt2 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt2 = Attempts + "<"
                 }
             }
 
             if (Guesses == 3) {
-                if (Attempts > Number) {
-                    var Attempt3 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt3 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt3 = Attempts + "<"
                 }
             }
 
             if (Guesses == 4) {
-                if (Attempts > Number) {
-                    var Attempt4 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt4 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt4 = Attempts + "<"
                 }
             }
 
             if (Guesses == 5) {
-                if (Attempts > Number) {
-                    var Attempt5 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt5 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt5 = Attempts + "<"
                 }
             }
 
             if (Guesses == 6) {
-                if (Attempts > Number) {
-                    var Attempt6 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt6 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt6 = Attempts + "<"
                 }
             }
 
             if (Guesses == 7) {
-                if (Attempts > Number) {
-                    var Attempt7 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt7 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt7 = Attempts + "<"
                 }
             }
 
             if (Guesses == 8) {
-                if (Attempts > Number) {
-                    var Attempt8 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt8 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt8 = Attempts + "<"
                 }
             }
 
             if (Guesses == 9) {
-                if (Attempts > Number) {
-                    var Attempt9 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt9 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt9 = Attempts + "<"
                 }
             }
 
             if (Guesses == 10) {
-                if (Attempts > Number) {
-                    var Attempt10 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt10 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt10 = Attempts + "<"
                 }
             }
 
             if (Guesses == 11) {
-                if (Attempts > Number) {
-                    var Attempt11 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt11 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt11 = Attempts + "<"
                 }
             }
 
             if (Guesses == 12) {
-                if (Attempts > Number) {
-                    var Attempt12 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt12 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt12 = Attempts + "<"
                 }
             }
 
             if (Guesses == 13) {
-                if (Attempts > Number) {
-                    var Attempt13 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt13 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt13 = Attempts + "<"
                 }
             }
 
             if (Guesses == 14) {
-                if (Attempts > Number) {
-                    var Attempt14 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt14 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt14 = Attempts + "<"
                 }
             }
 
             if (Guesses == 15) {
-                if (Attempts > Number) {
-                    var Attempt15 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt15 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt15 = Attempts + "<"
                 }
             }
 
             if (Guesses == 16) {
-                if (Attempts > Number) {
-                    var Attempt16 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt16 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt16 = Attempts + "<"
                 }
             }
 
             if (Guesses == 17) {
-                if (Attempts > Number) {
-                    var Attempt17 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt17 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt17 = Attempts + "<"
                 }
             }
 
             if (Guesses == 18) {
-                if (Attempts > Number) {
-                    var Attempt18 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt18 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt18 = Attempts + "<"
                 }
             }
 
@@ -791,164 +791,164 @@ if (Answer == "2") {
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
 
             if (Guesses == 1) {
-                if (Attempts > Number) {
-                    var Attempt1 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt1 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt1 = Attempts + "<"
                 }
             }
 
             if (Guesses == 2) {
-                if (Attempts > Number) {
-                    var Attempt2 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt2 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt2 = Attempts + "<"
                 }
             }
 
             if (Guesses == 3) {
-                if (Attempts > Number) {
-                    var Attempt3 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt3 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt3 = Attempts + "<"
                 }
             }
 
             if (Guesses == 4) {
-                if (Attempts > Number) {
-                    var Attempt4 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt4 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt4 = Attempts + "<"
                 }
             }
 
             if (Guesses == 5) {
-                if (Attempts > Number) {
-                    var Attempt5 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt5 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt5 = Attempts + "<"
                 }
             }
 
             if (Guesses == 6) {
-                if (Attempts > Number) {
-                    var Attempt6 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt6 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt6 = Attempts + "<"
                 }
             }
 
             if (Guesses == 7) {
-                if (Attempts > Number) {
-                    var Attempt7 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt7 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt7 = Attempts + "<"
                 }
             }
 
             if (Guesses == 8) {
-                if (Attempts > Number) {
-                    var Attempt8 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt8 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt8 = Attempts + "<"
                 }
             }
 
             if (Guesses == 9) {
-                if (Attempts > Number) {
-                    var Attempt9 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt9 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt9 = Attempts + "<"
                 }
             }
 
             if (Guesses == 10) {
-                if (Attempts > Number) {
-                    var Attempt10 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt10 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt10 = Attempts + "<"
                 }
             }
 
             if (Guesses == 11) {
-                if (Attempts > Number) {
-                    var Attempt11 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt11 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt11 = Attempts + "<"
                 }
             }
 
             if (Guesses == 12) {
-                if (Attempts > Number) {
-                    var Attempt12 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt12 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt12 = Attempts + "<"
                 }
             }
 
             if (Guesses == 13) {
-                if (Attempts > Number) {
-                    var Attempt13 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt13 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt13 = Attempts + "<"
                 }
             }
 
             if (Guesses == 14) {
-                if (Attempts > Number) {
-                    var Attempt14 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt14 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt14 = Attempts + "<"
                 }
             }
 
             if (Guesses == 15) {
-                if (Attempts > Number) {
-                    var Attempt15 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt15 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt15 = Attempts + "<"
                 }
             }
 
             if (Guesses == 16) {
-                if (Attempts > Number) {
-                    var Attempt16 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt16 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt16 = Attempts + "<"
                 }
             }
 
             if (Guesses == 17) {
-                if (Attempts > Number) {
-                    var Attempt17 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt17 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt17 = Attempts + "<"
                 }
             }
 
             if (Guesses == 18) {
-                if (Attempts > Number) {
-                    var Attempt18 = Attempts + "<"
-                }
-                if (Attempts < Number) {
+                if (Attempts > RandomNumber) {
                     var Attempt18 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt18 = Attempts + "<"
                 }
             }
 
