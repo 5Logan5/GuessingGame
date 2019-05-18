@@ -1,4 +1,4 @@
-console.log("Welcome to V.12 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
+console.log("Welcome to V.12.3 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -29,6 +29,7 @@ console.log("Welcome to V.12 of my Guessing Game, you better of not have come he
 //Patch Notes: V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode
 //Patch Notes: Mothers Day colors were added for a few days
 //Patch Notes: V.12 The game tells you your previous guesses, made the game neater
+//Patch Notes: v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)
 
 var Author = "Logan B."
 
@@ -171,10 +172,6 @@ if (Answer == "1") {
             TotalTries -= 1;
         }
 
-        if (Guesses == -1) {
-            Guesses += 1
-        }
-
         if (Attempts == "") {
             Guesses -= 1;
             TotalTries += 1;
@@ -184,80 +181,171 @@ if (Answer == "1") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.12\nThe game tells you your previous guesses, made the game neater")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.12.3\nv.12.3 fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+
             if (Guesses == 1) {
-                var Attempt1 = Attempts
+                if (Attempts > Number) {
+                    var Attempt1 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt1 = Attempts + ">"
+                }
             }
 
             if (Guesses == 2) {
-                var Attempt2 = Attempts
+                if (Attempts > Number) {
+                    var Attempt2 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt2 = Attempts + ">"
+                }
             }
 
             if (Guesses == 3) {
-                var Attempt3 = Attempts
+                if (Attempts > Number) {
+                    var Attempt3 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt3 = Attempts + ">"
+                }
             }
 
             if (Guesses == 4) {
-                var Attempt4 = Attempts
+                if (Attempts > Number) {
+                    var Attempt4 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt4 = Attempts + ">"
+                }
             }
 
             if (Guesses == 5) {
-                var Attempt5 = Attempts
+                if (Attempts > Number) {
+                    var Attempt5 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt5 = Attempts + ">"
+                }
             }
 
             if (Guesses == 6) {
-                var Attempt6 = Attempts
+                if (Attempts > Number) {
+                    var Attempt6 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt6 = Attempts + ">"
+                }
             }
 
             if (Guesses == 7) {
-                var Attempt7 = Attempts
+                if (Attempts > Number) {
+                    var Attempt7 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt7 = Attempts + ">"
+                }
             }
 
             if (Guesses == 8) {
-                var Attempt8 = Attempts
+                if (Attempts > Number) {
+                    var Attempt8 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt8 = Attempts + ">"
+                }
             }
 
             if (Guesses == 9) {
-                var Attempt9 = Attempts
+                if (Attempts > Number) {
+                    var Attempt9 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt9 = Attempts + ">"
+                }
             }
 
             if (Guesses == 10) {
-                var Attempt10 = Attempts
+                if (Attempts > Number) {
+                    var Attempt10 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt10 = Attempts + ">"
+                }
             }
 
             if (Guesses == 11) {
-                var Attempt11 = Attempts
+                if (Attempts > Number) {
+                    var Attempt11 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt11 = Attempts + ">"
+                }
             }
 
             if (Guesses == 12) {
-                var Attempt12 = Attempts
+                if (Attempts > Number) {
+                    var Attempt12 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt12 = Attempts + ">"
+                }
             }
 
             if (Guesses == 13) {
-                var Attempt13 = Attempts
+                if (Attempts > Number) {
+                    var Attempt13 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt13 = Attempts + ">"
+                }
             }
 
             if (Guesses == 14) {
-                var Attempt14 = Attempts
+                if (Attempts > Number) {
+                    var Attempt14 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt14 = Attempts + ">"
+                }
             }
 
             if (Guesses == 15) {
-                var Attempt15 = Attempts
+                if (Attempts > Number) {
+                    var Attempt15 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt15 = Attempts + ">"
+                }
             }
 
             if (Guesses == 16) {
-                var Attempt16 = Attempts
+                if (Attempts > Number) {
+                    var Attempt16 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt16 = Attempts + ">"
+                }
             }
 
             if (Guesses == 17) {
-                var Attempt17 = Attempts
+                if (Attempts > Number) {
+                    var Attempt17 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt17 = Attempts + ">"
+                }
             }
 
             if (Guesses == 18) {
-                var Attempt18 = Attempts
+                if (Attempts > Number) {
+                    var Attempt18 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt18 = Attempts + ">"
+                }
             }
 
         }
@@ -442,7 +530,7 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = "Achievement V.12 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.12.3 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -683,11 +771,9 @@ if (Answer == "2") {
         }
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + "."); TotalTries -= 1;
-        }
-
-        if (Guesses == -1) {
-            Guesses += 1
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
+            Guesses += 1;
+            TotalTries -= 1;
         }
 
         if (Attempts == "") {
@@ -699,85 +785,177 @@ if (Answer == "2") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.12\nThe game tells you your previous guesses, made the game neater")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.12.3\nv.12.3 fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+
             if (Guesses == 1) {
-                var Attempt1 = Attempts
+                if (Attempts > Number) {
+                    var Attempt1 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt1 = Attempts + ">"
+                }
             }
 
             if (Guesses == 2) {
-                var Attempt2 = Attempts
+                if (Attempts > Number) {
+                    var Attempt2 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt2 = Attempts + ">"
+                }
             }
 
             if (Guesses == 3) {
-                var Attempt3 = Attempts
+                if (Attempts > Number) {
+                    var Attempt3 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt3 = Attempts + ">"
+                }
             }
 
             if (Guesses == 4) {
-                var Attempt4 = Attempts
+                if (Attempts > Number) {
+                    var Attempt4 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt4 = Attempts + ">"
+                }
             }
 
             if (Guesses == 5) {
-                var Attempt5 = Attempts
+                if (Attempts > Number) {
+                    var Attempt5 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt5 = Attempts + ">"
+                }
             }
 
             if (Guesses == 6) {
-                var Attempt6 = Attempts
+                if (Attempts > Number) {
+                    var Attempt6 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt6 = Attempts + ">"
+                }
             }
 
             if (Guesses == 7) {
-                var Attempt7 = Attempts
+                if (Attempts > Number) {
+                    var Attempt7 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt7 = Attempts + ">"
+                }
             }
 
             if (Guesses == 8) {
-                var Attempt8 = Attempts
+                if (Attempts > Number) {
+                    var Attempt8 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt8 = Attempts + ">"
+                }
             }
 
             if (Guesses == 9) {
-                var Attempt9 = Attempts
+                if (Attempts > Number) {
+                    var Attempt9 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt9 = Attempts + ">"
+                }
             }
 
             if (Guesses == 10) {
-                var Attempt10 = Attempts
+                if (Attempts > Number) {
+                    var Attempt10 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt10 = Attempts + ">"
+                }
             }
 
             if (Guesses == 11) {
-                var Attempt11 = Attempts
+                if (Attempts > Number) {
+                    var Attempt11 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt11 = Attempts + ">"
+                }
             }
 
             if (Guesses == 12) {
-                var Attempt12 = Attempts
+                if (Attempts > Number) {
+                    var Attempt12 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt12 = Attempts + ">"
+                }
             }
 
             if (Guesses == 13) {
-                var Attempt13 = Attempts
+                if (Attempts > Number) {
+                    var Attempt13 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt13 = Attempts + ">"
+                }
             }
 
             if (Guesses == 14) {
-                var Attempt14 = Attempts
+                if (Attempts > Number) {
+                    var Attempt14 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt14 = Attempts + ">"
+                }
             }
 
             if (Guesses == 15) {
-                var Attempt15 = Attempts
+                if (Attempts > Number) {
+                    var Attempt15 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt15 = Attempts + ">"
+                }
             }
 
             if (Guesses == 16) {
-                var Attempt16 = Attempts
+                if (Attempts > Number) {
+                    var Attempt16 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt16 = Attempts + ">"
+                }
             }
 
             if (Guesses == 17) {
-                var Attempt17 = Attempts
+                if (Attempts > Number) {
+                    var Attempt17 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt17 = Attempts + ">"
+                }
             }
 
             if (Guesses == 18) {
-                var Attempt18 = Attempts
+                if (Attempts > Number) {
+                    var Attempt18 = Attempts + "<"
+                }
+                if (Attempts < Number) {
+                    var Attempt18 = Attempts + ">"
+                }
             }
 
         }
 
         if (Attempts == RandomNumber) {
+
 
             Attempt1 = "__"
 
@@ -886,7 +1064,7 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = "Achievement V.12 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.12.3 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                 document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
