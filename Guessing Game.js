@@ -1,4 +1,4 @@
-console.log("Welcome to V.11.5 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
+console.log("Welcome to V.12 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -28,6 +28,10 @@ console.log("Welcome to V.11.5 of my Guessing Game, you better of not have come 
 //Patch Notes: V.11.2 Fixed a bug with the achievement cookie and added a "So close but yet so far" achievement when you lose all your turns on the last round
 //Patch Notes: V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode
 //Patch Notes: Mothers Day colors were added for a few days
+//Patch Notes: V.12 The game tells you your previous guesses, made the game neater
+
+var Author = "Logan B."
+
 
 var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -85,15 +89,84 @@ if (Answer == "1") {
 
     while (Attempts != RandomNumber) {
 
-        if (Attempts == "") {
-            Guesses -= 1;
-            TotalTries += 1;
-            alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
+        if (Attempt1 == undefined) {
+            Attempt1 = "__"
         }
 
+        if (Attempt2 == undefined) {
+            Attempt2 = "__"
+        }
+
+        if (Attempt3 == undefined) {
+            Attempt3 = "__"
+        }
+
+        if (Attempt4 == undefined) {
+            Attempt4 = "__"
+        }
+
+        if (Attempt5 == undefined) {
+            Attempt5 = "__"
+        }
+
+        if (Attempt6 == undefined) {
+            Attempt6 = "__"
+        }
+
+        if (Attempt7 == undefined) {
+            Attempt7 = "__"
+        }
+
+        if (Attempt8 == undefined) {
+            Attempt8 = "__"
+        }
+
+        if (Attempt9 == undefined) {
+            Attempt9 = "__"
+        }
+
+        if (Attempt10 == undefined) {
+            Attempt10 = "__"
+        }
+
+        if (Attempt11 == undefined) {
+            Attempt11 = "__"
+        }
+
+        if (Attempt12 == undefined) {
+            Attempt12 = "__"
+        }
+
+        if (Attempt13 == undefined) {
+            Attempt13 = "__"
+        }
+
+        if (Attempt14 == undefined) {
+            Attempt14 = "__"
+        }
+
+        if (Attempt15 == undefined) {
+            Attempt15 = "__"
+        }
+
+        if (Attempt16 == undefined) {
+            Attempt16 = "__"
+        }
+
+        if (Attempt17 == undefined) {
+            Attempt17 = "__"
+        }
+
+        if (Attempt18 == undefined) {
+            Attempt18 = "__"
+        }
+
+        if (Author != "Logan B.") {
+            alert("Oops, looks like you're playing a plagiarized version of the Guessing Game. To play the real game visit --> https://5logan5.github.io/GuessingGame/")
+        }
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
             Guesses += 1;
             TotalTries -= 1;
         }
@@ -102,13 +175,130 @@ if (Answer == "1") {
             Guesses += 1
         }
 
+        if (Attempts == "") {
+            Guesses -= 1;
+            TotalTries += 1;
+            alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
+        }
+
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.12\nThe game tells you your previous guesses, made the game neater")
+        }
+
+        if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+            if (Guesses == 1) {
+                var Attempt1 = Attempts
+            }
+
+            if (Guesses == 2) {
+                var Attempt2 = Attempts
+            }
+
+            if (Guesses == 3) {
+                var Attempt3 = Attempts
+            }
+
+            if (Guesses == 4) {
+                var Attempt4 = Attempts
+            }
+
+            if (Guesses == 5) {
+                var Attempt5 = Attempts
+            }
+
+            if (Guesses == 6) {
+                var Attempt6 = Attempts
+            }
+
+            if (Guesses == 7) {
+                var Attempt7 = Attempts
+            }
+
+            if (Guesses == 8) {
+                var Attempt8 = Attempts
+            }
+
+            if (Guesses == 9) {
+                var Attempt9 = Attempts
+            }
+
+            if (Guesses == 10) {
+                var Attempt10 = Attempts
+            }
+
+            if (Guesses == 11) {
+                var Attempt11 = Attempts
+            }
+
+            if (Guesses == 12) {
+                var Attempt12 = Attempts
+            }
+
+            if (Guesses == 13) {
+                var Attempt13 = Attempts
+            }
+
+            if (Guesses == 14) {
+                var Attempt14 = Attempts
+            }
+
+            if (Guesses == 15) {
+                var Attempt15 = Attempts
+            }
+
+            if (Guesses == 16) {
+                var Attempt16 = Attempts
+            }
+
+            if (Guesses == 17) {
+                var Attempt17 = Attempts
+            }
+
+            if (Guesses == 18) {
+                var Attempt18 = Attempts
+            }
+
         }
 
         if (Attempts == RandomNumber) {
+
+            Attempt1 = "__"
+
+            Attempt2 = "__"
+
+            Attempt3 = "__"
+
+            Attempt4 = "__"
+
+            Attempt5 = "__"
+
+            Attempt6 = "__"
+
+            Attempt7 = "__"
+
+            Attempt8 = "__"
+
+            Attempt9 = "__"
+
+            Attempt10 = "__"
+
+            Attempt11 = "__"
+
+            Attempt12 = "__"
+
+            Attempt13 = "__"
+
+            Attempt14 = "__"
+
+            Attempt15 = "__"
+
+            Attempt16 = "__"
+
+            Attempt17 = "__"
+
+            Attempt18 = "__"
 
             alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
 
@@ -252,7 +442,7 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.12 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -335,472 +525,8 @@ if (Answer == "1") {
 
             Round += 1;
             alert("This is the start of a new round.")
-
-
-            {
-                var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
-                Guesses += 1;
-                TotalTries -= 1;
-
-                if (Attempts == RandomNumber) {
-                    alert("WHOA! You guessed it right on your first try. Nice job!")
-                    Correct += 1;
-                    Guesses = 0;
-
-                    if (Round == 1) {
-                        var Round1 = Guesses;
-                    }
-
-                    if (Round == 2) {
-                        var Round2 = Guesses;
-                    }
-
-                    if (Round == 3) {
-                        var Round3 = Guesses;
-                    }
-
-                    if (Round == 4) {
-                        var Round4 = Guesses;
-                    }
-
-                    if (Round == 5) {
-                        var Round5 = Guesses;
-                    }
-
-                    if (Round == 6) {
-                        var Round6 = Guesses;
-                    }
-
-                    if (Round == 7) {
-                        var Round7 = Guesses;
-                    }
-
-                    if (Round == 8) {
-                        var Round8 = Guesses;
-                    }
-
-                    if (Round == 9) {
-                        var Round9 = Guesses;
-                    }
-
-                    if (Round == 10) {
-                        var Round10 = Guesses;
-                    }
-
-                    if (Round == 11) {
-                        var Round11 = Guesses;
-                    }
-
-                    if (Round == 12) {
-                        var Round12 = Guesses;
-                    }
-
-                    if (Round == 13) {
-                        var Round13 = Guesses;
-                    }
-
-                    if (Round == 14) {
-                        var Round14 = Guesses;
-                    }
-
-                    if (Round == 15) {
-                        var Round15 = Guesses;
-                    }
-
-                    if (Round == 16) {
-                        var Round16 = Guesses;
-                    }
-
-                    if (Round == 17) {
-                        var Round17 = Guesses;
-                    }
-
-                    if (Round == 18) {
-                        var Round18 = Guesses;
-                    }
-
-                    if (Round == 19) {
-                        var Round19 = Guesses;
-                    }
-
-                    if (Round == 20) {
-                        var Round20 = Guesses;
-                    }
-
-
-
-                    if (Correct == 3) {
-                        Number = 350;
-                        alert("*Notice* The number has changed to 350 and you have 9 tries from 8.")
-                    }
-
-                    if (Correct == 5) {
-                        alert("*Notice* The number has changed to 500 and you now have 10 tries from 9.")
-                        Number = 500;
-                        MaxTries = 10;
-                        TotalTries = 10;
-
-                    }
-
-                    if (Correct == 8) {
-                        alert("*Notice* The number has changed to 750 and you now have 12 tries from 10.")
-                        Number = 750;
-                        MaxTries = 12;
-                        TotalTries = 12;
-                    }
-
-                    if (Correct == 10) {
-                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 12.")
-                        Number = 1000;
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct == 12) {
-                        alert("*Notice* The number has changed to 1,250 and you have 16 tries from 14.")
-                        Number = 1250;
-                        MaxTries = 16;
-                        TotalTries = 16;
-                    }
-
-                    if (Correct == 14) {
-                        alert("*Notice* The number has changed to 1,500 and you have 17 tries from 16.")
-                        Number = 1500;
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct == 16) {
-                        alert("*Notice* The number has changed to 2,000 and you have 19 tries from 17.")
-                        Number = 2000
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-
-                    if (Correct == 20) {
-
-                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-
-                        var Continue = prompt("Congrats on beating the game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
-
-                        var YorN = Continue.slice(0, 1); //YorN means Yes or No
-                        var YorNtoUpperCase = YorN.toUpperCase();
-                        var esORo = Continue.slice(1, 3); //esORo means Y(es) OR N(o)
-                        var LoweresORo = esORo.toLowerCase();
-                        var Continue = (YorNtoUpperCase + LoweresORo);
-
-                        if (Continue == "Yes") {
-                            alert("You are on a streak of 20.");
-                        }
-
-                        if (Continue == "No") {
-                            var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("You beat the game in " + endGameTries + " tries.");
-                            break
-                        }
-
-                        if (Continue == "") {
-                            var Continue2 = prompt("You enterd nothing. Would you like to continue to get a higher score? Type 'Yes' or 'No'. ")
-                            var YorN2 = Continue2.slice(0, 1); //YorN means Yes or No
-                            var YorNtoUpperCase2 = YorN2.toUpperCase();
-                            var esORo2 = Continue2.slice(1, 3); //esORo means Y(es) OR N(o)
-                            var LoweresORo2 = esORo2.toLowerCase();
-                            var Continue2 = (YorNtoUpperCase2 + LoweresORo2);
-
-                            if (Continue2 == "Yes") {
-                                alert("You are on a streak of 20.")
-                            }
-
-                            if (Continue2 == "No") {
-                                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                document.write("You beat the game in " + endGameTries + " tries.");
-                                break
-                            }
-                        }
-                    }
-
-                    if (Correct < 3) {
-                        MaxTries = 8;
-                        TotalTries = 8;
-                    }
-
-                    if (Correct >= 3 && Correct < 5) {
-                        MaxTries = 9;
-                        TotalTries = 9;
-                    }
-
-
-                    if (Correct >= 5 && Correct < 8) {
-                        MaxTries = 10;
-                        TotalTries = 10;
-                    }
-
-                    if (Correct >= 8 && Correct < 10) {
-                        MaxTries = 12;
-                        TotalTries = 12;
-                    }
-
-                    if (Correct >= 10 && Correct < 12) {
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct >= 12 && Correct < 14) {
-                        MaxTries = 16;
-                        TotalTries = 16;
-                    }
-                    if (Correct >= 14 && Correct < 16) {
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct >= 16) {
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-                    Round += 1;
-                    alert("This is the start of a new round.")
-                    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
-                    Guesses += 1;
-                }
-
-                if (Attempts == RandomNumber) {
-                    alert("WHOA! You guessed it right on your first try. Nice job!")
-                    Correct += 1;
-                    Guesses = 0;
-
-                    if (Round == 1) {
-                        var Round1 = Guesses;
-                    }
-
-                    if (Round == 2) {
-                        var Round2 = Guesses;
-                    }
-
-                    if (Round == 3) {
-                        var Round3 = Guesses;
-                    }
-
-                    if (Round == 4) {
-                        var Round4 = Guesses;
-                    }
-
-                    if (Round == 5) {
-                        var Round5 = Guesses;
-                    }
-
-                    if (Round == 6) {
-                        var Round6 = Guesses;
-                    }
-
-                    if (Round == 7) {
-                        var Round7 = Guesses;
-                    }
-
-                    if (Round == 8) {
-                        var Round8 = Guesses;
-                    }
-
-                    if (Round == 9) {
-                        var Round9 = Guesses;
-                    }
-
-                    if (Round == 10) {
-                        var Round10 = Guesses;
-                    }
-
-                    if (Round == 11) {
-                        var Round11 = Guesses;
-                    }
-
-                    if (Round == 12) {
-                        var Round12 = Guesses;
-                    }
-
-                    if (Round == 13) {
-                        var Round13 = Guesses;
-                    }
-
-                    if (Round == 14) {
-                        var Round14 = Guesses;
-                    }
-
-                    if (Round == 15) {
-                        var Round15 = Guesses;
-                    }
-
-                    if (Round == 16) {
-                        var Round16 = Guesses;
-                    }
-
-                    if (Round == 17) {
-                        var Round17 = Guesses;
-                    }
-
-                    if (Round == 18) {
-                        var Round18 = Guesses;
-                    }
-
-                    if (Round == 19) {
-                        var Round19 = Guesses;
-                    }
-
-                    if (Round == 20) {
-                        var Round20 = Guesses;
-                    }
-
-
-                    if (Correct == 3) {
-                        Number = 350;
-                        alert("*Notice* The number has changed to 350 and you have 9 tries from 8.")
-                    }
-
-                    if (Correct == 5) {
-                        alert("*Notice* The number has changed to 500 and you now have 10 tries from 9.")
-                        Number = 500;
-                        MaxTries = 10;
-                        TotalTries = 10;
-
-                    }
-
-                    if (Correct == 8) {
-                        alert("*Notice* The number has changed to 750 and you now have 12 tries from 10.")
-                        Number = 750;
-                        MaxTries = 12;
-                        TotalTries = 12;
-                    }
-
-                    if (Correct == 10) {
-                        alert("*Notice* The number has changed to 1,000 and you have 14 tries from 12.")
-                        Number = 1000;
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct == 12) {
-                        alert("*Notice* The number has changed to 1,250 and you have 16 tries from 14.")
-                        Number = 1250;
-                        MaxTries = 16;
-                        TotalTries = 16;
-                    }
-
-                    if (Correct == 14) {
-                        alert("*Notice* The number has changed to 1,500 and you have 17 tries from 16.")
-                        Number = 1500;
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct == 16) {
-                        alert("*Notice* The number has changed to 2,000 and you have 19 tries from 17.")
-                        Number = 2000
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-
-                    if (Correct == 20) {
-
-                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                        document.cookie = "Achievement V.11.5 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-
-                        var Continue = prompt("Congratulations on BEATING The Guessing Game. Would you like to continue to get a higher score? Type 'Yes' or 'No'")
-
-                        var YorN = Continue.slice(0, 1); //YorN means Yes or No
-                        var YorNtoUpperCase = YorN.toUpperCase();
-                        var esORo = Continue.slice(1, 3); //esORo means Y(es) OR N(o)   
-                        var LoweresORo = esORo.toLowerCase();
-                        var Continue = (YorNtoUpperCase + LoweresORo);
-
-                        if (Continue == "Yes") {
-                            alert("You are on a streak of 20.");
-                        }
-
-                        if (Continue == "No") {
-                            var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                            document.write("You beat the game in " + endGameTries + " tries.");
-                            break
-                        }
-
-                        if (Continue == "") {
-                            var Continue2 = prompt("Would you like to continue to get a higher score? Type 'Yes' or 'No'. ")
-                            var YorN2 = Continue2.slice(0, 1); //YorN means Yes or No
-                            var YorNtoUpperCase2 = YorN2.toUpperCase();
-                            var esORo2 = Continue2.slice(1, 3); //esORo means Y(es) OR N(o)   
-                            var LoweresORo2 = esORo2.toLowerCase();
-                            var Continue2 = (YorNtoUpperCase2 + LoweresORo2);
-
-                            if (Continue2 == "Yes") {
-                                alert("You are on a streak of 20.");
-                            }
-
-                            if (Continue2 == "No") {
-                                var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                document.write("You beat the game in " + endGameTries + " tries.");
-                                break
-                            }
-
-                        }
-
-                    }
-
-
-                    if (Correct < 3) {
-                        MaxTries = 8;
-                        TotalTries = 8;
-                    }
-
-                    if (Correct >= 3 && Correct < 5) {
-                        MaxTries = 9;
-                        TotalTries = 9;
-                    }
-
-
-                    if (Correct >= 5 && Correct < 8) {
-                        MaxTries = 10;
-                        TotalTries = 10;
-                    }
-
-                    if (Correct >= 8 && Correct < 10) {
-                        MaxTries = 12;
-                        TotalTries = 12;
-                    }
-
-                    if (Correct >= 10 && Correct < 12) {
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct >= 12 && Correct < 14) {
-                        MaxTries = 16;
-                        TotalTries = 16;
-                    }
-                    if (Correct >= 14 && Correct < 16) {
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct >= 16) {
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-                    Round += 1;
-                    alert("This is the start of a new round.")
-                    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.  You are on round " + Round + ".");
-                    Guesses += 1;
-                    TotalTries -= 1;
-
-                    if (Attempts == "") {
-                        Guesses -= 1;
-                        TotalTries += 1;
-                        alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
-                    }
-                }
-            }
-
+            Attempts = NaN
+            var RandomNumber = Math.floor(Math.random() * Number) + 1;
 
         }
 
@@ -850,7 +576,6 @@ if (Answer == "1") {
             if (Correct >= 30) {
                 document.cookie = "Extra Innings = Get a score of 30 or more; expires=Tue, 31 Dec 2030 12:00:00 UTC";
             }
-
             break
         }
 
@@ -885,30 +610,210 @@ if (Answer == "2") {
 
     while (Attempts != RandomNumber) {
 
-        if (Attempts == "") {
-            Guesses -= 1;
-            TotalTries += 1;
-            alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
+        if (Attempt1 == undefined) {
+            Attempt1 = "__"
         }
 
+        if (Attempt2 == undefined) {
+            Attempt2 = "__"
+        }
+
+        if (Attempt3 == undefined) {
+            Attempt3 = "__"
+        }
+
+        if (Attempt4 == undefined) {
+            Attempt4 = "__"
+        }
+
+        if (Attempt5 == undefined) {
+            Attempt5 = "__"
+        }
+
+        if (Attempt6 == undefined) {
+            Attempt6 = "__"
+        }
+
+        if (Attempt7 == undefined) {
+            Attempt7 = "__"
+        }
+
+        if (Attempt8 == undefined) {
+            Attempt8 = "__"
+        }
+
+        if (Attempt9 == undefined) {
+            Attempt9 = "__"
+        }
+
+        if (Attempt10 == undefined) {
+            Attempt10 = "__"
+        }
+
+        if (Attempt11 == undefined) {
+            Attempt11 = "__"
+        }
+
+        if (Attempt12 == undefined) {
+            Attempt12 = "__"
+        }
+
+        if (Attempt13 == undefined) {
+            Attempt13 = "__"
+        }
+
+        if (Attempt14 == undefined) {
+            Attempt14 = "__"
+        }
+
+        if (Attempt15 == undefined) {
+            Attempt15 = "__"
+        }
+
+        if (Attempt16 == undefined) {
+            Attempt16 = "__"
+        }
+
+        if (Attempt17 == undefined) {
+            Attempt17 = "__"
+        }
+
+        if (Attempt18 == undefined) {
+            Attempt18 = "__"
+        }
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
-            Guesses += 1;
-            TotalTries -= 1;
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + "."); TotalTries -= 1;
         }
 
         if (Guesses == -1) {
             Guesses += 1
         }
 
+        if (Attempts == "") {
+            Guesses -= 1;
+            TotalTries += 1;
+            alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
+        }
+
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.11.5\nChanged some things and added an achievement for getting a score of 30 or higher in normal mode")
+            alert("Wow, " + Name + " aren't you glad to be happily playing V.12\nThe game tells you your previous guesses, made the game neater")
+        }
+
+        if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+            if (Guesses == 1) {
+                var Attempt1 = Attempts
+            }
+
+            if (Guesses == 2) {
+                var Attempt2 = Attempts
+            }
+
+            if (Guesses == 3) {
+                var Attempt3 = Attempts
+            }
+
+            if (Guesses == 4) {
+                var Attempt4 = Attempts
+            }
+
+            if (Guesses == 5) {
+                var Attempt5 = Attempts
+            }
+
+            if (Guesses == 6) {
+                var Attempt6 = Attempts
+            }
+
+            if (Guesses == 7) {
+                var Attempt7 = Attempts
+            }
+
+            if (Guesses == 8) {
+                var Attempt8 = Attempts
+            }
+
+            if (Guesses == 9) {
+                var Attempt9 = Attempts
+            }
+
+            if (Guesses == 10) {
+                var Attempt10 = Attempts
+            }
+
+            if (Guesses == 11) {
+                var Attempt11 = Attempts
+            }
+
+            if (Guesses == 12) {
+                var Attempt12 = Attempts
+            }
+
+            if (Guesses == 13) {
+                var Attempt13 = Attempts
+            }
+
+            if (Guesses == 14) {
+                var Attempt14 = Attempts
+            }
+
+            if (Guesses == 15) {
+                var Attempt15 = Attempts
+            }
+
+            if (Guesses == 16) {
+                var Attempt16 = Attempts
+            }
+
+            if (Guesses == 17) {
+                var Attempt17 = Attempts
+            }
+
+            if (Guesses == 18) {
+                var Attempt18 = Attempts
+            }
+
         }
 
         if (Attempts == RandomNumber) {
+
+            Attempt1 = "__"
+
+            Attempt2 = "__"
+
+            Attempt3 = "__"
+
+            Attempt4 = "__"
+
+            Attempt5 = "__"
+
+            Attempt6 = "__"
+
+            Attempt7 = "__"
+
+            Attempt8 = "__"
+
+            Attempt9 = "__"
+
+            Attempt10 = "__"
+
+            Attempt11 = "__"
+
+            Attempt12 = "__"
+
+            Attempt13 = "__"
+
+            Attempt14 = "__"
+
+            Attempt15 = "__"
+
+            Attempt16 = "__"
+
+            Attempt17 = "__"
+
+            Attempt18 = "__"
 
             alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
 
@@ -981,7 +886,7 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.12 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                 document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
@@ -1010,231 +915,8 @@ if (Answer == "2") {
 
             Round += 1;
             alert("This is the start of a new round.")
-
-
-            {
-                var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
-                Guesses += 1;
-                TotalTries -= 1;
-
-                if (Attempts == RandomNumber) {
-
-                    alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
-
-                    if (Round == 1) {
-                        var Round1 = Guesses;
-                    }
-
-                    if (Round == 2) {
-                        var Round2 = Guesses;
-                    }
-
-                    if (Round == 3) {
-                        var Round3 = Guesses;
-                    }
-
-                    if (Round == 4) {
-                        var Round4 = Guesses;
-                    }
-
-                    if (Round == 5) {
-                        var Round5 = Guesses;
-                    }
-
-                    if (Round == 6) {
-                        var Round6 = Guesses;
-                    }
-
-                    if (Round == 7) {
-                        var Round7 = Guesses;
-                    }
-
-                    if (Round == 8) {
-                        var Round8 = Guesses;
-                    }
-
-                    if (Round == 9) {
-                        var Round9 = Guesses;
-                    }
-
-                    if (Round == 10) {
-                        var Round10 = Guesses;
-                    }
-
-                    if (Guesses == 1) {
-                        alert('Whoa! Hold on there cheater! ;) It took you only one try to correctly guess ' + RandomNumber + '.' + ' Do you know the odds of doing that again?')
-                    }
-
-                    Correct += 1;
-                    Guesses = 0;
-
-                    if (Correct == 3) {
-                        Number = 1000;
-                        alert("*Notice* The number has changed to 1000 and you have 14 tries from 10.")
-                    }
-
-                    if (Correct == 5) {
-                        alert("*Notice* The number has changed to 1500 and you now have 17 tries from 14.")
-                        Number = 1500;
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct == 7) {
-                        alert("*Notice* The number has changed to 2000 and you now have 19 tries from 17.")
-                        Number = 2000;
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-
-
-                    if (Correct == 10) {
-                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
-                        break
-                    }
-
-                    if (Correct < 3) {
-                        MaxTries = 10;
-                        TotalTries = 10;
-                    }
-
-                    if (Correct >= 3 && Correct < 5) {
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct >= 5 && Correct < 7) {
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct >= 7) {
-                        MaxTries = 19
-                        TotalTries = 19
-                    }
-                    Round += 1;
-                    alert("This is the start of a new round.")
-                    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ".");
-                    Guesses += 1;
-                }
-
-                if (Attempts == RandomNumber) {
-
-                    alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
-
-                    if (Round == 1) {
-                        var Round1 = Guesses;
-                    }
-
-                    if (Round == 2) {
-                        var Round2 = Guesses;
-                    }
-
-                    if (Round == 3) {
-                        var Round3 = Guesses;
-                    }
-
-                    if (Round == 4) {
-                        var Round4 = Guesses;
-                    }
-
-                    if (Round == 5) {
-                        var Round5 = Guesses;
-                    }
-
-                    if (Round == 6) {
-                        var Round6 = Guesses;
-                    }
-
-                    if (Round == 7) {
-                        var Round7 = Guesses;
-                    }
-
-                    if (Round == 8) {
-                        var Round8 = Guesses;
-                    }
-
-                    if (Round == 9) {
-                        var Round9 = Guesses;
-                    }
-
-                    if (Round == 10) {
-                        var Round10 = Guesses;
-                    }
-
-                    if (Guesses == 1) {
-                        alert('Whoa! Hold on there cheater! ;) It took you only one try to correctly guess ' + RandomNumber + '.' + ' Do you know the odds of doing that again?')
-                    }
-
-                    Correct += 1;
-                    Guesses = 0;
-
-                    if (Correct == 3) {
-                        Number = 1000;
-                        alert("*Notice* The number has changed to 1000 and you have 14 tries from 10.")
-                    }
-
-                    if (Correct == 5) {
-                        alert("*Notice* The number has changed to 1500 and you now have 17 tries from 14.")
-                        Number = 1500;
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct == 7) {
-                        alert("*Notice* The number has changed to 2000 and you now have 19 tries from 17.")
-                        Number = 2000;
-                        MaxTries = 19;
-                        TotalTries = 19;
-                    }
-
-
-                    if (Correct == 10) {
-                        var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                        document.cookie = "Achievement V.11.5 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
-                        break
-                    }
-
-                    if (Correct < 3) {
-                        MaxTries = 10;
-                        TotalTries = 10;
-                    }
-
-                    if (Correct >= 3 && Correct < 5) {
-                        MaxTries = 14;
-                        TotalTries = 14;
-                    }
-
-                    if (Correct >= 5 && Correct < 7) {
-                        MaxTries = 17;
-                        TotalTries = 17;
-                    }
-
-                    if (Correct >= 7) {
-                        MaxTries = 19
-                        TotalTries = 19
-                    }
-                    Round += 1;
-                    alert("This is the start of a new round.")
-                    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left.  You are on round " + Round + ".");
-                    Guesses += 1;
-                    TotalTries -= 1;
-
-                    if (Attempts == "") {
-                        Guesses -= 1;
-                        TotalTries += 1;
-                        alert("Whoops! You entered nothing. You still have " + TotalTries + " tries left.")
-                    }
-                }
-            }
-
-
+            Attempts = NaN
+            var RandomNumber = Math.floor(Math.random() * Number) + 1;
         }
 
         if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
@@ -1296,85 +978,6 @@ if (Answer == "2") {
     }
 }
 
-///Beat The Clock///////////////////// still trying to figure this out
-/*
-if (Answer == "3") {
-
-    var Number = 500
-    var Guesses = 0
-    var RandomNumber = Math.floor(Math.random() * Number) + 1;
-    var Correct = 0
-    var Round = 1
-    var TotalTries = 10
-    var D = new Date();
-    var Minutes = D.getMinutes();
-
-    var EndTime = Minutes + 5
-
-    if (EndTime ==  "60") {
-        var EndTime = 0;
-    }
-
-    if (EndTime == "61"){
-        var EndTime = 1;
-    }
-
-    if (EndTime == "62"){
-        var EndTime = 2;
-
-    }
-
-    if (EndTime == "63"){
-        var EndTime = 3;
-    }
-
-    if (EndTime == "64"){
-        var EndTime = 4;
-    }
-
-    var D = null
-    var Minutes = null
-
-    while (Attempts != RandomNumber){
-
-    (Attempts != RandomNumber); {
-        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You are on round " + Round + "." + RandomNumber);
-        Guesses += 1;
-    }
-
-    if (Attempts == null){
-        document.write("You ended the game.")
-        break
-    }
-
-    if (Attempts != "" && Attempts <= Number && Attempts > 0) {
-        if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
-            alert('Higher than ' + Attempts + "!");
-        }
-    }
-    if (Attempts != "" && Attempts <= Number && Attempts > 0) {
-        if (Attempts > RandomNumber) { //If user types in answer higher than the random number the system will tell them to guess lower
-            alert('Lower than ' + Attempts + "!");
-        }
-    }
-
-    if (Attempts == "CheckVersion") {
-        Guesses -= 1;
-        alert("Wow, " + Name + " aren't you glad to be happily playing V.11.2\nFixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round")
-    }
-
-    if (Attempts == RandomNumber) {
-
-        var ND = new Date();
-        var UpdatedTime = ND.getMinutes;
-        alert (UpdatedTime)
-
-        alert("Nice, you guessed " + RandomNumber + " correctly. You have minutes left.")
-    }
-}
-
-
-}
 /*
 
 
