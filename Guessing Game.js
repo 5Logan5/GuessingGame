@@ -1,4 +1,4 @@
-console.log("Welcome to V.12.3 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
+console.log("Welcome to V.12.6 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -30,6 +30,7 @@ console.log("Welcome to V.12.3 of my Guessing Game, you better of not have come 
 //Patch Notes: Mothers Day colors were added for a few days
 //Patch Notes: V.12 The game tells you your previous guesses, made the game neater
 //Patch Notes: v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)
+//Patch Notes: v.12.6 Now when you accedently type something besides a number like "24sdvs" it will give you back your turn instead of you wasting your turn
 
 var Author = "Logan B."
 
@@ -162,6 +163,10 @@ if (Answer == "1") {
             Attempt18 = "__"
         }
 
+        if (Attempt19 == undefined) {
+            Attempt19 = "__"
+        }
+
         if (Author != "Logan B.") {
             alert("Oops, looks like you're playing a plagiarized version of the Guessing Game. To play the real game visit --> https://5logan5.github.io/GuessingGame/")
         }
@@ -181,7 +186,7 @@ if (Answer == "1") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.12.3\nv.12.3 fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)")
+            alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.3 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -348,7 +353,172 @@ if (Answer == "1") {
                 }
             }
 
+            if (Guesses == 19) {
+                if (Attempts > RandomNumber) {
+                    var Attempt19 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt19 = Attempts + "<"
+                }
+            }
         }
+
+        if (Attempts != null && Attempts != RandomNumber) {
+
+            if (Guesses == 1) {
+                if (Attempt1 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 2) {
+                if (Attempt2 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 3) {
+                if (Attempt3 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 4) {
+                if (Attempt4 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 5) {
+                if (Attempt5 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 6) {
+                if (Attempt6 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 7) {
+                if (Attempt7 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 8) {
+                if (Attempt8 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 9) {
+                if (Attempt9 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 10) {
+                if (Attempt10 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 11) {
+                if (Attempt11 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 12) {
+                if (Attempt12 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 13) {
+                if (Attempt13 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 14) {
+                if (Attempt14 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 15) {
+                if (Attempt15 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 16) {
+                if (Attempt16 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 17) {
+                if (Attempt17 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 18) {
+                if (Attempt18 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 19) {
+                if (Attempt19 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+        }
+
+
 
         if (Attempts == RandomNumber) {
 
@@ -387,6 +557,8 @@ if (Answer == "1") {
             Attempt17 = "__"
 
             Attempt18 = "__"
+
+            Attempt19 = "__"
 
             alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
 
@@ -530,8 +702,8 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = "Achievement V.12.3 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-
+                document.cookie = "Achievement V.12.6 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                 var YorN = Continue.slice(0, 1); //YorN means Yes or No
@@ -669,14 +841,10 @@ if (Answer == "1") {
 
 
         if (Attempts > Number) { //If the user typed a number bigger than what your suppose to guess the system will display the message below
-            Guesses -= 1;
-            TotalTries += 1;
             alert("Whoa. That's a bit too high of a guess. Try a number below " + Number + " next time.")
         }
         if (Attempts != "") {
             if (Attempts < 1) { //If the user typed a number lower than 0 the system will display the message below
-                Guesses -= 1;
-                TotalTries += 1;
                 alert("Yikes! You entered a number below 1. Try a number higher than 0 this time.")
             }
         }
@@ -695,6 +863,7 @@ if (Answer == "2") {
     var Round = 1
     var TotalTries = 10
     var Time = new Date();
+
 
     while (Attempts != RandomNumber) {
 
@@ -770,6 +939,10 @@ if (Answer == "2") {
             Attempt18 = "__"
         }
 
+        if (Attempt19 == undefined) {
+            Attempt19 = "__"
+        }
+
         (Attempts != RandomNumber); {
             var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
             Guesses += 1;
@@ -785,7 +958,7 @@ if (Answer == "2") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing V.12.3\nv.12.3 fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)")
+            alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.6 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -952,6 +1125,170 @@ if (Answer == "2") {
                 }
             }
 
+            if (Guesses == 19) {
+                if (Attempts > RandomNumber) {
+                    var Attempt19 = Attempts + ">"
+                }
+                if (Attempts < RandomNumber) {
+                    var Attempt19 = Attempts + "<"
+                }
+            }
+
+        }
+
+        if (Attempts != null && Attempts != RandomNumber) {
+
+            if (Guesses == 1) {
+                if (Attempt1 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 2) {
+                if (Attempt2 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 3) {
+                if (Attempt3 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 4) {
+                if (Attempt4 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 5) {
+                if (Attempt5 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 6) {
+                if (Attempt6 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 7) {
+                if (Attempt7 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 8) {
+                if (Attempt8 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 9) {
+                if (Attempt9 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 10) {
+                if (Attempt10 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 11) {
+                if (Attempt11 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 12) {
+                if (Attempt12 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 13) {
+                if (Attempt13 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 14) {
+                if (Attempt14 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 15) {
+                if (Attempt15 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 16) {
+                if (Attempt16 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 17) {
+                if (Attempt17 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 18) {
+                if (Attempt18 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
+
+            if (Guesses == 19) {
+                if (Attempt19 == "__") {
+                    alert("Oops! Something happened. Please re-enter your guess.")
+                    Guesses -= 1;
+                    TotalTries += 1;
+                }
+            }
         }
 
         if (Attempts == RandomNumber) {
@@ -992,6 +1329,8 @@ if (Answer == "2") {
             Attempt17 = "__"
 
             Attempt18 = "__"
+
+            Attempt19 = "__"
 
             alert('Nice! You correctly guessed ' + RandomNumber + " in " + Guesses + " tries.")
 
@@ -1064,7 +1403,7 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = "Achievement V.12.3 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.12.6 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                 document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
@@ -1141,14 +1480,10 @@ if (Answer == "2") {
 
 
         if (Attempts > Number) { //If the user typed a number bigger than what your suppose to guess the system will display the message below
-            Guesses -= 1;
-            TotalTries += 1;
             alert("Whoa. That's a bit too high of a guess. Try a number below " + Number + " next time.")
         }
         if (Attempts != "") {
             if (Attempts < 1) { //If the user typed a number lower than 0 the system will display the message below
-                Guesses -= 1;
-                TotalTries += 1;
                 alert("Yikes! You entered a number below 1. Try a number higher than 0 this time.")
             }
         }
