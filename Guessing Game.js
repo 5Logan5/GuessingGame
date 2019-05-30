@@ -1,4 +1,4 @@
-console.log("Welcome to V.12.6 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
+console.log("Welcome to V.13 of my Guessing Game, you better of not have come here to cheat, if you are then see your way out.")
 //Patch Notes: V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in "GiveUp" and the system will tell you the number and the game will end.
 //Patch Notes: V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type "Hint" and the system will tell you a number thats around the random number and got rid of "GiveUp".
 //Patch Notes: V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries.
@@ -30,7 +30,9 @@ console.log("Welcome to V.12.6 of my Guessing Game, you better of not have come 
 //Patch Notes: Mothers Day colors were added for a few days
 //Patch Notes: V.12 The game tells you your previous guesses, made the game neater
 //Patch Notes: v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)
-//Patch Notes: v.12.6 Now when you accedently type something besides a number like "24sdvs" it will give you back your turn instead of you wasting your turn
+//Patch Notes: v.12.6 Now when you accidentally type something besides a number like "24sdvs" it will give you back your turn instead of you wasting your turn
+//Patch Notes: v.13 Added an existing game mode where you get to choose how much tries you have
+
 
 var Author = "Logan B."
 
@@ -49,31 +51,31 @@ if (Name != null) {
 
 if (Name == null) {
     document.write("Please reload and enter a name.")
-    console.error("Please enter a name.")
+    console.error("User didn't enter a name!")
 }
 
 if (Name == "") {
     document.write("Please reload and enter a name.")
-    console.error("Please enter a name.")
+    console.error("User didn't enter a name!")
 }
 
 if (Name != null) {
     if (Name != "") {
-        var Answer = prompt("Hello, " + Name + ". Welcome to the Guessing Game, for the normal game mode (20 Rounds) type '1' and for the fast pace game mode (10 Rounds) press '2'.")
+        var Answer = prompt("Hello, " + Name + ". Welcome to the Guessing Game, for the normal game mode (20 Rounds) type '1', for the fast pace game mode (10 Rounds) press '2' and for the game mode where you choose the amount of tries you have type '3'.")
     }
 }
 
 if (Name != null && Name != "") {
     if (Answer == "") {
         document.write("Please reload and enter a game mode.")
-        console.error("Please enter a game mode.")
+        console.error("User didn't enter a game mode!")
     }
 }
 
 if (Name != null && Name != "") {
     if (Answer == null) {
         document.write("Please reload and enter a game mode.")
-        console.error("Please enter a game mode.")
+        console.error("User didn't enter a game mode!")
     }
 }
 
@@ -83,7 +85,7 @@ if (Answer == "1") {
     var Guesses = 0
     var MaxTries = 8
     var RandomNumber = Math.floor(Math.random() * Number) + 1;
-    var Correct = 0
+    var Correct = 18
     var Round = 1
     var TotalTries = 8
     var Time = new Date();
@@ -172,7 +174,7 @@ if (Answer == "1") {
         }
 
         (Attempts != RandomNumber); {
-            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
+            var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + "." + RandomNumber);
             Guesses += 1;
             TotalTries -= 1;
         }
@@ -186,7 +188,7 @@ if (Answer == "1") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.3 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
+            alert("Wow, " + Name + " aren't you glad to be happily playing v.13\nv.13 Patch Note: Added an existing game mode where you get to choose how much tries you have")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -702,8 +704,8 @@ if (Answer == "1") {
 
             if (Correct == 20) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                document.cookie = "Achievement V.12.6 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-                
+                document.cookie = "Achievement V.13 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+
                 var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
                 var YorN = Continue.slice(0, 1); //YorN means Yes or No
@@ -793,7 +795,7 @@ if (Answer == "1") {
         if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
 
             if (Correct <= 19) {
-                document.write("You have ended the game with a streak of " + Correct + ".")
+                document.write("You ended the game with a streak of " + Correct + ".")
                 break
             }
 
@@ -958,7 +960,11 @@ if (Answer == "2") {
         if (Attempts == "CheckVersion") {
             Guesses -= 1;
             TotalTries += 1;
-            alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.6 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
+            alert("Wow, " + Name + " aren't you glad to be happily playing v.13\nv.13 Patch Note: Added an existing game mode where you get to choose how much tries you have")
+        }
+
+        if (Author != "Logan B.") {
+            alert("Oops, looks like you're playing a plagiarized version of the Guessing Game. To play the real game visit --> https://5logan5.github.io/GuessingGame/")
         }
 
         if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -1403,7 +1409,7 @@ if (Answer == "2") {
 
             if (Correct == 10) {
                 var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                document.cookie = "Achievement V.12.6 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                document.cookie = "Achievement V.13 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                 document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
                 break
             }
@@ -1491,13 +1497,172 @@ if (Answer == "2") {
     }
 }
 
+
+if (Answer == "3") {
+
+    var Tries = prompt("How much tries would you like? Please type 30 through 500.")
+    var Number = 100
+    var Guesses = 0
+    var RandomNumber = Math.floor(Math.random() * Number) + 1;
+    var Round = 1
+    var TotalTries = Tries
+
+    if (Tries == 500) {
+        var Number500 = 1
+    }
+
+    if (Tries == null) {
+        EndGame = true
+    }
+
+    else {
+
+        EndGame = false
+    }
+
+    while (Attempts != RandomNumber) {
+
+        if (EndGame == true) {
+            console.error("User didn't enter a number between 30 and 500!")
+            document.write("Please reload and enter a number between 30 and 500.")
+            break
+        }
+
+        if (Tries != null && Tries != "") {
+            if (TotalTries > 500) {
+                console.error("User didn't enter a number between 30 and 500!")
+                document.write("Please reload and enter a number between 30 and 500.")
+                break
+            }
+
+            if (TotalTries < 30) {
+                console.error("User didn't enter a number between 30 and 500!")
+                document.write("Please reload and enter a number between 30 and 500.")
+                break
+            }
+        }
+
+        if (Guesses == TotalTries - 1) {
+            alert("This is your last try! Make it a good one.")
+        }
+
+        if (Author != "Logan B.") {
+            alert("Oops, looks like you're playing a plagiarized version of the Guessing Game. To play the real game visit --> https://5logan5.github.io/GuessingGame/")
+        }
+
+
+        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + Tries + " tries left. You are on round " + Round + "." + RandomNumber);
+
+
+        if (Attempts > RandomNumber && Guesses != TotalTries) {
+            if (Attempts != null) {
+                if (Attempts != "") {
+                    alert("Lower!")
+                }
+            }
+        }
+
+        if (Attempts < RandomNumber && Guesses != TotalTries) {
+            if (Attempts != null) {
+                if (Attempts != "") {
+                    alert("Higher!")
+                }
+            }
+        }
+
+        if (Attempts == null) {
+            document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
+            break
+        }
+
+        Guesses += 1;
+        Tries -= 1;
+
+        if (Attempts == "") {
+            alert("Whoops! You entered nothing. I have taken off a try for you.")
+            Guesses -= 1;
+            Tries += 1;
+        }
+
+        if (Attempts == "CheckVersion") {
+            Guesses -= 1;
+            Tries += 1;
+            alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.6 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
+        }
+
+
+
+        if (Attempts == RandomNumber) {
+            Round += 1;
+
+            alert('Nice! You correctly guessed ' + RandomNumber + ".")
+
+
+            if (Round == 3) {
+                Number = 350;
+                alert("*Notice* The number has changed to 350.")
+            }
+
+            if (Round == 5) {
+                alert("*Notice* The number has changed to 500.")
+                Number = 500;
+            }
+
+            if (Round == 8) {
+                alert("*Notice* The number has changed to 750.")
+                Number = 750;
+            }
+
+            if (Round == 10) {
+                alert("*Notice* The number has changed to 1,000")
+                Number = 1000;
+            }
+
+            if (Round == 12) {
+                alert("*Notice* The number has changed to 1,250.")
+                Number = 1250;
+            }
+
+            if (Round == 14) {
+                alert("*Notice* The number has changed to 1,500.")
+                Number = 1500;
+            }
+
+            if (Round == 16) {
+                alert("*Notice* The number has changed to 2,000.")
+                Number = 2000
+            }
+
+            alert("This is the start of a new round.")
+
+            var RandomNumber = Math.floor(Math.random() * Number) + 1;
+            var Attempts = NaN
+
+            if (Guesses == TotalTries - 1) {
+                alert("This is your last try! Make it a good one.")
+            }
+        }
+
+        if (Guesses >= TotalTries) {
+            if (Number500 == 1) {
+                document.cookie = "That's A Lot! = Complete a game in 500 tries.; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                alert("Wow, you completed a game with 500 tries!")
+            }
+
+            alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + TotalTries + " tries.")
+            document.write("Nice! You got to Round " + Round + " in " + TotalTries + " tries.")
+            break
+        }
+    }
+}
+
 /*
 
 
 
 
 /*
- For playing offline to paste in the HTML "Body" Section to make the font arial, font color orange, and size 25px
+ For playing offline to paste in the HTML "Body" Section to make the font plain, font color white, and size 30px
 <font color="White"</font>
 <font face="plain"</font>
 <font size="30"</font>
