@@ -1662,7 +1662,7 @@ if (Answer == "3") {
 
 
 /*
- For playing offline to paste in the HTML "Body" Section to make the font plain, font color white, and size 30px
+ For playing offline to paste in the HTML "Body" Section to make the font plain font color white and size 30px
 <font color="White"</font>
 <font face="plain"</font>
 <font size="30"</font>
