@@ -42,7 +42,7 @@
 //Patch Notes: v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<)
 //Patch Notes: v.12.6 Now when you accidentally type something besides a number like "24sdvs" it will give you back your turn instead of you wasting your turn
 //Patch Notes: v.13 Added an existing game mode where you get to choose how much tries you have
-//Patch Notes: v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and now shows what numbers you have recently guessed 
+//Patch Notes: v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed 
 -->
 
 
@@ -53,7 +53,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100,100,100);
+            color: rgb(0, 0, 0);
             background-color: rgb(185, 104, 110);
             border: none;
             border-radius: 15px;
@@ -76,7 +76,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100,100,100);
+            color: rgb(0, 0, 0);
             background-color: rgb(79, 167, 226);
             border: none;
             border-radius: 15px;
@@ -99,7 +99,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100, 100, 100);
+            color: rgb(0, 0, 0);
             background-color: rgb(59, 228, 186);
             border: none;
             border-radius: 15px;
@@ -116,6 +116,29 @@
             transform: translateY(4px);
         }
 
+        #PatchNotes {
+            padding: 5px 10px;
+            font-size: 15px;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background-color: rgb(152, 103, 192);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        #PatchNotes:hover {
+            background-color: rgb(152, 103, 192)
+        }
+
+        #PatchNotes:active {
+            background-color: rgb(152, 103, 192);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
         div.Info {
             font-size: 29px;
         }
@@ -127,13 +150,14 @@
     <body style="background-color:black;">
         <font color="White" </font> <font face="plain" </font> <font size="30" </font> <div align="center">
             <h1>Welcome to the Guessing Game</h1>
-            <button id="button1" onclick="Mode1()" disabled>Mode 1</button>
-            <button id="button2" onclick="Mode2()" disabled>Mode 2</button>
-            <button id="button3" onclick="Mode3()" disabled>Mode 3</button>
+            <button id="button1" onclick="Mode1()">Mode 1</button>
+            <button id="button2" onclick="Mode2()">Mode 2</button>
+            <button id="button3" onclick="Mode3()">Mode 3</button>
             <hr size="4" noshade </hr> <div class="Info" align="left">
 
-             <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> 
-            <!-- <table cellspacing="10">
+            <!-- <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> -->
+            <table cellspacing="10">
+
                 <tr>
                     <td>Mode 1:</td>
 
@@ -141,14 +165,16 @@
                         run out of tries!</td>
 
                 </tr>
+
                 <tr>
                     <td>
                         Mode 2:
                     </td>
 
                     <td>
-                        There are 10 rounds in this game mode getting harder as the round your on increases (Basically just a faster version of Mode 1). Don't run out of tries!
-                        
+                        There are 10 rounds in this game mode getting harder as the round your on increases (Basically
+                        just a faster version of Mode 1). Don't run out of tries!
+
                     </td>
 
                 </tr>
@@ -165,18 +191,46 @@
                     </td>
 
 
-
                 </tr>
-                </div>
+            </table>
+            <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14: Added buttons to choose what mode you want to
+            play and bug fixes in mode 3 and
+            mode 3
+            now shows what numbers you have recently guessed. <button id="PatchNotes" onclick="PatchNotes()">More Patch Notes</button> </h6>
+            </div>
+            <div>
+                <hr size="4" noshade </hr> </div> 
+                <p 
+                id="NameError">
+                </p>
 
-                <h4>Recent Update: v.14: Added buttons to choose what mode you want to play and bug fixes in mode 3 and now shows what numbers you have recently guessed  </h4> -->
-                </div>
+                <p id="WinningMessage">
+                </p>
+
+                <p id="CancelButton">
+                </p>
+
+                <p id="OutOfTries">
+                </p>
+
+                <p 
+                id="TriesError">
+                </p>
+
 
                 <script>
 
                     function Mode1() {
 
-                        document.body.style.backgroundColor = "black";
+
+                        document.getElementById('NameError').innerHTML = ""
+                        document.getElementById('WinningMessage').innerHTML = ""
+                        document.getElementById('CancelButton').innerHTML = ""
+                        document.getElementById('OutOfTries').innerHTML = ""
+                        document.getElementById('TriesError').innerHTML = ""
+
+                        var Version = "v.14"
+                        console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
 
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -204,14 +258,20 @@
                         while (Attempts != RandomNumber) {
 
                             if (Name == null) {
-                                document.write("Please reload and enter a name.")
+
+
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 1' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
                             if (Name == "") {
-                                document.write("Please reload and enter a name.")
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 1' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -296,7 +356,7 @@
                             }
 
                             (Attempts != RandomNumber); {
-                                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
+                                var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ". ");
                                 Guesses += 1;
                                 TotalTries -= 1;
                             }
@@ -310,7 +370,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing v.13\nv.13 Patch Note: Added an existing game mode where you get to choose how much tries you have")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -826,7 +886,7 @@
 
                                 if (Correct == 20) {
                                     var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                    document.cookie = "Achievement V.13 (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                                    document.cookie = "Achievement " + Version + " (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
 
                                     var Continue = prompt("Congrats on beating the game! Would you like to continue to get a higher score? Type 'Yes' or 'No'")
 
@@ -841,7 +901,9 @@
                                     }
 
                                     if (Continue == "No") {
-                                        document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
+                                        document.getElementById('WinningMessage').innerHTML = "You beat the game with a total amount of " + endGameTries + " guesses."
+                                        document.title = 'Guessing Game';
+                                        document.body.style.fontSize = "30px";
                                         break
                                     }
 
@@ -860,7 +922,9 @@
 
                                         if (Continue2 == "No") {
                                             var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                            document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
+                                            document.getElementById('WinningMessage').innerHTML = "You beat the game with a total amount of " + endGameTries + " guesses."
+                                            document.title = 'Guessing Game';
+                                            document.body.style.fontSize = "30px";
                                             break
                                         }
                                     }
@@ -917,16 +981,20 @@
                             if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
 
                                 if (Correct <= 19) {
-                                    document.write("You ended the game with a streak of " + Correct + ".")
+                                    document.getElementById('CancelButton').innerHTML = "You ended the game with a streak of " + Correct + "."
+                                    document.title = 'Guessing Game';
+                                    document.body.style.fontSize = "30px";
                                     break
                                 }
 
                                 if (Correct > 19) {
                                     var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                    document.write("Congrats on beating the game. In 20 rounds you ended up with a total of " + endGameTries + " guesses. You ended the game with a streak of " + Correct + ".")
+                                    document.getElementById('CancelButton').innerHTML = "Congrats on beating the game. In 20 rounds you ended up with a total of " + endGameTries + " guesses. You ended the game with a streak of " + Correct + "."
                                     if (Correct >= 30) {
                                         document.cookie = "Extra Innings = Get a score of 30 or more; expires=Tue, 31 Dec 2030 12:00:00 UTC";
                                     }
+                                    document.title = 'Guessing Game';
+                                    document.body.style.fontSize = "30px";
                                     break
                                 }
 
@@ -952,7 +1020,7 @@
 
                             if (Guesses >= MaxTries) { //If the user reaches its max tries the game will end
                                 alert('You have no more tries left. The correct answer was ' + RandomNumber + ".")
-                                document.write(" You went on a streak of " + Correct + ".")
+                                document.getElementById('OutOfTries').innerHTML = "You went on a streak of " + Correct + "."
                                 if (Correct == 19) {
                                     document.cookie = "So Close But Yet So Far (Normal Mode) = Lose the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
                                 }
@@ -960,6 +1028,8 @@
                                 if (Correct >= 30) {
                                     document.cookie = "Extra Innings = Get a score of 30 or more; expires=Tue, 31 Dec 2030 12:00:00 UTC";
                                 }
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -983,6 +1053,15 @@
                     function Mode2() {
 
 
+                        document.getElementById('NameError').innerHTML = ""
+                        document.getElementById('WinningMessage').innerHTML = ""
+                        document.getElementById('CancelButton').innerHTML = ""
+                        document.getElementById('OutOfTries').innerHTML = ""
+                        document.getElementById('TriesError').innerHTML = ""
+
+
+                        var Version = "v.14"
+                        console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
 
@@ -1009,14 +1088,18 @@
                         while (Attempts != RandomNumber) {
 
                             if (Name == null) {
-                                document.write("Please reload and enter a name.")
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 1' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
                             if (Name == "") {
-                                document.write("Please reload and enter a name.")
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 1' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -1111,7 +1194,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing v.13\nv.13 Patch Note: Added an existing game mode where you get to choose how much tries you have")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
                             }
 
                             if (Author != "Logan B.") {
@@ -1560,8 +1643,10 @@
 
                                 if (Correct == 10) {
                                     var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
-                                    document.cookie = "Achievement V.13 (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
-                                    document.write("You beat the game with a total amount of " + endGameTries + " guesses.");
+                                    document.cookie = "Achievement " + Version + " (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
+                                    document.getElementById('WinningMessage').innerHTML = "You beat the game with a total amount of " + endGameTries + " guesses."
+                                    document.title = 'Guessing Game';
+                                    document.body.style.fontSize = "30px";
                                     break
                                 }
 
@@ -1595,16 +1680,10 @@
 
                             if (Attempts == null) { //If user presses the "Cancel" button it will end the code and display the messages below.
 
-                                if (Correct <= 19) {
-                                    document.write("You have ended the game with a streak of " + Correct + ".")
-                                    break
-                                }
-
-                                if (Correct > 19) {
-                                    var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
-                                    document.write("Congrats on beating the game. In 20 rounds you ended up with a total of " + endGameTries + " guesses. You ended the game with a streak of " + Correct + ".")
-                                    break
-                                }
+                                document.getElementById('CancelButton').innerHTML = "You ended the game with a streak of " + Correct + "."
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
+                                break
 
                             }
 
@@ -1628,10 +1707,12 @@
 
                             if (Guesses >= MaxTries) { //If the user reaches its max tries the game will end
                                 alert('You have no more tries left. The correct answer was ' + RandomNumber + ".")
-                                document.write(" You went on a streak of " + Correct + ".")
+                                document.getElementById('OutOfTries').innerHTML = "You went on a streak of " + Correct + "."
                                 if (Correct == 9) {
                                     document.cookie = "So Close But Yet So Far (Fast Pace) = Lose the game on the last round; expires=Tue, 31 Dec 2030 12:00:00 UTC";
                                 }
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -1659,6 +1740,16 @@
 
                     function Mode3() {
 
+
+                        document.getElementById('NameError').innerHTML = ""
+                        document.getElementById('WinningMessage').innerHTML = ""
+                        document.getElementById('CancelButton').innerHTML = ""
+                        document.getElementById('OutOfTries').innerHTML = ""
+                        document.getElementById('TriesError').innerHTML = ""
+
+
+                        var Version = "v.14"
+                        console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
 
@@ -1700,14 +1791,18 @@
                         while (Attempts != RandomNumber) {
 
                             if (Name == null) {
-                                document.write("Please reload and enter a name.")
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 3' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
                             if (Name == "") {
-                                document.write("Please reload and enter a name.")
+                                document.getElementById('NameError').innerHTML = "Please press 'Mode 3' and enter a name!"
                                 console.error("User didn't enter a name!")
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -1793,20 +1888,26 @@
 
                             if (EndGame == true) {
                                 console.error("User didn't enter a number between 30 and 500!")
-                                document.write("Please reload and enter a number between 30 and 500.")
+                                document.getElementById('TriesError').innerHTML = "Please reload and enter a number between 30 and 500."
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
                             if (Tries != null && Tries != "") {
                                 if (TotalTries > 500) {
                                     console.error("User didn't enter a number between 30 and 500!")
-                                    document.write("Please reload and enter a number between 30 and 500.")
+                                    document.getElementById('TriesError').innerHTML = "Please reload and enter a number between 30 and 500."
+                                    document.title = 'Guessing Game';
+                                    document.body.style.fontSize = "30px";
                                     break
                                 }
 
                                 if (TotalTries < 30) {
                                     console.error("User didn't enter a number between 30 and 500!")
-                                    document.write("Please reload and enter a number between 30 and 500.")
+                                    document.getElementById('TriesError').innerHTML = "Please reload and enter a number between 30 and 500."
+                                    document.title = 'Guessing Game';
+                                    document.body.style.fontSize = "30px";
                                     break
                                 }
                             }
@@ -1841,7 +1942,9 @@
                             }
 
                             if (Attempts == null) {
-                                document.write("You ended the game on round " + Round + " with " + Tries + " tries left.")
+                                document.getElementById('CancelButton').innerHTML = "You ended the game on round " + Round + " with " + Tries + " tries left."
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
 
@@ -1863,7 +1966,7 @@
                                 Tries += 1;
                                 BlankGuesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing v.12.6\nv.12.6 Patch Note: Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -2352,24 +2455,20 @@
                                 }
 
                                 alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + TotalTries + " tries.")
-                                document.write("Nice! You got to Round " + Round + " in " + TotalTries + " tries.")
+                                document.getElementById('OutOfTries').innerHTML = "Nice! You got to Round " + Round + " in " + TotalTries + " tries."
+                                document.title = 'Guessing Game';
+                                document.body.style.fontSize = "30px";
                                 break
                             }
                         }
-                    }</script>
+                    }
+                    
+                    function PatchNotes(){
+                        document.write("Patch Notes: Coming Soon!")
+                    }
 
 
-
-
-
-
-
-
-
-
-
-
-
+                    </script>
 
     </body>
 
