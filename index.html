@@ -53,7 +53,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(0, 0, 0);
+            color: rgb(100,100,100);
             background-color: rgb(185, 104, 110);
             border: none;
             border-radius: 15px;
@@ -76,7 +76,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(0, 0, 0);
+            color: rgb(100,100,100);
             background-color: rgb(79, 167, 226);
             border: none;
             border-radius: 15px;
@@ -99,7 +99,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(0, 0, 0);
+            color: rgb(100,100,100);
             background-color: rgb(59, 228, 186);
             border: none;
             border-radius: 15px;
@@ -150,13 +150,13 @@
     <body style="background-color:black;">
         <font color="White" </font> <font face="plain" </font> <font size="30" </font> <div align="center">
             <h1>Welcome to the Guessing Game</h1>
-            <button id="button1" onclick="Mode1()">Mode 1</button>
-            <button id="button2" onclick="Mode2()">Mode 2</button>
-            <button id="button3" onclick="Mode3()">Mode 3</button>
+            <button id="button1" onclick="Mode1()"disabled>Mode 1</button>
+            <button id="button2" onclick="Mode2()"disabled>Mode 2</button>
+            <button id="button3" onclick="Mode3()"disabled>Mode 3</button>
             <hr size="4" noshade </hr> <div class="Info" align="left">
 
-            <!-- <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> -->
-            <table cellspacing="10">
+             <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> 
+            <!--<table cellspacing="10">
 
                 <tr>
                     <td>Mode 1:</td>
@@ -192,7 +192,7 @@
 
 
                 </tr>
-            </table>
+            </table>-->
             <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14: Added buttons to choose what mode you want to
             play and bug fixes in mode 3 and
             mode 3
