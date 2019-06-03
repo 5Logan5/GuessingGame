@@ -43,17 +43,18 @@
 //Patch Notes: v.12.6 Now when you accidentally type something besides a number like "24sdvs" it will give you back your turn instead of you wasting your turn
 //Patch Notes: v.13 Added an existing game mode where you get to choose how much tries you have
 //Patch Notes: v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed 
+//Patch Notes: v.14.2 Added patch notes and some changes
 -->
 
 
     <style>
         #button1 {
-            padding: 15px 25px; 
+            padding: 15px 25px;
             font-size: 24px;
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100,100,100);
+            color: rgb(0, 0, 0);
             background-color: rgb(185, 104, 110);
             border: none;
             border-radius: 15px;
@@ -76,7 +77,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100,100,100);
+            color: rgb(0, 0, 0);
             background-color: rgb(79, 167, 226);
             border: none;
             border-radius: 15px;
@@ -99,7 +100,7 @@
             text-align: left;
             cursor: pointer;
             outline: none;
-            color: rgb(100,100,100);
+            color: rgb(0, 0, 0);
             background-color: rgb(59, 228, 186);
             border: none;
             border-radius: 15px;
@@ -126,7 +127,7 @@
             background-color: rgb(152, 103, 192);
             border: none;
             border-radius: 15px;
-            box-shadow: 0 9px #999;
+            box-shadow: 0 5px #999;
         }
 
         #PatchNotes:hover {
@@ -135,8 +136,8 @@
 
         #PatchNotes:active {
             background-color: rgb(152, 103, 192);
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
+            box-shadow: 0px #666;
+            transform: translateY(2px);
         }
 
         div.Info {
@@ -150,13 +151,13 @@
     <body style="background-color:black;">
         <font color="White" </font> <font face="plain" </font> <font size="30" </font> <div align="center">
             <h1>Welcome to the Guessing Game</h1>
-            <button id="button1" onclick="Mode1()"disabled>Mode 1</button>
-            <button id="button2" onclick="Mode2()"disabled>Mode 2</button>
-            <button id="button3" onclick="Mode3()"disabled>Mode 3</button>
+            <button id="button1" onclick="Mode1()">Mode 1</button>
+            <button id="button2" onclick="Mode2()">Mode 2</button>
+            <button id="button3" onclick="Mode3()">Mode 3</button>
             <hr size="4" noshade </hr> <div class="Info" align="left">
 
-             <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> 
-            <!--<table cellspacing="10">
+            <!-- <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> -->
+            <table cellspacing="10">
 
                 <tr>
                     <td>Mode 1:</td>
@@ -192,16 +193,13 @@
 
 
                 </tr>
-            </table>-->
-            <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14: Added buttons to choose what mode you want to
-            play and bug fixes in mode 3 and
-            mode 3
-            now shows what numbers you have recently guessed. <button id="PatchNotes" onclick="PatchNotes()">More Patch Notes</button> </h6>
+            </table>
+            <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14.2: Added patch notes and some changes. <button
+                id="PatchNotes" onclick="PatchNotes()"> More Patch
+                Notes</button> </h6>
             </div>
             <div>
-                <hr size="4" noshade </hr> </div> 
-                <p 
-                id="NameError">
+                <hr size="4" noshade </hr> </div> <p id="NameError">
                 </p>
 
                 <p id="WinningMessage">
@@ -213,8 +211,7 @@
                 <p id="OutOfTries">
                 </p>
 
-                <p 
-                id="TriesError">
+                <p id="TriesError">
                 </p>
 
 
@@ -229,7 +226,7 @@
                         document.getElementById('OutOfTries').innerHTML = ""
                         document.getElementById('TriesError').innerHTML = ""
 
-                        var Version = "v.14"
+                        var Version = "v.14.2"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
 
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
@@ -370,7 +367,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -1060,7 +1057,7 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.14"
+                        var Version = "v.14.2"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -1194,7 +1191,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
                             }
 
                             if (Author != "Logan B.") {
@@ -1748,7 +1745,7 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.14"
+                        var Version = "v.14.2"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -1966,7 +1963,7 @@
                                 Tries += 1;
                                 BlankGuesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -2462,14 +2459,19 @@
                             }
                         }
                     }
-                    
-                    function PatchNotes(){
-                        document.write("Patch Notes: Coming Soon!")
+
+                    function PatchNotes() {
+                        document.write("<p> Patch Notes: </p> <p> V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in 'GiveUp' and the system will tell you the number and the game will end.</p>  <p> V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type 'Hint' and the system will tell you a number thats around the random number and got rid of 'GiveUp'. </p> <p> V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries. </p> <p> V.2.1 Fixed some bugs and added a feature that makes the game harder as your streak gets bigger </p> <p> V.3 INTRODUCING Names. The system will now interact with you if you put your name in, if you don't enter your name the game won't start and if you don't want to put your name just make up a random one. Fixed some bugs and made the game harder by Reducing your tries at 6 in a row and 9 in a row and you can choose your wallpaper color. </p>  <p> V.3.3 Bug Fixes </p> <p> V.3.8 Bug Fixes </p> <p> V.4 Bug Fixes </p> <p> V.4.1 Only allowed ten letters in name and first letter of name is always capitilized </p> <p> V.5 Bug Fixes </p> <p> V.6 Bug Fixes </p> <p> V.6.1 Bug Fixes </p> <p> V.6.5 Bug Fixes </p> <p> V.6.6 Bug Fixes </p> <p> V.7 Made game harder </p> <p> V.8 Bug Fixes </p> <p> V.8.2 Bug Fixes </p> <p> V.8.3 Made the game neater </p> <p> V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater. </p>")
+                        document.write("<p> V.9.1 Changed picture for tab art. Bug Fixes. </p> <p> V.9.4 Removed/changed some things and fixed some bugs </p> <p> V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.) </p> <p> V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered </p> <p> V.10.4 When you guess a number it will now say 'The number is higher than x'. </p>")
+                        document.write("<p> V.10.6 Cookies will no longer get deleted when winning more than 1 game and fixed a bug when you type nothing once you get the number correct and an extry try would be added </p> <p> V.11 Changed picture for tab art (Credit: https://pixabay.com/users/io-images-1096650/), added a different game mode (Fast Pace; only 10 rounds instead of 20) </p> <p> V.11.2 Fixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round </p> <p> V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode </p> <p> V.12 The game tells you your previous guesses, made the game neater </p>")
+                        document.write("<p> v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<) </p> <p> v.12.6 Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn </p> <p> v.13 Added an existing game mode where you get to choose how much tries you have </p> <p> v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed </p> <p> Current Version: V.14.2 Added patch notes and some changes</p>")
+                        document.body.style.fontSize = "20px";
                         document.title = 'Guessing Game';
+
                     }
 
 
-                    </script>
+                </script>
 
     </body>
 
