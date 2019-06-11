@@ -44,6 +44,7 @@
 //Patch Notes: v.13 Added an existing game mode where you get to choose how much tries you have
 //Patch Notes: v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed 
 //Patch Notes: v.14.2 Added patch notes and some changes
+//Patch Notes: v.14.4 Bug Fixes in game mode 3
 -->
 
 
@@ -194,7 +195,7 @@
 
                 </tr>
             </table>
-            <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14.2: Added patch notes and some changes. <button
+            <hr size="4" noshade </hr> </div> <h6>Recent Update: v.14.4: Bug fixes in game mode 3. <button
                 id="PatchNotes" onclick="PatchNotes()"> More Patch
                 Notes</button> </h6>
             </div>
@@ -226,7 +227,7 @@
                         document.getElementById('OutOfTries').innerHTML = ""
                         document.getElementById('TriesError').innerHTML = ""
 
-                        var Version = "v.14.2"
+                        var Version = "v.14.4"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
 
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
@@ -367,7 +368,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -1057,7 +1058,7 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.14.2"
+                        var Version = "v.14.4"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -1191,7 +1192,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
                             }
 
                             if (Author != "Logan B.") {
@@ -1745,7 +1746,7 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.14.2"
+                        var Version = "v.14.4"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -1763,13 +1764,13 @@
 
                         if (Name != null && Name != "") {
                             var Tries = prompt("How much tries would you like? Please type 30 through 500.")
+                            var TotalTries = Tries
                         }
 
                         var Number = 100
                         var Guesses = 0
                         var RandomNumber = Math.floor(Math.random() * Number) + 1;
                         var Round = 1
-                        var TotalTries = Tries
                         var BlankGuesses = 0
 
                         if (Tries == 500) {
@@ -1900,7 +1901,7 @@
                                     break
                                 }
 
-                                if (TotalTries < 30) {
+                                if (Tries < 30) {
                                     console.error("User didn't enter a number between 30 and 500!")
                                     document.getElementById('TriesError').innerHTML = "Please reload and enter a number between 30 and 500."
                                     document.title = 'Guessing Game';
@@ -1946,24 +1947,21 @@
                             }
 
                             Guesses += 1;
-                            Tries -= 1;
                             BlankGuesses += 1;
                             TotalTries -= 1;
 
                             if (Attempts == "") {
                                 alert("Whoops! You entered nothing. I have taken off a try for you.")
                                 Guesses -= 1;
-                                Tries += 1;
                                 BlankGuesses -= 1;
                                 TotalTries += 1;
                             }
 
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
-                                Tries += 1;
                                 BlankGuesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Added patch notes and some changes")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -2155,8 +2153,7 @@
                                 if (BlankGuesses == 1) {
                                     if (Attempt1 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
-                                        Guesses -= 1;
-                                        Tries += 1;
+                                        Guesses -= 1;                                   
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2166,7 +2163,6 @@
                                     if (Attempt2 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2175,8 +2171,7 @@
                                 if (BlankGuesses == 3) {
                                     if (Attempt3 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
-                                        Guesses -= 1;
-                                        Tries += 1;
+                                        Guesses -= 1;;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2186,7 +2181,6 @@
                                     if (Attempt4 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2196,7 +2190,6 @@
                                     if (Attempt5 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2206,7 +2199,6 @@
                                     if (Attempt6 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2216,7 +2208,6 @@
                                     if (Attempt7 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2226,7 +2217,6 @@
                                     if (Attempt8 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2236,7 +2226,6 @@
                                     if (Attempt9 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2246,7 +2235,6 @@
                                     if (Attempt10 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2256,7 +2244,6 @@
                                     if (Attempt11 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2266,7 +2253,6 @@
                                     if (Attempt12 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2276,7 +2262,6 @@
                                     if (Attempt13 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2286,7 +2271,6 @@
                                     if (Attempt14 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2296,7 +2280,6 @@
                                     if (Attempt15 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2316,7 +2299,6 @@
                                     if (Attempt17 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2326,7 +2308,6 @@
                                     if (Attempt18 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2336,7 +2317,6 @@
                                     if (Attempt19 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2346,7 +2326,6 @@
                                     if (Attempt20 == "__") {
                                         alert("Oops! Something happened. Please re-enter your guess.")
                                         Guesses -= 1;
-                                        Tries += 1;
                                         BlankGuesses -= 1;
                                         TotalTries += 1;
                                     }
@@ -2445,14 +2424,14 @@
                                 }
                             }
 
-                            if (Guesses >= TotalTries) {
+                            if (Guesses >= Tries) {
                                 if (Number500 == 1) {
                                     document.cookie = "That's A Lot! = Complete a game in 500 tries.; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
                                     alert("Wow, you completed a game with 500 tries!")
                                 }
 
-                                alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + TotalTries + " tries.")
-                                document.getElementById('OutOfTries').innerHTML = "Nice! You got to Round " + Round + " in " + TotalTries + " tries."
+                                alert("Bad news: You ran out of tries. Good News: You got to Round " + Round + " in " + Tries + " tries.")
+                                document.getElementById('OutOfTries').innerHTML = "Nice! You got to Round " + Round + " in " + Tries + " tries."
                                 document.title = 'Guessing Game';
                                 document.body.style.fontSize = "30px";
                                 break
@@ -2464,7 +2443,7 @@
                         document.write("<p> Patch Notes: </p> <p> V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in 'GiveUp' and the system will tell you the number and the game will end.</p>  <p> V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type 'Hint' and the system will tell you a number thats around the random number and got rid of 'GiveUp'. </p> <p> V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries. </p> <p> V.2.1 Fixed some bugs and added a feature that makes the game harder as your streak gets bigger </p> <p> V.3 INTRODUCING Names. The system will now interact with you if you put your name in, if you don't enter your name the game won't start and if you don't want to put your name just make up a random one. Fixed some bugs and made the game harder by Reducing your tries at 6 in a row and 9 in a row and you can choose your wallpaper color. </p>  <p> V.3.3 Bug Fixes </p> <p> V.3.8 Bug Fixes </p> <p> V.4 Bug Fixes </p> <p> V.4.1 Only allowed ten letters in name and first letter of name is always capitilized </p> <p> V.5 Bug Fixes </p> <p> V.6 Bug Fixes </p> <p> V.6.1 Bug Fixes </p> <p> V.6.5 Bug Fixes </p> <p> V.6.6 Bug Fixes </p> <p> V.7 Made game harder </p> <p> V.8 Bug Fixes </p> <p> V.8.2 Bug Fixes </p> <p> V.8.3 Made the game neater </p> <p> V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater. </p>")
                         document.write("<p> V.9.1 Changed picture for tab art. Bug Fixes. </p> <p> V.9.4 Removed/changed some things and fixed some bugs </p> <p> V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.) </p> <p> V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered </p> <p> V.10.4 When you guess a number it will now say 'The number is higher than x'. </p>")
                         document.write("<p> V.10.6 Cookies will no longer get deleted when winning more than 1 game and fixed a bug when you type nothing once you get the number correct and an extry try would be added </p> <p> V.11 Changed picture for tab art (Credit: https://pixabay.com/users/io-images-1096650/), added a different game mode (Fast Pace; only 10 rounds instead of 20) </p> <p> V.11.2 Fixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round </p> <p> V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode </p> <p> V.12 The game tells you your previous guesses, made the game neater </p>")
-                        document.write("<p> v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<) </p> <p> v.12.6 Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn </p> <p> v.13 Added an existing game mode where you get to choose how much tries you have </p> <p> v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed </p> <p> Current Version: V.14.2 Added patch notes and some changes</p>")
+                        document.write("<p> v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<) </p> <p> v.12.6 Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn </p> <p> v.13 Added an existing game mode where you get to choose how much tries you have </p> <p> v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed </p> <p> v.14.2 Added patch notes and some changes</p> <p> Current Version: v.14.4: Bug fixes in game mode 3")
                         document.body.style.fontSize = "20px";
                         document.title = 'Guessing Game';
 
