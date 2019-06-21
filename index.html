@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -45,7 +45,7 @@
 //Patch Notes: v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed 
 //Patch Notes: v.14.2 Added patch notes and some changes
 //Patch Notes: v.14.4 Bug Fixes in game mode 3
-//Patch Notes: v.15 A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong
+//Patch Notes: v.15 A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong (6-20-19 - Bug Fixes in mode 4)
 -->
 
 
@@ -214,7 +214,7 @@
                         Mode 4:
                     </td>
                     <td>
-                        In this mode you are timed, 1 minute and lower number for easy, 2 minutes for medium, and 3
+                        In this mode you are timed, 1 minute and lower number for easy, 2 minutes for medium, and 2
                         minutes and higher number for hard. Hurry Up!!
                     </td>
                 </tr>
@@ -2495,7 +2495,7 @@
 
                         if (Name != null && Name != "") {
 
-                            var Mode = prompt("Hello " + Name + ", would you like to play the Easy, Medium or Hard mode? All the modes have a 3 minute limit it's just the harder the game mode the bigger the numbers are. Type 'Easy', 'Medium' or 'Hard'.")
+                            var Mode = prompt("Hello " + Name + ", would you like to play the Easy, Medium or Hard mode? Easy is set at 1 minute and medium and hard are 2 minutes it's just the harder the game mode the bigger the numbers are. Type 'Easy', 'Medium' or 'Hard'.")
                             var EMH = Mode.slice(0, 1); //EMH e for easy m for medium and h for hard
                             var EMHtoUpperCase = EMH.toUpperCase();
                             var afterEMH = Mode.slice(1, 6); //After EMH ex. E(asy) or M(edium)
@@ -2896,19 +2896,7 @@
                                                 if (EndTime == 0) {
 
                                                     if (Time2Minutes != 0) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
+                                            
                                                         if (Time2Minutes == 59) {
                                                             alert("Nice! You beat the game and had lots of time left!")
                                                             document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -3487,12 +3475,6 @@
 
                                                     if (Time2Minutes != 0) {
 
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
                                                         if (Time2Minutes == 58) {
                                                             alert("Nice! You beat the game and had lots of time left!")
                                                             document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -3531,18 +3513,6 @@
                                                 if (EndTime == 1) {
 
                                                     if (Time2Minutes != 1) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
 
                                                         if (Time2Minutes == 59) {
                                                             alert("Nice! You beat the game and had lots of time left!")
@@ -4078,12 +4048,6 @@
 
                                                     if (Time2Minutes != 0) {
 
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
                                                         if (Time2Minutes == 58) {
                                                             alert("Nice! You beat the game and had lots of time left!")
                                                             document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -4122,18 +4086,6 @@
                                                 if (EndTime == 1) {
 
                                                     if (Time2Minutes != 1) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
 
                                                         if (Time2Minutes == 59) {
                                                             alert("Nice! You beat the game and had lots of time left!")
