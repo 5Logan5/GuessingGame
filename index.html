@@ -187,15 +187,15 @@
     <body style="background-color:black;">
         <font color="White" </font> <font face="plain" </font> <font size="30" </font> <div align="center">
             <h1>Welcome to the Guessing Game</h1>
-            <button id="button1" onclick="Mode1()"disabled>Mode 1</button>
-            <button id="button2" onclick="Mode2()"disabled>Mode 2</button>
-            <button id="button3" onclick="Mode3()"disabled>Mode 3</button>
-            <button id="button4" onclick="Mode4()"disabled>Mode 4</button>
+            <button id="button1" onclick="Mode1()">Mode 1</button>
+            <button id="button2" onclick="Mode2()">Mode 2</button>
+            <button id="button3" onclick="Mode3()">Mode 3</button>
+            <button id="button4" onclick="Mode4()">Mode 4</button>
             <hr size="4" noshade </hr> <div class="Info" align="left">
 
-            <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4>
+            <!-- <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> -->
             <table cellspacing="10">
-<!--
+
                 <tr>
                     <td>Mode 1:</td>
                     <td>There are 20 rounds in this game mode getting harder as the round that your on increases. Don't
@@ -235,7 +235,6 @@
                 id="PatchNotes" onclick="PatchNotes()"> More Patch
                 Notes</button> </h6>
             </div>
--->
             <div>
                 <hr size="4" noshade </hr> </div> <p id="NameError">
                 </p>
@@ -2529,14 +2528,6 @@
                                         var EndTime = 0
                                     }
 
-                                    if (EndTime == 61) {
-                                        var EndTime = 1;
-                                    }
-
-                                    if (EndTime == 62) {
-                                        var EndTime = 2;
-                                    }
-
                                     while (Attempts != RandomNumber) {
 
                                         if (Attempt1 == undefined) {
@@ -2864,7 +2855,7 @@
                                                 var Time2Minutes = Time2.getMinutes();
                                                 var Time2Seconds = Time2.getSeconds();
 
-                                                if (EndTime != 0 && EndTime != 1 && EndTime != 2) {
+                                                if (EndTime != 0) {
                                                     if (EndTime > Time2Minutes) {
                                                         alert("Nice! You beat the game and had lots of time left!")
                                                         document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -2932,117 +2923,6 @@
                                                         }
                                                     }
                                                 }
-
-                                                if (EndTime == 1) {
-
-                                                    if (Time2Minutes != 1) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 59) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes > 1) {
-                                                            alert("Uh oh, you didn't complete the game in time!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 0) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-                                                    }
-
-                                                    if (Time2Minutes == 1) {
-                                                        if (StartSeconds < Time2Seconds) {
-                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
-                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
-                                                            break
-                                                        }
-                                                        if (StartSeconds >= Time2Seconds) {
-                                                            var TimeNotUsed = StartSeconds - Time2Seconds
-                                                            alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
-                                                            break
-                                                        }
-                                                    }
-                                                }
-
-
-                                                if (EndTime == 2) {
-
-                                                    if (Time2Minutes != 2) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 59) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes > 2) {
-                                                            alert("Uh oh, you didn't complete the game in time!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 0) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 1) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-                                                    }
-
-                                                    if (Time2Minutes == 2) {
-                                                        if (StartSeconds < Time2Seconds) {
-                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
-                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
-                                                            break
-                                                        }
-                                                        if (StartSeconds >= Time2Seconds) {
-                                                            var TimeNotUsed = StartSeconds - Time2Seconds
-                                                            alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
-                                                            break
-                                                        }
-                                                    }
-                                                }
-
-
                                             }
 
                                             if (Round != 6) {
@@ -3109,10 +2989,6 @@
 
                                     if (EndTime == 61) {
                                         var EndTime = 1;
-                                    }
-
-                                    if (EndTime == 62) {
-                                        var EndTime = 2;
                                     }
 
                                     while (Attempts != RandomNumber) {
@@ -3442,7 +3318,7 @@
                                                 var Time2Minutes = Time2.getMinutes();
                                                 var Time2Seconds = Time2.getSeconds();
 
-                                                if (EndTime != 0 && EndTime != 1 && EndTime != 2) {
+                                                if (EndTime != 0 && EndTime != 1) {
                                                     if (EndTime > Time2Minutes) {
                                                         alert("Nice! You beat the game and had lots of time left!")
                                                         document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -3684,10 +3560,6 @@
                                         var EndTime = 1;
                                     }
 
-                                    if (EndTime == 62) {
-                                        var EndTime = 2;
-                                    }
-
                                     while (Attempts != RandomNumber) {
 
                                         if (Attempt1 == undefined) {
@@ -4015,7 +3887,7 @@
                                                 var Time2Minutes = Time2.getMinutes();
                                                 var Time2Seconds = Time2.getSeconds();
 
-                                                if (EndTime != 0 && EndTime != 1 && EndTime != 2) {
+                                                if (EndTime != 0 && EndTime != 1) {
                                                     if (EndTime > Time2Minutes) {
                                                         alert("Nice! You beat the game and had lots of time left!")
                                                         document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
@@ -4128,66 +4000,6 @@
                                                         }
                                                     }
                                                 }
-
-
-                                                if (EndTime == 2) {
-
-                                                    if (Time2Minutes != 2) {
-
-                                                        if (Time2Minutes == 57) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 58) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 59) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes > 2) {
-                                                            alert("Uh oh, you didn't complete the game in time!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 0) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-
-                                                        if (Time2Minutes == 1) {
-                                                            alert("Nice! You beat the game and had lots of time left!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
-                                                            break
-                                                        }
-                                                    }
-
-                                                    if (Time2Minutes == 2) {
-                                                        if (StartSeconds < Time2Seconds) {
-                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
-                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
-                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
-                                                            break
-                                                        }
-                                                        if (StartSeconds >= Time2Seconds) {
-                                                            var TimeNotUsed = StartSeconds - Time2Seconds
-                                                            alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare")
-                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
-                                                            break
-                                                        }
-                                                    }
-                                                }
-
-
                                             }
 
                                             if (Round != 6) {
@@ -4233,18 +4045,7 @@
                             }
                         }
                     }
-
-
-
-
-
-
-
-
-
-
-
-
+                    
                     function PatchNotes() {
                         document.write("<p> Patch Notes: </p> <p> V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in 'GiveUp' and the system will tell you the number and the game will end.</p>  <p> V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type 'Hint' and the system will tell you a number thats around the random number and got rid of 'GiveUp'. </p> <p> V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries. </p> <p> V.2.1 Fixed some bugs and added a feature that makes the game harder as your streak gets bigger </p> <p> V.3 INTRODUCING Names. The system will now interact with you if you put your name in, if you don't enter your name the game won't start and if you don't want to put your name just make up a random one. Fixed some bugs and made the game harder by Reducing your tries at 6 in a row and 9 in a row and you can choose your wallpaper color. </p>  <p> V.3.3 Bug Fixes </p> <p> V.3.8 Bug Fixes </p> <p> V.4 Bug Fixes </p> <p> V.4.1 Only allowed ten letters in name and first letter of name is always capitilized </p> <p> V.5 Bug Fixes </p> <p> V.6 Bug Fixes </p> <p> V.6.1 Bug Fixes </p> <p> V.6.5 Bug Fixes </p> <p> V.6.6 Bug Fixes </p> <p> V.7 Made game harder </p> <p> V.8 Bug Fixes </p> <p> V.8.2 Bug Fixes </p> <p> V.8.3 Made the game neater </p> <p> V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater. </p>")
                         document.write("<p> V.9.1 Changed picture for tab art. Bug Fixes. </p> <p> V.9.4 Removed/changed some things and fixed some bugs </p> <p> V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.) </p> <p> V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered </p> <p> V.10.4 When you guess a number it will now say 'The number is higher than x'. </p>")
