@@ -47,6 +47,7 @@
 //Patch Notes: v.14.4 Bug Fixes in game mode 3
 //Patch Notes: v.15 A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong (6-20-19 - Bug Fixes in mode 4)
 //Patch Notes: v.15.2 Game Mode 3 now responds with "Higher/Lower than x"
+//Patch Notes: v.16 A brand new game mode! Mode 5, where if you complete the game in under 2 minutes you get coins based on how you placed use these coins to buy perks in the shop.
 -->
 
 
@@ -58,18 +59,18 @@
             cursor: pointer;
             outline: none;
             color: rgb(0, 0, 0);
-            background-color: rgb(185, 104, 110);
+            background-color: rgb(138, 6, 6);
             border: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
         }
 
         #button1:hover {
-            background-color: rgb(185, 104, 110)
+            background-color: rgb(138, 6, 6)
         }
 
         #button1:active {
-            background-color: rgb(185, 104, 110);
+            background-color: rgb(138, 6, 6);
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
@@ -81,18 +82,18 @@
             cursor: pointer;
             outline: none;
             color: rgb(0, 0, 0);
-            background-color: rgb(79, 167, 226);
+            background-color: rgb(10, 10, 175);
             border: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
         }
 
         #button2:hover {
-            background-color: rgb(79, 167, 226)
+            background-color: rgb(10, 10, 175)
         }
 
         #button2:active {
-            background-color: rgb(79, 167, 226);
+            background-color: rgb(10, 10, 175);
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
@@ -104,18 +105,18 @@
             cursor: pointer;
             outline: none;
             color: rgb(0, 0, 0);
-            background-color: rgb(59, 228, 186);
+            background-color: teal;
             border: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
         }
 
         #button3:hover {
-            background-color: rgb(59, 228, 186)
+            background-color: teal
         }
 
         #button3:active {
-            background-color: rgb(59, 228, 186);
+            background-color: teal;
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
@@ -127,18 +128,41 @@
             cursor: pointer;
             outline: none;
             color: rgb(0, 0, 0);
-            background-color: rgb(91, 80, 138);
+            background-color: purple;
             border: none;
             border-radius: 15px;
             box-shadow: 0 9px #999;
         }
 
         #button4:hover {
-            background-color: rgb(91, 80, 138)
+            background-color: purple
         }
 
         #button4:active {
-            background-color: rgb(91, 80, 138);
+            background-color: purple;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        #button5 {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            color: rgb(0, 0, 0);
+            background-color: orange;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        #button5:hover {
+            background-color: orange
+        }
+
+        #button5:active {
+            background-color: orange;
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
@@ -191,6 +215,7 @@
             <button id="button2" onclick="Mode2()">Mode 2</button>
             <button id="button3" onclick="Mode3()">Mode 3</button>
             <button id="button4" onclick="Mode4()">Mode 4</button>
+            <button id="button5" onclick="Mode5()">Mode 5</button>
             <hr size="4" noshade </hr> <div class="Info" align="left">
 
             <!-- <h4>Buttons are disabled due to maintenance break. Sorry for the inconvenience!</h4> -->
@@ -228,11 +253,20 @@
                         In this mode you are timed, 1 minute and lower number for easy, 2 minutes for medium, and 2
                         minutes and higher number for hard. Hurry Up!!
                     </td>
+                <tr>
+                    <td>
+                        Mode 5:
+                    </td>
+
+                    <td>If you complete the game in under 2 minutes you get coins
+                        based on how you placed. Use these coins to buy perks in the shop.</td>
+
                 </tr>
 
             </table>
-            <hr size="4" noshade </hr> </div> <h6> Game Mode 3 now responds with "Higher/Lower than x" <button
-                id="PatchNotes" onclick="PatchNotes()"> More Patch
+            <hr size="4" noshade </hr> </div> <h6> Latest Update - A brand new game mode! Complete
+            the game in under 2 minutes and get coins based on how you placed. Use these coins to buy perks in the shop.
+            <button id="PatchNotes" onclick="PatchNotes()"> More Patch
                 Notes</button> </h6>
             </div>
             <div>
@@ -240,7 +274,7 @@
                 </p>
 
                 <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.15.2</div>
+                    <div id="versionNumber" class="title">v.16</div>
                 </p>
 
                 <p id="CancelButton">
@@ -267,7 +301,7 @@
                         document.getElementById('OutOfTries').innerHTML = ""
                         document.getElementById('TriesError').innerHTML = ""
 
-                        var Version = "v.15.2"
+                        var Version = "v.16"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
 
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
@@ -280,6 +314,13 @@
                             var restOfName = Name.slice(1, 30);
                             var restOfNameLowerCase = restOfName.toLowerCase();
                             var Name = (upperCaseName + restOfNameLowerCase);
+                        }
+
+                        var Coins = document.cookie
+                        var CoinsCut = Coins.slice(6, 11)
+
+                        if (CoinsCut == "") {
+                            document.cookie = "Coins=0; expires=Wed, 25 Jan 2025 12:00:00 UTC";
                         }
 
                         var Author = "Logan B."
@@ -408,7 +449,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new game mode! Mode 5, where if you complete the game in under 2 minutes you get coins based on how you placed. Use these coins to buy perks in the shop.")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -1087,7 +1128,7 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.15.2"
+                        var Version = "v.16"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
 
@@ -1099,6 +1140,13 @@
                             var restOfName = Name.slice(1, 30);
                             var restOfNameLowerCase = restOfName.toLowerCase();
                             var Name = (upperCaseName + restOfNameLowerCase);
+                        }
+
+                        var Coins = document.cookie
+                        var CoinsCut = Coins.slice(6, 11)
+
+                        if (CoinsCut == "") {
+                            document.cookie = "Coins=0; expires=Wed, 25 Jan 2025 12:00:00 UTC";
                         }
 
                         var Author = "Logan B."
@@ -1221,7 +1269,7 @@
                             if (Attempts == "CheckVersion") {
                                 Guesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new game mode! Mode 5, where if you complete the game in under 2 minutes you get coins based on how you placed. Use these coins to buy perks in the shop.")
                             }
 
                             if (Author != "Logan B.") {
@@ -1764,9 +1812,16 @@
                         document.getElementById('TriesError').innerHTML = ""
 
 
-                        var Version = "v.15.2"
+                        var Version = "v.16"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
+
+                        var Coins = document.cookie
+                        var CoinsCut = Coins.slice(6, 11)
+
+                        if (CoinsCut == "") {
+                            document.cookie = "Coins=0; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                        }
 
 
                         if (Name != null) {
@@ -1962,7 +2017,7 @@
                                 Guesses -= 1;
                                 BlankGuesses -= 1;
                                 TotalTries += 1;
-                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong")
+                                alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: A brand new game mode! Mode 5, where if you complete the game in under 2 minutes you get coins based on how you placed. Use these coins to buy perks in the shop.")
                             }
 
                             if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
@@ -2464,7 +2519,14 @@
                         document.getElementById('ExtraTime').innerHTML = ""
 
 
-                        var Version = "v.15.2"
+                        var Coins = document.cookie
+                        var CoinsCut = Coins.slice(6, 11)
+
+                        if (CoinsCut == "") {
+                            document.cookie = "Coins=0; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                        }
+
+                        var Version = "v.16"
                         console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
 
                         var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
@@ -4045,12 +4107,1815 @@
                             }
                         }
                     }
-                    
+
+                    function Mode5() {
+
+                        document.getElementById('ExtraTime').innerHTML = ""
+                        document.getElementById('NameError').innerHTML = ""
+                        document.getElementById('WinningMessage').innerHTML = ""
+                        document.getElementById('CancelButton').innerHTML = ""
+                        document.getElementById('OutOfTries').innerHTML = ""
+                        document.getElementById('TriesError').innerHTML = ""
+
+                        var Coins = document.cookie
+                        var CoinsCut = Coins.slice(6, 11)
+
+                        if (CoinsCut == "") {
+                            document.cookie = "Coins=0; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                        }
+
+                        var Version = "v.16"
+                        console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
+
+                        var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
+
+                        if (Name != null) {
+                            // Capitilizing the first letter of name
+                            var firstChar = Name.slice(0, 1);
+                            var upperCaseName = firstChar.toUpperCase();
+                            var restOfName = Name.slice(1, 30);
+                            var restOfNameLowerCase = restOfName.toLowerCase();
+                            var Name = (upperCaseName + restOfNameLowerCase);
+                        }
+
+                        if (Name == null) {
+                            document.getElementById('NameError').innerHTML = "Please press 'Mode 5' and enter a name!"
+                            console.error("User didn't enter a name!")
+                            document.title = 'Guessing Game';
+                            document.body.style.fontSize = "30px";
+                        }
+
+                        if (Name == "") {
+                            document.getElementById('NameError').innerHTML = "Please press 'Mode 5' and enter a name!"
+                            console.error("User didn't enter a name!")
+                            document.title = 'Guessing Game';
+                            document.body.style.fontSize = "30px";
+                        }
+
+                        if (Name != null && Name != "") {
+
+                            var GoToShop = prompt("Hi, " + Name + " would you like to visit the shop? Type 'Yes' or 'No'")
+
+                            var firstChar2 = GoToShop.slice(0, 1);
+                            var upperCaseName2 = firstChar2.toUpperCase();
+                            var restOfAns = GoToShop.slice(1, 3);
+                            var restOfAnsLowered = restOfAns.toLowerCase();
+                            var GoToShop = (upperCaseName2 + restOfAnsLowered);
+
+                            if (GoToShop == "Yes") {
+
+                                if (CoinsCut == "0") {
+                                    var Transfer1 = prompt("Welcome to the shop, " + Name + ". You have 0 coins.")
+
+                                    if (Transfer1 = "Sync") {
+                                        var Sync = prompt("How much coins was on your other account?")                                       
+                                        var CoinsLeft = CoinsCut + Sync
+                                        var CheckForNegative = CoinsLeft.toString().slice(1,5)
+                                        document.cookie = "Coins=" + CheckForNegative + "; expires=Wed, 25 Dec 2025 12:00:00 UTC";
+                                    }
+                                }
+
+                                if (CoinsCut != "" && CoinsCut != "0") {
+
+                                    var Purchase = prompt("Welcome to the shop, " + Name + ". You have " + CoinsCut + " coins. The items in the shop right now are the 'Cheater' which gives you and extra 30 seconds for 400 coins! The other one is a where you 500 coins no matter what but if you lose you wasted 350 coins and is called 'Coin Booster'.")
+
+                                    if (Purchase == "Cheater") {
+                                        var CoinsLeft = CoinsCut - 400
+                                        var CheckForNegative = CoinsLeft.toString().slice(0, 1)
+                                        if (CheckForNegative == "-") {
+                                            CoinsCut + 400
+                                            alert("Sorry, you don't have enough coins.")
+                                        }
+
+                                        else {
+                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Dec 2025 12:00:00 UTC";
+                                            var Cheater = 1
+                                            alert("Congrats! You just purchased the 'Cheater' Perk for 400 Coins. You now have " + CoinsLeft + " coins left.")
+                                        }
+                                    }
+
+                                    if (Purchase == "Coin Booster") {
+                                        var CoinsLeft = CoinsCut - 350
+                                        var CheckForNegative = CoinsLeft.toString().slice(0, 1)
+                                        if (CheckForNegative == "-") {
+                                            CoinsCut + 350
+                                            alert("Sorry, you don't have enough coins.")
+                                        }
+
+                                        else {
+                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Dec 2025 12:00:00 UTC";
+                                            var CoinBooster = 1
+                                            alert("Congrats! You just purchased the 'Coin Booster' Perk for 350 Coins. You now have " + CoinsLeft + " coins left.")
+                                        }
+
+                                    }
+
+                                    if (Purchase == "Transfer") {
+                                        var Sync = prompt("How much coins was on your other account?")
+                                        var CoinsLeft = CoinsCut + Sync
+                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Dec 2025 12:00:00 UTC";
+                                    }
+
+
+                                }
+                            }
+
+                            if (Cheater == 1) {
+                                var Start = prompt("Alright, I'm gonna warn you that the number is 5000, you have 2 minutes and you have ∞ tries, type 'GO' and press 'OK' and the timer will start and when you complete the game it will tell you if you won or not.")
+                                var TypeGO = Start.slice(0, 2);
+                                var goToUpperCase = TypeGO.toUpperCase();
+                                var Start = (goToUpperCase);
+                                Number = 5000
+                                Round = 1
+                                var RandomNumber = Math.floor(Math.random() * Number) + 1;
+
+                                if (Start == "GO") {
+                                    var BlankGuesses = 0;
+                                    var Time = new Date();
+                                    var StartTime = Time.getMinutes();
+                                    var StartSeconds = Time.getSeconds();
+                                    var EndTime = StartTime + 2
+
+                                    if (EndTime == 60) {
+                                        var EndTime = 0
+                                    }
+
+                                    if (EndTime == 61) {
+                                        var EndTime = 1;
+                                    }
+
+                                    while (Attempts != RandomNumber) {
+
+                                        if (Attempt1 == undefined) {
+                                            Attempt1 = "__"
+                                        }
+
+                                        if (Attempt2 == undefined) {
+                                            Attempt2 = "__"
+                                        }
+
+                                        if (Attempt3 == undefined) {
+                                            Attempt3 = "__"
+                                        }
+
+                                        if (Attempt4 == undefined) {
+                                            Attempt4 = "__"
+                                        }
+
+                                        if (Attempt5 == undefined) {
+                                            Attempt5 = "__"
+                                        }
+
+                                        if (Attempt6 == undefined) {
+                                            Attempt6 = "__"
+                                        }
+
+                                        if (Attempt7 == undefined) {
+                                            Attempt7 = "__"
+                                        }
+
+                                        if (Attempt8 == undefined) {
+                                            Attempt8 = "__"
+                                        }
+
+                                        if (Attempt9 == undefined) {
+                                            Attempt9 = "__"
+                                        }
+
+                                        if (Attempt10 == undefined) {
+                                            Attempt10 = "__"
+                                        }
+
+                                        if (Attempt11 == undefined) {
+                                            Attempt11 = "__"
+                                        }
+
+                                        if (Attempt12 == undefined) {
+                                            Attempt12 = "__"
+                                        }
+
+                                        if (Attempt13 == undefined) {
+                                            Attempt13 = "__"
+                                        }
+
+                                        if (Attempt14 == undefined) {
+                                            Attempt14 = "__"
+                                        }
+
+                                        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ".");
+                                        BlankGuesses += 1;
+                                        if (Attempts == "CheckVersion") {
+                                            BlankGuesses -= 1;
+                                            alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
+                                        }
+
+                                        if (Attempts == null) {
+                                            document.getElementById('CancelButton').innerHTML = "You ended the game."
+                                            document.title = 'Guessing Game';
+                                            document.body.style.fontSize = "30px";
+                                            break
+                                        }
+
+                                        if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt1 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt1 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt2 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt2 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt3 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt3 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt4 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt4 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt5 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt5 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt6 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt6 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt7 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt7 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt8 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt8 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt9 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt9 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt10 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt10 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt11 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt11 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt12 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt12 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt13 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt13 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt14 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt14 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (Attempts > RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Lower!")
+                                                    }
+                                                }
+                                            }
+
+                                            if (Attempts < RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Higher!")
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts != null && Attempts != RandomNumber) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempt1 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempt2 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempt3 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempt4 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempt5 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempt6 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempt7 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempt8 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempt9 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempt10 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempt11 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempt12 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempt13 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempt14 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts == RandomNumber) {
+                                            Round += 1
+                                            if (Round == 6) {
+                                                var Time2 = new Date();
+                                                var Time2Minutes = Time2.getMinutes();
+                                                var Time2Seconds = Time2.getSeconds();
+
+                                                if (EndTime != 0 && EndTime != 1) {
+                                                    if (EndTime > Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left plus you earned 100 coins!")
+                                                        var CoinsLeft = CoinsCut + 100
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes > EndTime) {
+                                                        alert("Uh oh, you didn't complete the game in time!")
+                                                        document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                        break
+                                                    }
+
+                                                    if (StartTime == Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                        var CoinsLeft = CoinsCut + 100
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes == EndTime) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had + " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+
+                                                if (EndTime == 0) {
+
+                                                    if (Time2Minutes != 0) {
+
+                                                        if (Time2Minutes == 58) {
+                                                            alert("Nice! You beat the game and had lots of time left adn earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 0) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 0) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+                                                if (EndTime == 1) {
+
+                                                    if (Time2Minutes != 1) {
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 1) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 0) {
+                                                            alert("Nice! You beat the game and had lots of time left adn earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 1) {
+                                                        if (StartSeconds < Time2Seconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            if (Round != 6) {
+                                                alert("Nice you correctly guessed " + RandomNumber + ".")
+                                            }
+
+                                            BlankGuesses = 0;
+
+                                            Attempt1 = "__"
+
+                                            Attempt2 = "__"
+
+                                            Attempt3 = "__"
+
+                                            Attempt4 = "__"
+
+                                            Attempt5 = "__"
+
+                                            Attempt6 = "__"
+
+                                            Attempt7 = "__"
+
+                                            Attempt8 = "__"
+
+                                            Attempt9 = "__"
+
+                                            Attempt10 = "__"
+
+                                            Attempt11 = "__"
+
+                                            Attempt12 = "__"
+
+                                            Attempt13 = "__"
+
+                                            Attempt14 = "__"
+
+                                            var RandomNumber = Math.floor(Math.random() * Number) + 1;
+                                            var Attempts = NaN
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            if (CoinBooster == 1) {
+                                var Start = prompt("Alright, I'm gonna warn you that the number is 5000, you have 2 minutes and you have ∞ tries, type 'GO' and press 'OK' and the timer will start and when you complete the game it will tell you if you won or not.")
+                                var TypeGO = Start.slice(0, 2);
+                                var goToUpperCase = TypeGO.toUpperCase();
+                                var Start = (goToUpperCase);
+                                Number = 5000
+                                Round = 1
+                                var RandomNumber = Math.floor(Math.random() * Number) + 1;
+
+                                if (Start == "GO") {
+                                    var BlankGuesses = 0;
+                                    var Time = new Date();
+                                    var StartTime = Time.getMinutes();
+                                    var StartSeconds = Time.getSeconds();
+                                    var EndTime = StartTime + 2
+
+                                    if (EndTime == 60) {
+                                        var EndTime = 0
+                                    }
+
+                                    if (EndTime == 61) {
+                                        var EndTime = 1;
+                                    }
+
+                                    while (Attempts != RandomNumber) {
+
+                                        if (Attempt1 == undefined) {
+                                            Attempt1 = "__"
+                                        }
+
+                                        if (Attempt2 == undefined) {
+                                            Attempt2 = "__"
+                                        }
+
+                                        if (Attempt3 == undefined) {
+                                            Attempt3 = "__"
+                                        }
+
+                                        if (Attempt4 == undefined) {
+                                            Attempt4 = "__"
+                                        }
+
+                                        if (Attempt5 == undefined) {
+                                            Attempt5 = "__"
+                                        }
+
+                                        if (Attempt6 == undefined) {
+                                            Attempt6 = "__"
+                                        }
+
+                                        if (Attempt7 == undefined) {
+                                            Attempt7 = "__"
+                                        }
+
+                                        if (Attempt8 == undefined) {
+                                            Attempt8 = "__"
+                                        }
+
+                                        if (Attempt9 == undefined) {
+                                            Attempt9 = "__"
+                                        }
+
+                                        if (Attempt10 == undefined) {
+                                            Attempt10 = "__"
+                                        }
+
+                                        if (Attempt11 == undefined) {
+                                            Attempt11 = "__"
+                                        }
+
+                                        if (Attempt12 == undefined) {
+                                            Attempt12 = "__"
+                                        }
+
+                                        if (Attempt13 == undefined) {
+                                            Attempt13 = "__"
+                                        }
+
+                                        if (Attempt14 == undefined) {
+                                            Attempt14 = "__"
+                                        }
+
+                                        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ".");
+                                        BlankGuesses += 1;
+                                        if (Attempts == "CheckVersion") {
+                                            BlankGuesses -= 1;
+                                            alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
+                                        }
+
+                                        if (Attempts == null) {
+                                            document.getElementById('CancelButton').innerHTML = "You ended the game."
+                                            document.title = 'Guessing Game';
+                                            document.body.style.fontSize = "30px";
+                                            break
+                                        }
+
+                                        if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt1 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt1 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt2 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt2 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt3 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt3 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt4 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt4 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt5 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt5 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt6 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt6 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt7 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt7 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt8 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt8 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt9 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt9 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt10 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt10 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt11 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt11 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt12 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt12 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt13 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt13 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt14 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt14 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (Attempts > RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Lower!")
+                                                    }
+                                                }
+                                            }
+
+                                            if (Attempts < RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Higher!")
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts != null && Attempts != RandomNumber) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempt1 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempt2 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempt3 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempt4 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempt5 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempt6 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempt7 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempt8 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempt9 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempt10 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempt11 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempt12 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempt13 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempt14 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts == RandomNumber) {
+                                            Round += 1
+                                            if (Round == 6) {
+                                                var Time2 = new Date();
+                                                var Time2Minutes = Time2.getMinutes();
+                                                var Time2Seconds = Time2.getSeconds();
+
+                                                if (EndTime != 0 && EndTime != 1) {
+                                                    if (EndTime > Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left and you earned 500 coins!")
+                                                        var CoinsLeft = CoinsCut + 500
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes > EndTime) {
+                                                        alert("Uh oh, you didn't complete the game in time!")
+                                                        document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                        break
+                                                    }
+
+                                                    if (StartTime == Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left and you earned 500 coins!")
+                                                        var CoinsLeft = CoinsCut + 500
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes == EndTime) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+
+                                                if (EndTime == 0) {
+
+                                                    if (Time2Minutes != 0) {
+
+                                                        if (Time2Minutes == 58) {
+                                                            alert("Nice! You beat the game and had lots of time left and you earned 500 coins!")
+                                                            var CoinsLeft = CoinsCut + 500
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and you earned 500 coins!")
+                                                            var CoinsLeft = CoinsCut + 500
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 0) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 0) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+                                                if (EndTime == 1) {
+
+                                                    if (Time2Minutes != 1) {
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and you earmed 500 coins!")
+                                                            var CoinsLeft = CoinsCut + 500
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 1) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 0) {
+                                                            alert("Nice! You beat the game and had lots of time left and you earned 500 coins!")
+                                                            var CoinsLeft = CoinsCut + 500
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 1) {
+                                                        if (StartSeconds < Time2Seconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and you earned 500 coins!")
+                                                                var CoinsLeft = CoinsCut + 500
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            if (Round != 6) {
+                                                alert("Nice you correctly guessed " + RandomNumber + ".")
+                                            }
+
+                                            BlankGuesses = 0;
+
+                                            Attempt1 = "__"
+
+                                            Attempt2 = "__"
+
+                                            Attempt3 = "__"
+
+                                            Attempt4 = "__"
+
+                                            Attempt5 = "__"
+
+                                            Attempt6 = "__"
+
+                                            Attempt7 = "__"
+
+                                            Attempt8 = "__"
+
+                                            Attempt9 = "__"
+
+                                            Attempt10 = "__"
+
+                                            Attempt11 = "__"
+
+                                            Attempt12 = "__"
+
+                                            Attempt13 = "__"
+
+                                            Attempt14 = "__"
+
+                                            var RandomNumber = Math.floor(Math.random() * Number) + 1;
+                                            var Attempts = NaN
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            if (Cheater != 1 && CoinBooster != 1) {
+                                var Start = prompt("Alright, I'm gonna warn you that the number is 5000, you have 2 minutes and you have ∞ tries, type 'GO' and press 'OK' and the timer will start and when you complete the game it will tell you if you won or not.")
+                                var TypeGO = Start.slice(0, 2);
+                                var goToUpperCase = TypeGO.toUpperCase();
+                                var Start = (goToUpperCase);
+                                Number = 5000
+                                Round = 1
+                                var RandomNumber = Math.floor(Math.random() * Number) + 1;
+
+                                if (Start == "GO") {
+                                    var BlankGuesses = 0;
+                                    var Time = new Date();
+                                    var StartTime = Time.getMinutes();
+                                    var StartSeconds = Time.getSeconds();
+                                    var EndTime = StartTime + 2
+
+                                    if (EndTime == 60) {
+                                        var EndTime = 0
+                                    }
+
+                                    if (EndTime == 61) {
+                                        var EndTime = 1;
+                                    }
+
+                                    while (Attempts != RandomNumber) {
+
+                                        if (Attempt1 == undefined) {
+                                            Attempt1 = "__"
+                                        }
+
+                                        if (Attempt2 == undefined) {
+                                            Attempt2 = "__"
+                                        }
+
+                                        if (Attempt3 == undefined) {
+                                            Attempt3 = "__"
+                                        }
+
+                                        if (Attempt4 == undefined) {
+                                            Attempt4 = "__"
+                                        }
+
+                                        if (Attempt5 == undefined) {
+                                            Attempt5 = "__"
+                                        }
+
+                                        if (Attempt6 == undefined) {
+                                            Attempt6 = "__"
+                                        }
+
+                                        if (Attempt7 == undefined) {
+                                            Attempt7 = "__"
+                                        }
+
+                                        if (Attempt8 == undefined) {
+                                            Attempt8 = "__"
+                                        }
+
+                                        if (Attempt9 == undefined) {
+                                            Attempt9 = "__"
+                                        }
+
+                                        if (Attempt10 == undefined) {
+                                            Attempt10 = "__"
+                                        }
+
+                                        if (Attempt11 == undefined) {
+                                            Attempt11 = "__"
+                                        }
+
+                                        if (Attempt12 == undefined) {
+                                            Attempt12 = "__"
+                                        }
+
+                                        if (Attempt13 == undefined) {
+                                            Attempt13 = "__"
+                                        }
+
+                                        if (Attempt14 == undefined) {
+                                            Attempt14 = "__"
+                                        }
+
+                                        var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ".");
+                                        BlankGuesses += 1;
+                                        if (Attempts == "CheckVersion") {
+                                            BlankGuesses -= 1;
+                                            alert("Wow, " + Name + " aren't you glad to be happily playing " + Version + "\n" + Version + " Patch Note: Bug fixes in game mode 3")
+                                        }
+
+                                        if (Attempts == null) {
+                                            document.getElementById('CancelButton').innerHTML = "You ended the game."
+                                            document.title = 'Guessing Game';
+                                            document.body.style.fontSize = "30px";
+                                            break
+                                        }
+
+                                        if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt1 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt1 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt2 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt2 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt3 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt3 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt4 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt4 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt5 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt5 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt6 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt6 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt7 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt7 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt8 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt8 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt9 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt9 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt10 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt10 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt11 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt11 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt12 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt12 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt13 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt13 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempts > RandomNumber) {
+                                                    var Attempt14 = Attempts + ">"
+                                                }
+                                                if (Attempts < RandomNumber) {
+                                                    var Attempt14 = Attempts + "<"
+                                                }
+                                            }
+
+                                            if (Attempts > RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Lower!")
+                                                    }
+                                                }
+                                            }
+
+                                            if (Attempts < RandomNumber) {
+                                                if (Attempts != null) {
+                                                    if (Attempts != "") {
+                                                        alert("Higher!")
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts != null && Attempts != RandomNumber) {
+
+                                            if (BlankGuesses == 1) {
+                                                if (Attempt1 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 2) {
+                                                if (Attempt2 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 3) {
+                                                if (Attempt3 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 4) {
+                                                if (Attempt4 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 5) {
+                                                if (Attempt5 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 6) {
+                                                if (Attempt6 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 7) {
+                                                if (Attempt7 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 8) {
+                                                if (Attempt8 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 9) {
+                                                if (Attempt9 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 10) {
+                                                if (Attempt10 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 11) {
+                                                if (Attempt11 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 12) {
+                                                if (Attempt12 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 13) {
+                                                if (Attempt13 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                            if (BlankGuesses == 14) {
+                                                if (Attempt14 == "__") {
+                                                    alert("Oops! Something happened. Please re-enter your guess.")
+                                                    BlankGuesses -= 1;
+                                                }
+                                            }
+
+                                        }
+
+                                        if (Attempts == RandomNumber) {
+                                            Round += 1
+                                            if (Round == 6) {
+                                                var Time2 = new Date();
+                                                var Time2Minutes = Time2.getMinutes();
+                                                var Time2Seconds = Time2.getSeconds();
+
+                                                if (EndTime != 0 && EndTime != 1) {
+                                                    if (EndTime > Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left plus you earned 100 coins!")
+                                                        var CoinsLeft = CoinsCut + 100
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes > EndTime) {
+                                                        alert("Uh oh, you didn't complete the game in time!")
+                                                        document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                        break
+                                                    }
+
+                                                    if (StartTime == Time2Minutes) {
+                                                        alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                        var CoinsLeft = CoinsCut + 100
+                                                        document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                        document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                        break
+                                                    }
+
+                                                    if (Time2Minutes == EndTime) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had + " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+
+                                                if (EndTime == 0) {
+
+                                                    if (Time2Minutes != 0) {
+
+                                                        if (Time2Minutes == 58) {
+                                                            alert("Nice! You beat the game and had lots of time left adn earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 0) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 0) {
+                                                        if (Time2Seconds > StartSeconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+
+                                                if (EndTime == 1) {
+
+                                                    if (Time2Minutes != 1) {
+
+                                                        if (Time2Minutes == 59) {
+                                                            alert("Nice! You beat the game and had lots of time left and earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes > 1) {
+                                                            alert("Uh oh, you didn't complete the game in time!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, you didn't complete the game in time!"
+                                                            break
+                                                        }
+
+                                                        if (Time2Minutes == 0) {
+                                                            alert("Nice! You beat the game and had lots of time left adn earned 100 coins!")
+                                                            var CoinsLeft = CoinsCut + 100
+                                                            document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had lots of time left!"
+                                                            break
+                                                        }
+                                                    }
+
+                                                    if (Time2Minutes == 1) {
+                                                        if (StartSeconds < Time2Seconds) {
+                                                            var ExtraUsedTime = Time2Seconds - StartSeconds
+                                                            alert("Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!")
+                                                            document.getElementById('ExtraTime').innerHTML = "Uh oh, looks like you didn't complete the game in time! You were " + ExtraUsedTime + " second(s) over the limit!"
+                                                            break
+                                                        }
+                                                        if (StartSeconds >= Time2Seconds) {
+                                                            var TimeNotUsed = StartSeconds - Time2Seconds
+
+
+                                                            if (TimeNotUsed >= 20) {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 100 coins!")
+                                                                var CoinsLeft = CoinsCut + 100
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            else {
+                                                                alert("Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare and earned 50 coins!")
+                                                                var CoinsLeft = CoinsCut + 50
+                                                                document.cookie = "Coins=" + CoinsLeft + "; expires=Wed, 25 Jan 2025 12:00:00 UTC";
+                                                            }
+
+                                                            document.getElementById('ExtraTime').innerHTML = "Nice! You beat the game and had " + TimeNotUsed + " second(s) to spare"
+                                                            break
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            if (Round != 6) {
+                                                alert("Nice you correctly guessed " + RandomNumber + ".")
+                                            }
+
+                                            BlankGuesses = 0;
+
+                                            Attempt1 = "__"
+
+                                            Attempt2 = "__"
+
+                                            Attempt3 = "__"
+
+                                            Attempt4 = "__"
+
+                                            Attempt5 = "__"
+
+                                            Attempt6 = "__"
+
+                                            Attempt7 = "__"
+
+                                            Attempt8 = "__"
+
+                                            Attempt9 = "__"
+
+                                            Attempt10 = "__"
+
+                                            Attempt11 = "__"
+
+                                            Attempt12 = "__"
+
+                                            Attempt13 = "__"
+
+                                            Attempt14 = "__"
+
+                                            var RandomNumber = Math.floor(Math.random() * Number) + 1;
+                                            var Attempts = NaN
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     function PatchNotes() {
                         document.write("<p> Patch Notes: </p> <p> V.1 Features include... If you guess the number on the first try, the system will alert you with a message. 2. Give up option. When you feel like your not going to guess the number just type in 'GiveUp' and the system will tell you the number and the game will end.</p>  <p> V.1.1 In v.1.1 you can now click the cancel button to end the game and a hint system just type 'Hint' and the system will tell you a number thats around the random number and got rid of 'GiveUp'. </p> <p> V.2 This is a big update that's introducing STREAKS. Remember getting it correct and starting a new game. Well in V.2 Everytime you get it correct it adds it to your streak and try to get as many correct guesses in a row before running out of tries. </p> <p> V.2.1 Fixed some bugs and added a feature that makes the game harder as your streak gets bigger </p> <p> V.3 INTRODUCING Names. The system will now interact with you if you put your name in, if you don't enter your name the game won't start and if you don't want to put your name just make up a random one. Fixed some bugs and made the game harder by Reducing your tries at 6 in a row and 9 in a row and you can choose your wallpaper color. </p>  <p> V.3.3 Bug Fixes </p> <p> V.3.8 Bug Fixes </p> <p> V.4 Bug Fixes </p> <p> V.4.1 Only allowed ten letters in name and first letter of name is always capitilized </p> <p> V.5 Bug Fixes </p> <p> V.6 Bug Fixes </p> <p> V.6.1 Bug Fixes </p> <p> V.6.5 Bug Fixes </p> <p> V.6.6 Bug Fixes </p> <p> V.7 Made game harder </p> <p> V.8 Bug Fixes </p> <p> V.8.2 Bug Fixes </p> <p> V.8.3 Made the game neater </p> <p> V.9 This is a HUGE I mean HUGE update. You now have a choice between 2 game modes, #1 being the original one and #2 being that you get to choose however many tries you want and try to get to the farthest round with those tries. Removed ranks in game #1. Bug fixes and made game neater. </p>")
                         document.write("<p> V.9.1 Changed picture for tab art. Bug Fixes. </p> <p> V.9.4 Removed/changed some things and fixed some bugs </p> <p> V.10 BIG UPDATE: Added/changed some things (Max letters in a name is now 30, error messages in console, game is harder (Amount of tries are lowered), took off game mode two and everytime you win, a cookie will be created for like a little achievement.) </p> <p> V.10.2 Spruced up the achievement cookie and can now check what version you are playing by typing in CheckVersion after your name and game mode is entered </p> <p> V.10.4 When you guess a number it will now say 'The number is higher than x'. </p>")
                         document.write("<p> V.10.6 Cookies will no longer get deleted when winning more than 1 game and fixed a bug when you type nothing once you get the number correct and an extry try would be added </p> <p> V.11 Changed picture for tab art (Credit: https://pixabay.com/users/io-images-1096650/), added a different game mode (Fast Pace; only 10 rounds instead of 20) </p> <p> V.11.2 Fixed a bug with the achievement cookie and added a 'So close but yet so far' achievement when you lose all your turns on the last round </p> <p> V.11.5 Changed some things and added an achievement for getting a score of 30 or higher in normal mode </p> <p> V.12 The game tells you your previous guesses, made the game neater </p>")
-                        document.write("<p> v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<) </p> <p> v.12.6 Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn </p> <p> v.13 Added an existing game mode where you get to choose how much tries you have </p> <p> v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed </p> <p> v.14.2 Added patch notes and some changes</p> <p> v.14.4: Bug fixes in game mode 3 </p> <p> v.15: A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong </p> <p> Current Version: v.15.2: Game Mode 3 now responds with 'Higher/Lower than x'</p>")
+                        document.write("<p> v.12.3 Fixed game mode 2 where it wouldn't tell you your previous guesses and added an alligator symbol to show whether what you put was bigger than the number (x>) or smaller (x<) </p> <p> v.12.6 Now when you accidentally type something besides a number like '24sdvs' it will give you back your turn instead of you wasting your turn </p> <p> v.13 Added an existing game mode where you get to choose how much tries you have </p> <p> v.14 Whoa! Look how different the guessing game is. Added buttons to choose what mode you want to play and bug fixes in mode 3 and mode 3 now shows what numbers you have recently guessed </p> <p> v.14.2 Added patch notes and some changes</p> <p> v.14.4: Bug fixes in game mode 3 </p> <p> v.15: A brand new 'Timed' game mode! Fixed where if you typed a number bigger than the guessing range it would tell you that the number was higher instead of telling you something went wrong </p> <p> v.15.2: Game Mode 3 now responds with 'Higher/Lower than x'</p> <p> Current Version: v.16: A brand new game mode! Mode 5, where if you complete the game in under 2 minutes you get coins based on how you placed use these coins to buy perks in the shop. </p>")
                         document.body.style.fontSize = "20px";
                         document.title = 'Guessing Game';
 
