@@ -698,10 +698,11 @@
                                     var TotalDC2 = parseInt(TotalDC) - parseInt(1)
                                     alert("The DoubleCoins perk was activated successfully!")
                                     document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    var Perk1Active = "1"
                                 }
                                 else {
                                     alert("The DoubleCoins perk was not activated.")
-                                    var Perk1 = "0"
+                                    var Perk1Active = "0"
                                 }
                             }
 
@@ -1247,11 +1248,11 @@
 
                                     if (Correct == 20) {
 
-                                        if (Perk1 == "1") {
+                                        if (Perk1Active == "1") {
                                             var CoinsEarned = 1100
                                         }
 
-                                        if (Perk1 == "0" || Perk1 == null) {
+                                        if (Perk1Active == "0" || Perk1 == null) {
                                             var CoinsEarned = 550
                                         }
 
@@ -1477,10 +1478,11 @@
                                     var TotalDC2 = parseInt(TotalDC) - parseInt(1)
                                     alert("The DoubleCoins perk was activated successfully!")
                                     document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    var Perk1Active = "1"
                                 }
                                 else {
                                     alert("The DoubleCoins perk was not activated.")
-                                    var Perk1 = "0"
+                                    var Perk1Active = "0"
                                 }
                             }
 
@@ -1970,11 +1972,11 @@
                                     }
                                     if (Correct == 10) {
 
-                                        if (Perk1 == "1") {
+                                        if (Perk1Active == "1") {
                                             var CoinsEarned = 400
                                         }
 
-                                        if (Perk1 == "0" || Perk1 == null) {
+                                        if (Perk1Active == "0" || Perk1 == null) {
                                             var CoinsEarned = 200
                                         }
 
