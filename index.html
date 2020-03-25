@@ -417,7 +417,7 @@
                                     alert("Oh no! You don't have enough coins to upgrade your Bronze medallion. :/")
                                 }
 
-                                if (Coins >= 0 && TotalWins >= "5") {
+                                if (Coins >= 0 && TotalWins >= 5) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Badge = " + "Bronze" + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
                                     document.cookie = "Season1 = " + "Bronze" + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
@@ -438,7 +438,7 @@
                                     alert("Oh no! You don't have enough coins to upgrade your Silver medallion. :/")
                                 }
 
-                                if (Coins >= 0 && TotalWins >= "15" && BronzeUpgrade == "1") {
+                                if (Coins >= 0 && TotalWins >= 15 && BronzeUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Badge = " + "Silver" + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
                                     document.cookie = "Season1 = " + "Silver" + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
@@ -454,11 +454,9 @@
                                 var SilverUpgrade = readCookie('SilverUpgradeMedallion')
                                 var TotalWins = readCookie('TotalWins')
                                 var Coins = parseInt(Value) - parseInt(2500)
-                                if (Coins < 0) {
-                                    alert("Oh no! You don't have enough coins to upgrade your Gold medallion. :/")
-                                }
 
-                                if (Coins >= 0 && TotalWins >= "30" && SilverUpgrade == "1") {
+
+                                if (Coins >= 0 && TotalWins >= 30 && SilverUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Badge = " + "Gold" + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
                                     document.cookie = "Season1 = " + "Gold" + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
@@ -466,7 +464,7 @@
                                     alert("Your purchase of the upgraded Gold medallion was successful!")
                                 }
                                 else {
-                                    alert("Your purchase of the Gold upgrade medallion was unsuccessful! It looks like you didn't buy your upgraded Silver medallion or you don't have 30 total wins. Once you do so, come back here and try again.")
+                                    alert("Your purchase of the Gold upgrade medallion was unsuccessful! It looks like you didn't buy your upgraded Silver medallion, you don't have 30 total wins or you don't have enough coins. Once you do so, come back here and try again.")
                                 }
                             }
 
@@ -478,7 +476,7 @@
                                     alert("Oh no! You don't have enough coins to upgrade your Diamond medallion. :/")
                                 }
 
-                                if (Coins >= 0 && TotalWins >= "40" && GoldUpgrade == "1") {
+                                if (Coins >= 0 && TotalWins >= 40 && GoldUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Badge = " + "Diamond" + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
                                     document.cookie = "Season1 = " + "Diamond" + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
@@ -498,7 +496,7 @@
                                     alert("Oh no! You don't have enough coins to upgrade your Obsidian medallion. :/")
                                 }
 
-                                if (Coins >= 0 && TotalWins >= "60" && DiamondUpgrade == "1") {
+                                if (Coins >= 0 && TotalWins >= 60 && DiamondUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Badge = " + "Obsidian" + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
                                     document.cookie = "Season1 = " + "Obsidian" + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
