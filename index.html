@@ -579,41 +579,44 @@
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
-                            if (Name != null) {
+                            if (Name != null && Name != "") {
                                 // Capitilizing the first letter of name
                                 var firstChar = Name.slice(0, 1);
                                 var upperCaseName = firstChar.toUpperCase();
                                 var restOfName = Name.slice(1, 30);
                                 var restOfNameLowerCase = restOfName.toLowerCase();
                                 var Name = (upperCaseName + restOfNameLowerCase);
-                            }
-
-                            if (Coins == null) {
-                                var Coins = 0
-                            }
-
-                            var Perk1 = readCookie("DoubleCoins")
-                            var Perk2 = readCookie("Savior")
-                            var Perk3 = readCookie("Cheater")
-
-                            if (Perk1 >= "1") {
-                                var TotalDC = readCookie('DoubleCoins')
-                                var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
-
-                                if (UsePerk1 == "Yes") {
-                                    var TotalDC2 = parseInt(TotalDC) - parseInt(1)
-                                    alert("The DoubleCoins perk was activated successfully!")
-                                    document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                    var Perk1Active = "1"
+                                if (Coins == null) {
+                                    var Coins = 0
                                 }
-                                else {
-                                    alert("The DoubleCoins perk was not activated.")
-                                    var Perk1Active = "0"
-                                }
-                            }
 
-                            if (Perk3 >= "1") {
-                                alert("It looks like you have the cheater perk in you inventory! Type 'Cheat' anytime to use the perk and recieve a range that the random number is between.")
+                                var SaveGame1 = readCookie('SaveGame')
+                                if (SaveGame1 != 1) {
+                                    var Perk1 = readCookie("DoubleCoins")
+                                    var Perk2 = readCookie("Savior")
+                                    var Perk3 = readCookie("Cheater")
+
+                                    if (Perk1 >= "1") {
+                                        var TotalDC = readCookie('DoubleCoins')
+                                        var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
+
+                                        if (UsePerk1 == "Yes") {
+                                            var TotalDC2 = parseInt(TotalDC) - parseInt(1)
+                                            alert("The DoubleCoins perk was activated successfully!")
+                                            document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                            var Perk1Active = "1"
+                                        }
+                                        else {
+                                            alert("The DoubleCoins perk was not activated.")
+                                            var Perk1Active = "0"
+                                        }
+                                    }
+
+                                    if (Perk3 >= "1") {
+                                        alert("It looks like you have the cheater perk in you inventory! Type 'Cheat' anytime to use the perk and recieve a range that the random number is between.")
+                                    }
+
+                                }
                             }
 
                             var Author = "Logan B."
@@ -623,7 +626,7 @@
                             var RandomNumber = Math.floor(Math.random() * Number) + 1;
                             var Correct = 0
                             var Round = 1
-                            var TotalTries = 8
+                            var TotalTries = 8 // "You have __ tries left"
                             var Time = new Date();
                             var March = Time.getMonth();
                             var Day = Time.getDate();
@@ -690,7 +693,73 @@
                                     break
                                 }
 
+                                
+                               // if (Attempts == "SaveGame") {
+                                    //document.cookie = "Round = " + Round + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Correct = " + Correct + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "TotalTries = " + TotalTries + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Number = " + Number + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Guesses = " + Guesses + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "MaxTries = " + MaxTries + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Perk1Active = " + Perk1Active + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "SaveGame = " + 1 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt1 = " + Attempt1 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt2 = " + Attempt2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt3 = " + Attempt3 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                   //document.cookie = "Attempt4 = " + Attempt4 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt5 = " + Attempt5 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt6 = " + Attempt6 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt7 = " + Attempt7 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt8 = " + Attempt8 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt9 = " + Attempt9 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt10 = " + Attempt10 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt11 = " + Attempt11 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt12 = " + Attempt12 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt13 = " + Attempt13 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt14 = " + Attempt14 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt15 = " + Attempt15 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt16 = " + Attempt16 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt17 = " + Attempt17 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt18 = " + Attempt18 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    //document.cookie = "Attempt19 = " + Attempt19 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                   // alert("Your game has been successfully saved!")
+                                   // break
+                                //}
+                                
 
+                                //var SaveGame = readCookie("SaveGame")
+
+                                //if (SaveGame == 1) {
+                                    //var Round = readCookie('Round')
+                                    //var Correct = readCookie('Cookie')
+                                    //var TotalTries = readCookie('TotalTries')
+                                    //var Number = readCookie('Number')
+                                    //var Guesses = readCookie('Guesses')
+                                  //  var MaxTries = readCookie('MaxTries')
+                                   // var Perk1Active = readCookie('Perk1Active')
+                                   // var RandomNumber = readCookie('RandomNumber')
+                                   // var Attempt1 = readCookie('Attempt1')
+                                   // var Attempt2 = readCookie('Attempt2')
+                                   // var Attempt3 = readCookie('Attempt3')
+                                   // var Attempt4 = readCookie('Attempt4')
+                                    //var Attempt5 = readCookie('Attempt5')
+                                    //var Attempt6 = readCookie('Attempt6')
+                                    //var Attempt7 = readCookie('Attempt7')
+                                   // var Attempt8 = readCookie('Attempt8')
+                                   // var Attempt9 = readCookie('Attempt9')
+                                   // var Attempt10 = readCookie('Attempt10')
+                                    //var Attempt11 = readCookie('Attempt11')
+                                   // var Attempt12 = readCookie('Attempt12')
+                                   // var Attempt13 = readCookie('Attempt13')
+                                   // var Attempt14 = readCookie('Attempt14')
+                                   // var Attempt15 = readCookie('Attempt15')
+                                    //var Attempt16 = readCookie('Attempt16')
+                                   // var Attempt17 = readCookie('Attempt17')
+                                    //var Attempt18 = readCookie('Attempt18')
+                                    //var Attempt19 = readCookie('Attempt19')
+                                   // document.cookie = "SaveGame = " + 0 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                   // alert("Your save game was loaded.")
+                                //}
 
                                 if (Attempt1 == undefined) {
                                     Attempt1 = "__"
@@ -749,14 +818,17 @@
                                 if (Attempt19 == undefined) {
                                     Attempt19 = "__"
                                 }
+
                                 if (Author != "Logan B.") {
                                     alert("Oops, looks like you're playing a plagiarized version of the Guessing Game. To play the real game visit --> https://5logan5.github.io/GuessingGame/")
                                 }
+
                                 (Attempts != RandomNumber); {
                                     var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
                                     Guesses += 1;
                                     TotalTries -= 1;
                                 }
+
                                 if (Attempts == "") {
                                     Guesses -= 1;
                                     TotalTries += 1;
@@ -783,6 +855,8 @@
                                         alert("Perk was not activated successfully because it is not in you inventory!")
                                     }
                                 }
+
+
 
                                 if (Attempts != "CheckVersion" && Attempts <= Number && Attempts > 0) {
                                     if (Guesses == 1) {
@@ -938,7 +1012,7 @@
                                         }
                                     }
                                 }
-                                if (Attempts != null && Attempts != RandomNumber && Attempts != "Cheat") {
+                                if (Attempts != null && Attempts != RandomNumber && Attempts != "Cheat" && Attempts != "SaveGame") {
                                     if (Guesses == 1) {
                                         if (Attempt1 == "__") {
                                             alert("Oops! Something happened. Please re-enter your guess.")
@@ -1408,42 +1482,44 @@
                             var Version = "v.17.5"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
-                            if (Name != null) {
+                            if (Name != null && Name != "") {
                                 // Capitilizing the first letter of name
                                 var firstChar = Name.slice(0, 1);
                                 var upperCaseName = firstChar.toUpperCase();
                                 var restOfName = Name.slice(1, 30);
                                 var restOfNameLowerCase = restOfName.toLowerCase();
                                 var Name = (upperCaseName + restOfNameLowerCase);
-                            }
-
-                            if (Coins == null) {
-                                var Coins = 0
-                            }
-
-                            var Perk1 = readCookie("DoubleCoins")
-                            var Perk2 = readCookie("Savior")
-                            var Perk3 = readCookie("Cheater")
-
-                            if (Perk1 >= "1") {
-                                var TotalDC = readCookie('DoubleCoins')
-                                var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
-
-                                if (UsePerk1 == "Yes") {
-                                    var TotalDC2 = parseInt(TotalDC) - parseInt(1)
-                                    alert("The DoubleCoins perk was activated successfully!")
-                                    document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                    var Perk1Active = "1"
+                                if (Coins == null) {
+                                    var Coins = 0
                                 }
-                                else {
-                                    alert("The DoubleCoins perk was not activated.")
-                                    var Perk1Active = "0"
+
+                                var Perk1 = readCookie("DoubleCoins")
+                                var Perk2 = readCookie("Savior")
+                                var Perk3 = readCookie("Cheater")
+
+                                if (Perk1 >= "1") {
+                                    var TotalDC = readCookie('DoubleCoins')
+                                    var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
+
+                                    if (UsePerk1 == "Yes") {
+                                        var TotalDC2 = parseInt(TotalDC) - parseInt(1)
+                                        alert("The DoubleCoins perk was activated successfully!")
+                                        document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                        var Perk1Active = "1"
+                                    }
+                                    else {
+                                        alert("The DoubleCoins perk was not activated.")
+                                        var Perk1Active = "0"
+                                    }
+                                }
+
+                                if (Perk3 >= "1") {
+                                    alert("It looks like you have the cheater perk in you inventory! Type 'Cheat' anytime to use the perk and recieve a range that the random number is between.")
                                 }
                             }
 
-                            if (Perk3 >= "1") {
-                                alert("It looks like you have the cheater perk in you inventory! Type 'Cheat' anytime to use the perk and recieve a range that the random number is between.")
-                            }
+
+
 
                             var Author = "Logan B."
                             var Number = 500
