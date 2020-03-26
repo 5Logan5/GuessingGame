@@ -634,8 +634,8 @@
                             var CheckReward = readCookie('Reward')
 
                             if (CheckReward == null) {
-                                if (March >= 2 && Day <= 31) {
-                                    if (March >= 2 && Day <= 31 && Hour >= 14) {
+                                if (March == 2 && Day == 31) {
+                                    if (March == 2 && Day == 31 && Hour >= 12) {
                                         var Season1 = readCookie('Season1')
                                         if (Season1 == "Bronze") {
                                             var SeasonCoins = parseInt(Coins) + parseInt(300)
