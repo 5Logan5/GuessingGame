@@ -340,7 +340,7 @@
                                 document.cookie = "Coins = " + 0 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                             }
 
-                            var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins. Warning: Perks cannot be stacked!!!")
+                            var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins.")
 
                             if (Buy == "DoubleCoins") {
                                 var DCQ = readCookie('DoubleCoins')
@@ -350,9 +350,9 @@
                                 }
 
                                 var Q = prompt("How much would you like to buy?")
-                                var Cost = parseInt(350) * parseInt(Q)
-                                var Coins = parseInt(Value) - parseInt(Cost)
-                                var TotalPerksBought = parseInt(Q) + parseInt(DCQ)
+                                var Cost = parseFloat(350) * parseFloat(Q)
+                                var Coins = parseFloat(Value) - parseFloat(Cost)
+                                var TotalPerksBought = parseFloat(Q) + parseFloat(DCQ)
                                 if (Coins < 0) {
                                     alert("Oh no! You don't have enough coins to buy this. :/")
                                 }
@@ -377,9 +377,9 @@
                                 }
 
                                 var Q = prompt("How much would you like to buy?")
-                                var Cost = parseInt(300) * parseInt(Q)
-                                var Coins = parseInt(Value) - parseInt(Cost)
-                                var TotalPerksBought = parseInt(Q) + parseInt(DCQ)
+                                var Cost = parseFloat(300) * parseFloat(Q)
+                                var Coins = parseFloat(Value) - parseFloat(Cost)
+                                var TotalPerksBought = parseFloat(Q) + parseFloat(DCQ)
                                 if (Coins < 0) {
                                     alert("Oh no! You don't have enough coins to buy this. :/")
                                 }
@@ -398,9 +398,9 @@
                                 }
 
                                 var Q = prompt("How much would you like to buy?")
-                                var Cost = parseInt(400) * parseInt(Q)
-                                var Coins = parseInt(Value) - parseInt(Cost)
-                                var TotalPerksBought = parseInt(Q) + parseInt(DCQ)
+                                var Cost = parseFloat(400) * parseFloat(Q)
+                                var Coins = parseFloat(Value) - parseFloat(Cost)
+                                var TotalPerksBought = parseFloat(Q) + parseFloat(DCQ)
                                 if (Coins < 0) {
                                     alert("Oh no! You don't have enough coins to buy this. :/")
                                 }
@@ -412,7 +412,7 @@
                             }
 
                             if (Buy == "BronzeUpgrade") {
-                                var Coins = parseInt(Value) - parseInt(500)
+                                var Coins = parseFloat(Value) - parseFloat(500)
                                 var TotalWins = readCookie('TotalWins')
 
                                 if (Coins >= 0 && TotalWins >= 5) {
@@ -431,7 +431,7 @@
                             if (Buy == "SilverUpgrade") {
                                 var BronzeUpgrade = readCookie('BronzeUpgradeMedallion')
                                 var TotalWins = readCookie('TotalWins')
-                                var Coins = parseInt(Value) - parseInt(1000)
+                                var Coins = parseFloat(Value) - parseFloat(1000)
 
                                 if (Coins >= 0 && TotalWins >= 15 && BronzeUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -448,7 +448,7 @@
                             if (Buy == "GoldUpgrade") {
                                 var SilverUpgrade = readCookie('SilverUpgradeMedallion')
                                 var TotalWins = readCookie('TotalWins')
-                                var Coins = parseInt(Value) - parseInt(2500)
+                                var Coins = parseFloat(Value) - parseFloat(2500)
 
                                 if (Coins >= 0 && TotalWins >= 30 && SilverUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -465,7 +465,7 @@
                             if (Buy == "DiamondUpgrade") {
                                 var GoldUpgrade = readCookie('GoldUpgradeMedallion')
                                 var TotalWins = readCookie('TotalWins')
-                                var Coins = parseInt(Value) - parseInt(10000)
+                                var Coins = parseFloat(Value) - parseFloat(10000)
 
                                 if (Coins >= 0 && TotalWins >= 40 && GoldUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -482,7 +482,7 @@
                             if (Buy == "ObsidianUpgrade") {
                                 var DiamondUpgrade = readCookie('DiamondUpgradeMedallion')
                                 var TotalWins = readCookie('TotalWins')
-                                var Coins = parseInt(Value) - parseInt(25000)
+                                var Coins = parseFloat(Value) - parseFloat(25000)
 
                                 if (Coins >= 0 && TotalWins >= 60 && DiamondUpgrade == 1) {
                                     document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -589,7 +589,7 @@
                                         var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
 
                                         if (UsePerk1 == "Yes") {
-                                            var TotalDC2 = parseInt(TotalDC) - parseInt(1)
+                                            var TotalDC2 = parseFloat(TotalDC) - parseFloat(1)
                                             alert("The DoubleCoins perk was activated successfully!")
                                             document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             var Perk1Active = "1"
@@ -627,35 +627,35 @@
                                     if (March == 2 && Day == 31 && Hour >= 12) {
                                         var Season1 = readCookie('Season1')
                                         if (Season1 == "Bronze") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(300)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(300)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Silver") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(700)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(700)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Gold") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(1500)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1500)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Diamond") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(5000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Obsidian") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(10000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(10000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
@@ -748,18 +748,19 @@
 
                                 if (SaveGame == 1) {
                                     var Roundd = readCookie('Round')
-                                    var Round = parseInt(Roundd) + parseInt(0)
+                                    var Round = parseFloat(Roundd) + parseFloat(0)
                                     var Correctt = readCookie('Correct')
-                                    var Correct = parseInt(Correctt) + parseInt(0)
+                                    var Correct = parseFloat(Correctt) + parseFloat(0)
                                     var TotalTries = readCookie('TotalTries')
                                     var Numberr = readCookie('Number')
-                                    var Number = parseInt(Numberr) + parseInt(0)
+                                    var Number = parseFloat(Numberr) + parseFloat(0)
                                     var Guessess = readCookie('Guesses')
-                                    var Guesses = parseInt(Guessess) + parseInt(0)
+                                    var Guesses = parseFloat(Guessess) + parseFloat(0)
                                     var MaxTriess = readCookie('MaxTries')
-                                    var MaxTries = parseInt(MaxTriess) + parseInt(0)
+                                    var MaxTries = parseFloat(MaxTriess) + parseFloat(0)
                                     var Perk1Active = readCookie('Perk1Active')
-                                    var RandomNumber = readCookie('RandomNumber')
+                                    var RandomNumberr = readCookie('RandomNumber')
+                                    var RandomNumber = parseFloat(RandomNumberr) + parseFloat(0)
                                     var Attempt1 = readCookie('Attempt1')
                                     var Attempt2 = readCookie('Attempt2')
                                     var Attempt3 = readCookie('Attempt3')
@@ -779,45 +780,45 @@
                                     var Attempt17 = readCookie('Attempt17')
                                     var Attempt18 = readCookie('Attempt18')
                                     var Roundd1 = readCookie('Round1')
-                                    var Round1 = parseInt(Roundd1) + parseInt(0)
+                                    var Round1 = parseFloat(Roundd1) + parseFloat(0)
                                     var Roundd2 = readCookie('Round2')
-                                    var Round2 = parseInt(Roundd2) + parseInt(0)
+                                    var Round2 = parseFloat(Roundd2) + parseFloat(0)
                                     var Roundd3 = readCookie('Round3')
-                                    var Round3 = parseInt(Roundd3) + parseInt(0)
+                                    var Round3 = parseFloat(Roundd3) + parseFloat(0)
                                     var Roundd4 = readCookie('Round4')
-                                    var Round4 = parseInt(Roundd4) + parseInt(0)
+                                    var Round4 = parseFloat(Roundd4) + parseFloat(0)
                                     var Roundd5 = readCookie('Round5')
-                                    var Round5 = parseInt(Roundd5) + parseInt(0)
+                                    var Round5 = parseFloat(Roundd5) + parseFloat(0)
                                     var Roundd6 = readCookie('Round6')
-                                    var Round6 = parseInt(Roundd6) + parseInt(0)
+                                    var Round6 = parseFloat(Roundd6) + parseFloat(0)
                                     var Roundd7 = readCookie('Round7')
-                                    var Round7 = parseInt(Roundd7) + parseInt(0)
+                                    var Round7 = parseFloat(Roundd7) + parseFloat(0)
                                     var Roundd8 = readCookie('Round8')
-                                    var Round8 = parseInt(Roundd8) + parseInt(0)
+                                    var Round8 = parseFloat(Roundd8) + parseFloat(0)
                                     var Roundd9 = readCookie('Round9')
-                                    var Round9 = parseInt(Roundd9) + parseInt(0)
+                                    var Round9 = parseFloat(Roundd9) + parseFloat(0)
                                     var Roundd10 = readCookie('Round1')
-                                    var Round10 = parseInt(Roundd10) + parseInt(0)
+                                    var Round10 = parseFloat(Roundd10) + parseFloat(0)
                                     var Roundd11 = readCookie('Round11')
-                                    var Round11 = parseInt(Roundd11) + parseInt(0)
+                                    var Round11 = parseFloat(Roundd11) + parseFloat(0)
                                     var Roundd12 = readCookie('Round12')
-                                    var Round12 = parseInt(Roundd12) + parseInt(0)
+                                    var Round12 = parseFloat(Roundd12) + parseFloat(0)
                                     var Roundd13 = readCookie('Round13')
-                                    var Round13 = parseInt(Roundd13) + parseInt(0)
+                                    var Round13 = parseFloat(Roundd13) + parseFloat(0)
                                     var Roundd14 = readCookie('Round14')
-                                    var Round14 = parseInt(Roundd14) + parseInt(0)
+                                    var Round14 = parseFloat(Roundd14) + parseFloat(0)
                                     var Roundd15 = readCookie('Round15')
-                                    var Round15 = parseInt(Roundd15) + parseInt(0)
+                                    var Round15 = parseFloat(Roundd15) + parseFloat(0)
                                     var Roundd16 = readCookie('Round16')
-                                    var Round16 = parseInt(Roundd16) + parseInt(0)
+                                    var Round16 = parseFloat(Roundd16) + parseFloat(0)
                                     var Roundd17 = readCookie('Round17')
-                                    var Round17 = parseInt(Roundd17) + parseInt(0)
+                                    var Round17 = parseFloat(Roundd17) + parseFloat(0)
                                     var Roundd18 = readCookie('Round18')
-                                    var Round18 = parseInt(Roundd18) + parseInt(0)
+                                    var Round18 = parseFloat(Roundd18) + parseFloat(0)
                                     var Roundd19 = readCookie('Round19')
-                                    var Round19 = parseInt(Roundd19) + parseInt(0)
+                                    var Round19 = parseFloat(Roundd19) + parseFloat(0)
                                     var Roundd20 = readCookie('Round20')
-                                    var Round20 = parseInt(Roundd20) + parseInt(0)
+                                    var Round20 = parseFloat(Roundd20) + parseFloat(0)
                                     document.cookie = "SaveGame = " + 0 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     alert("Your save game was loaded.")
                                     document.cookie = "Round = " + Round + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
@@ -944,14 +945,14 @@
                                 if (Attempts == "Cheat") {
                                     if (Perk3 >= "1") {
                                         var C = readCookie("Cheater")
-                                        var finalC = parseInt(C) - parseInt(1)
+                                        var finalC = parseFloat(C) - parseFloat(1)
                                         var Range1Number = Math.floor(Math.random() * 7) + 1;
                                         if (Range1Number > Number) {
                                             var Range1Number = Number
                                         }
                                         var Range2Number = Math.floor(Math.random() * 7) + 1;
-                                        var Range1 = parseInt(RandomNumber) + parseInt(Range1Number)
-                                        var Range2 = parseInt(RandomNumber) - parseInt(Range2Number)
+                                        var Range1 = parseFloat(RandomNumber) + parseFloat(Range1Number)
+                                        var Range2 = parseFloat(RandomNumber) - parseFloat(Range2Number)
                                         Guesses -= 1;
                                         TotalTries += 1;
                                         alert("Your random number is between " + Range2 + " and " + Range1 + ".")
@@ -1397,7 +1398,7 @@
                                             var TotalWins = 0
                                         }
 
-                                        var TotalWins1 = parseInt(TotalWins) + parseInt(1)
+                                        var TotalWins1 = parseFloat(TotalWins) + parseFloat(1)
 
                                         if (TotalWins1 >= 5 && TotalWins1 < 14) {
                                             var Badge123 = readCookie('Badge')
@@ -1435,7 +1436,7 @@
                                         }
 
                                         document.cookie = "TotalWins = " + TotalWins1 + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
-                                        var Coins = parseInt(Coins) + parseInt(CoinsEarned)
+                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10 + Round11 + Round12 + Round13 + Round14 + Round15 + Round16 + Round17 + Round18 + Round19 + Round20
                                         document.cookie = "Achievement " + Version + " (Normal Mode) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
@@ -1551,7 +1552,7 @@
 
                                         if (UseSavior == "Yes") {
                                             var S11 = readCookie('Savior')
-                                            var finalSavior = parseInt(S11) - parseInt(1)
+                                            var finalSavior = parseFloat(S11) - parseFloat(1)
                                             TotalTries += 3
                                             MaxTries += 3
                                             alert("Your savior perk has given you 3 extra tries!")
@@ -1612,7 +1613,7 @@
                                         var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
 
                                         if (UsePerk1 == "Yes") {
-                                            var TotalDC2 = parseInt(TotalDC) - parseInt(1)
+                                            var TotalDC2 = parseFloat(TotalDC) - parseFloat(1)
                                             alert("The DoubleCoins perk was activated successfully!")
                                             document.cookie = "DoubleCoins = " + TotalDC2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             var Perk1Active = "1"
@@ -1651,35 +1652,35 @@
                                     if (March == 2 && Day == 31 && Hour >= 12) {
                                         var Season1 = readCookie('Season1')
                                         if (Season1 == "Bronze") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(300)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(300)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Silver") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(700)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(700)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Gold") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(1500)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1500)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Diamond") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(5000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
                                         }
 
                                         if (Season1 == "Obsidian") {
-                                            var SeasonCoins = parseInt(Coins) + parseInt(10000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(10000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Sat, 5 Apr 2020 3:59:59 UTC";
@@ -1771,18 +1772,19 @@
 
                                 if (SaveGame == 2) {
                                     var Roundd = readCookie('Round')
-                                    var Round = parseInt(Roundd) + parseInt(0)
+                                    var Round = parseFloat(Roundd) + parseFloat(0)
                                     var Correctt = readCookie('Correct')
-                                    var Correct = parseInt(Correctt) + parseInt(0)
+                                    var Correct = parseFloat(Correctt) + parseFloat(0)
                                     var TotalTries = readCookie('TotalTries')
                                     var Numberr = readCookie('Number')
-                                    var Number = parseInt(Numberr) + parseInt(0)
+                                    var Number = parseFloat(Numberr) + parseFloat(0)
                                     var Guessess = readCookie('Guesses')
-                                    var Guesses = parseInt(Guessess) + parseInt(0)
+                                    var Guesses = parseFloat(Guessess) + parseFloat(0)
                                     var MaxTriess = readCookie('MaxTries')
-                                    var MaxTries = parseInt(MaxTriess) + parseInt(0)
+                                    var MaxTries = parseFloat(MaxTriess) + parseFloat(0)
                                     var Perk1Active = readCookie('Perk1Active')
-                                    var RandomNumber = readCookie('RandomNumber')
+                                    var RandomNumberr = readCookie('RandomNumber')
+                                    var RandomNumber = parseFloat(RandomNumberr) + parseFloat(0)
                                     var Attempt1 = readCookie('Attempt1')
                                     var Attempt2 = readCookie('Attempt2')
                                     var Attempt3 = readCookie('Attempt3')
@@ -1802,45 +1804,45 @@
                                     var Attempt17 = readCookie('Attempt17')
                                     var Attempt18 = readCookie('Attempt18')
                                     var Roundd1 = readCookie('Round1')
-                                    var Round1 = parseInt(Roundd1) + parseInt(0)
+                                    var Round1 = parseFloat(Roundd1) + parseFloat(0)
                                     var Roundd2 = readCookie('Round2')
-                                    var Round2 = parseInt(Roundd2) + parseInt(0)
+                                    var Round2 = parseFloat(Roundd2) + parseFloat(0)
                                     var Roundd3 = readCookie('Round3')
-                                    var Round3 = parseInt(Roundd3) + parseInt(0)
+                                    var Round3 = parseFloat(Roundd3) + parseFloat(0)
                                     var Roundd4 = readCookie('Round4')
-                                    var Round4 = parseInt(Roundd4) + parseInt(0)
+                                    var Round4 = parseFloat(Roundd4) + parseFloat(0)
                                     var Roundd5 = readCookie('Round5')
-                                    var Round5 = parseInt(Roundd5) + parseInt(0)
+                                    var Round5 = parseFloat(Roundd5) + parseFloat(0)
                                     var Roundd6 = readCookie('Round6')
-                                    var Round6 = parseInt(Roundd6) + parseInt(0)
+                                    var Round6 = parseFloat(Roundd6) + parseFloat(0)
                                     var Roundd7 = readCookie('Round7')
-                                    var Round7 = parseInt(Roundd7) + parseInt(0)
+                                    var Round7 = parseFloat(Roundd7) + parseFloat(0)
                                     var Roundd8 = readCookie('Round8')
-                                    var Round8 = parseInt(Roundd8) + parseInt(0)
+                                    var Round8 = parseFloat(Roundd8) + parseFloat(0)
                                     var Roundd9 = readCookie('Round9')
-                                    var Round9 = parseInt(Roundd9) + parseInt(0)
+                                    var Round9 = parseFloat(Roundd9) + parseFloat(0)
                                     var Roundd10 = readCookie('Round1')
-                                    var Round10 = parseInt(Roundd10) + parseInt(0)
+                                    var Round10 = parseFloat(Roundd10) + parseFloat(0)
                                     var Roundd11 = readCookie('Round11')
-                                    var Round11 = parseInt(Roundd11) + parseInt(0)
+                                    var Round11 = parseFloat(Roundd11) + parseFloat(0)
                                     var Roundd12 = readCookie('Round12')
-                                    var Round12 = parseInt(Roundd12) + parseInt(0)
+                                    var Round12 = parseFloat(Roundd12) + parseFloat(0)
                                     var Roundd13 = readCookie('Round13')
-                                    var Round13 = parseInt(Roundd13) + parseInt(0)
+                                    var Round13 = parseFloat(Roundd13) + parseFloat(0)
                                     var Roundd14 = readCookie('Round14')
-                                    var Round14 = parseInt(Roundd14) + parseInt(0)
+                                    var Round14 = parseFloat(Roundd14) + parseFloat(0)
                                     var Roundd15 = readCookie('Round15')
-                                    var Round15 = parseInt(Roundd15) + parseInt(0)
+                                    var Round15 = parseFloat(Roundd15) + parseFloat(0)
                                     var Roundd16 = readCookie('Round16')
-                                    var Round16 = parseInt(Roundd16) + parseInt(0)
+                                    var Round16 = parseFloat(Roundd16) + parseFloat(0)
                                     var Roundd17 = readCookie('Round17')
-                                    var Round17 = parseInt(Roundd17) + parseInt(0)
+                                    var Round17 = parseFloat(Roundd17) + parseFloat(0)
                                     var Roundd18 = readCookie('Round18')
-                                    var Round18 = parseInt(Roundd18) + parseInt(0)
+                                    var Round18 = parseFloat(Roundd18) + parseFloat(0)
                                     var Roundd19 = readCookie('Round19')
-                                    var Round19 = parseInt(Roundd19) + parseInt(0)
+                                    var Round19 = parseFloat(Roundd19) + parseFloat(0)
                                     var Roundd20 = readCookie('Round20')
-                                    var Round20 = parseInt(Roundd20) + parseInt(0)
+                                    var Round20 = parseFloat(Roundd20) + parseFloat(0)
                                     document.cookie = "SaveGame = " + 0 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     alert("Your save game was loaded.")
                                     document.cookie = "Round = " + Round + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
@@ -1965,14 +1967,14 @@
                                 if (Attempts == "Cheat") {
                                     if (Perk3 >= "1") {
                                         var C = readCookie("Cheater")
-                                        var finalC = parseInt(C) - parseInt(1)
+                                        var finalC = parseFloat(C) - parseFloat(1)
                                         var Range1Number = Math.floor(Math.random() * 7) + 1;
                                         if (Range1Number > Number) {
                                             var Range1Number = Number
                                         }
                                         var Range2Number = Math.floor(Math.random() * 7) + 1;
-                                        var Range1 = parseInt(RandomNumber) + parseInt(Range1Number)
-                                        var Range2 = parseInt(RandomNumber) - parseInt(Range2Number)
+                                        var Range1 = parseFloat(RandomNumber) + parseFloat(Range1Number)
+                                        var Range2 = parseFloat(RandomNumber) - parseFloat(Range2Number)
                                         Guesses -= 1;
                                         TotalTries += 1;
                                         alert("Your random number is between " + Range2 + " and " + Range1 + ".")
@@ -2360,7 +2362,7 @@
                                             var TotalWins = 0
                                         }
 
-                                        var TotalWins1 = parseInt(TotalWins) + parseInt(1)
+                                        var TotalWins1 = parseFloat(TotalWins) + parseFloat(1)
 
                                         if (TotalWins1 >= 5 && TotalWins1 < 14) {
                                             var Badge123 = readCookie('Badge')
@@ -2398,7 +2400,7 @@
                                         }
 
                                         document.cookie = "TotalWins = " + TotalWins1 + "; expires=Tue, 31 Mar 2020 18:00:00 UTC";
-                                        var Coins = parseInt(Coins) + parseInt(CoinsEarned)
+                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         var endGameTries = Round1 + Round2 + Round3 + Round4 + Round5 + Round6 + Round7 + Round8 + Round9 + Round10
                                         document.cookie = "Achievement " + Version + " (Fast Pace) (" + Time + ")= Nice, " + Name + ", you beat the game in " + endGameTries + " tries; expires=Tue, 31 Dec 2030 12:00:00 UTC;"
@@ -2453,7 +2455,7 @@
 
                                         if (UseSavior == "Yes") {
                                             var S11 = readCookie('Savior')
-                                            var finalSavior = parseInt(S11) - parseInt(1)
+                                            var finalSavior = parseFloat(S11) - parseFloat(1)
                                             TotalTries += 3
                                             MaxTries += 3
                                             alert("Your savior perk has given you 3 extra tries!")
@@ -3039,25 +3041,25 @@
                                     }
 
                                     if (Tries < 100 && Tries > 50) {
-                                        var Coins = parseInt(Coins) + parseInt(75)
+                                        var Coins = parseFloat(Coins) + parseFloat(75)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         alert("Nice! You earned 75 coins!")
                                     }
 
                                     if (Tries >= 100 && Tries < 200) {
-                                        var Coins = parseInt(Coins) + parseInt(125)
+                                        var Coins = parseFloat(Coins) + parseFloat(125)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         alert("Nice! You earned 125 coins!")
                                     }
 
                                     if (Tries >= 200 && Tries < 300) {
-                                        var Coins = parseInt(Coins) + parseInt(350)
+                                        var Coins = parseFloat(Coins) + parseFloat(350)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         alert("Nice! You earned 350 coins!")
                                     }
 
                                     if (Tries >= 300) {
-                                        var Coins = parseInt(Coins) + parseInt(500)
+                                        var Coins = parseFloat(Coins) + parseFloat(500)
                                         document.cookie = "Coins = " + Coins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                         alert("Nice! You earned 500 coins!")
                                     }
