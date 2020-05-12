@@ -560,6 +560,13 @@
                                         var DC = prompt("How much to add?")
                                         document.cookie = "Cheater = " + DC + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     }
+
+                                    if (Code == "Season"){
+                                        var SeasonPicker = prompt("What season?")
+                                        var SeasonChosen = "Season" + SeasonPicker
+                                        var SeasonBadge = prompt("What badge was earned in that season?")
+                                        document.cookie = "Season1 = " + SeasonBadge + "; expires=Sat, 1 Oct 2022 8:00:00 UTC";
+                                    }
                                 }
                                 else {
                                     alert("Wrong password!")
@@ -625,50 +632,51 @@
                                 var Correct = 0
                                 var Round = 1
                                 var TotalTries = 8 // "You have __ tries left"                               
-                                var March = Time.getMonth();
+                                var Month111 = Time.getMonth();
                                 var Day = Time.getDate();
+                                alert (Day)
                                 var Day1 = Time.getDate();
                                 var Hour = Time.getHours();
                                 var CheckReward = readCookie('Reward')
                             }
 
                             if (CheckReward == null) {
-                                if (March >= 2) {
-                                    if (March == 2 && Day == 31 && Hour >= 14 || Day == 1 || Day == 2 || Day == 3 || Day == 4 || Day == 5) {
-                                        var Season1 = readCookie('Season1')
-                                        if (Season1 == "Bronze") {
+                                if (Month111 >= 4) {
+                                    if (Month111 == 4 && Day == 31 && Hour >= 14 || Day == 1 || Day == 2 || Day == 3 || Day == 4 || Day == 5) {
+                                        var Season4 = readCookie('Season4')
+                                        if (Season4 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(300)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Silver") {
+                                        if (Season4 == "Silver") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(700)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Gold") {
+                                        if (Season4 == "Gold") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1500)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Diamond") {
+                                        if (Season4 == "Diamond") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Obsidian") {
+                                        if (Season4 == "Obsidian") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(10000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
                                     }
@@ -1674,48 +1682,48 @@
                                 var Correct = 0
                                 var Round = 1
                                 var TotalTries = 10
-                                var March = Time.getMonth();
+                                var Month111 = Time.getMonth();
                                 var Day = Time.getDate();
                                 var Hour = Time.getHours();
                                 var CheckReward = readCookie('Reward')
                             }
 
                             if (CheckReward == null) {
-                                if (March == 2 && Day == 31) {
-                                    if (March == 2 && Day == 31 && Hour >= 12) {
-                                        var Season1 = readCookie('Season1')
-                                        if (Season1 == "Bronze") {
+                                if (Month111 == 4 && Day == 31) {
+                                    if (Month111 == 4 && Day == 31 && Hour >= 14 || Day == 1 || Day == 2 || Day == 3 || Day == 4 || Day == 5) {
+                                        var Season4 = readCookie('Season4')
+                                        if (Season4 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(300)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 300 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Silver") {
+                                        if (Season4 == "Silver") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(700)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 700 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Gold") {
+                                        if (Season4 == "Gold") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1500)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,500 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Diamond") {
+                                        if (Season4 == "Diamond") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
+                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 5,000 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
+                                            document.cookie = "Reward = " + 1 + "; expires=Sat, 6 Jun 2020 3:59:59 UTC";
                                         }
 
-                                        if (Season1 == "Obsidian") {
+                                        if (Season4 == "Obsidian") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(10000)
                                             document.cookie = "Coins = " + SeasonCoins + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
-                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on March 31st consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 10,000 coins! If it is past 2pm on May 31st consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 1 Jun 2020 3:59:59 UTC";
                                         }
 
