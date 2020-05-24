@@ -2333,7 +2333,7 @@
                                     Attempt19 = "__"
                                 }
                                 (Attempts != RandomNumber); {
-                                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + ".");
+                                    var Attempts = prompt("Alright, " + Name + ". I'm thinking of a number between 1 and " + Number + ". You have " + TotalTries + " tries left. You are on round " + Round + ". You have previously guessed: " + Attempt1 + ", " + Attempt2 + ", " + Attempt3 + ", " + Attempt4 + ", " + Attempt5 + ", " + Attempt6 + ", " + Attempt7 + ", " + Attempt8 + ", " + Attempt9 + ", " + Attempt10 + ", " + Attempt11 + ", " + Attempt12 + ", " + Attempt13 + ", " + Attempt14 + ", " + Attempt15 + ", " + Attempt16 + ", " + Attempt17 + ", " + Attempt18 + "." + RandomNumber);
                                     Guesses += 1;
                                     TotalTries -= 1;
                                 }
@@ -2881,6 +2881,33 @@
                                     document.title = 'Guessing Game';
                                     document.body.style.fontSize = "30px";
                                     Attempts = "SaveGame"
+
+                                    var Season1Badge = localStorage.getItem("Season1")
+                                        var Season2Badge = localStorage.getItem("Season2")
+                                        var Season3Badge = localStorage.getItem("Season3")
+                                        var Season4Badge = localStorage.getItem("Season4")
+
+                                        if (Season1Badge == null) {
+                                            var Season1Badge = "None"
+                                        }
+
+                                        if (Season2Badge == null) {
+                                            var Season2Badge = "None"
+                                        }
+
+                                        if (Season3Badge == null) {
+                                            var Season3Badge = "None"
+                                        }
+
+                                        if (Season4Badge == null) {
+                                            var Season4Badge = "None"
+                                        }
+
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myJSON = JSON.stringify(myObj);
+                                        localStorage.setItem("playerDataJSON", myJSON);
+
                                 }
                                 if (Attempts != "" && Attempts <= Number && Attempts > 0) {
                                     if (Attempts < RandomNumber) { //If user types in answer lower than the random number the system will tell them to guess higher
@@ -2945,6 +2972,33 @@
                                         if (Correct == 9) {
                                             localStorage.setItem("So Close But Yet So Far (Fast Mode)", "Lose the game on the last round")
                                         }
+
+                                        var Season1Badge = localStorage.getItem("Season1")
+                                        var Season2Badge = localStorage.getItem("Season2")
+                                        var Season3Badge = localStorage.getItem("Season3")
+                                        var Season4Badge = localStorage.getItem("Season4")
+
+                                        if (Season1Badge == null) {
+                                            var Season1Badge = "None"
+                                        }
+
+                                        if (Season2Badge == null) {
+                                            var Season2Badge = "None"
+                                        }
+
+                                        if (Season3Badge == null) {
+                                            var Season3Badge = "None"
+                                        }
+
+                                        if (Season4Badge == null) {
+                                            var Season4Badge = "None"
+                                        }
+
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myJSON = JSON.stringify(myObj);
+                                        localStorage.setItem("playerDataJSON", myJSON);
+
                                         document.title = 'Guessing Game';
                                         document.body.style.fontSize = "30px";
                                         break
