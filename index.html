@@ -5227,12 +5227,18 @@
 
                         function myFunction() {
                             var LifetimeWins = localStorage.getItem("LifetimeWins")
+                            if (LifetimeWins == null){
+                                var LifeTimeWins = 0
+                            }
                             document.getElementById("Wins").innerHTML = "Lifetime Wins: " + LifetimeWins;
                             document.getElementById("Wins").addEventListener("click", myFunction2);
                         }
 
                         function myFunction2() {
                             var TotalWins = localStorage.getItem("TotalWins")
+                            if (TotalWins == null){
+                                var TotalWins = 0
+                            }
                             document.getElementById("Wins").innerHTML = "Wins: " + TotalWins;
                             document.getElementById("Wins").addEventListener("click", myFunction);
                         }
