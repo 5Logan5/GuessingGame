@@ -57,6 +57,11 @@
 //Patch Notes: v.18 Bug fixes/Improvements and a new SaveGame feature just type in "SaveGame" to save your game.
 //Patch Notes: v.18.2 Bug fixes/Improvements and updated game for new season.
 //Patch Notes: v.19 Lots of changes. Badge glows when you are gold, diamond, or obsidian. New higher or lower game mode. Took out Modes 3 and 4. Lifetime guesses and wins now added. Milestones currently at 10,000 and 50,000 guesses and at 500 wins.
+//Patch Notes: v.19.1 Bug fixes.
+
+
+
+
 -->
 
 
@@ -753,7 +758,7 @@
 
                         function Mode1() {
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.19"
+                            var Version = "v.19.1"
                             var value = localStorage.getItem('Coins');
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
@@ -1676,6 +1681,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -1694,11 +1713,11 @@
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
-                                        if (TotalWins1 == 20){
+                                        if (TotalWins1 == 20) {
                                             alert("Congrats you just unlocked the Higher or Lower game mode!")
                                         }
 
@@ -1790,6 +1809,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -1808,7 +1841,12 @@
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1827,6 +1865,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -1845,7 +1897,12 @@
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1924,6 +1981,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -1942,7 +2013,12 @@
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1959,7 +2035,7 @@
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
-                            var Version = "v.19"
+                            var Version = "v.19.1"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null && Name != "") {
@@ -2820,6 +2896,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -2839,11 +2929,11 @@
 
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
-                                        if (TotalWins1 == 20){
+                                        if (TotalWins1 == 20) {
                                             alert("Congrats you just unlocked the Higher or Lower game mode!")
                                         }
 
@@ -2884,30 +2974,49 @@
                                     Attempts = "SaveGame"
 
                                     var Season1Badge = localStorage.getItem("Season1")
-                                        var Season2Badge = localStorage.getItem("Season2")
-                                        var Season3Badge = localStorage.getItem("Season3")
-                                        var Season4Badge = localStorage.getItem("Season4")
+                                    var Season2Badge = localStorage.getItem("Season2")
+                                    var Season3Badge = localStorage.getItem("Season3")
+                                    var Season4Badge = localStorage.getItem("Season4")
+                                    var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                    var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
 
-                                        if (Season1Badge == null) {
-                                            var Season1Badge = "None"
-                                        }
+                                    if (SCBYSFFM == null) {
+                                        var hasSoClose = "No"
+                                    } else {
+                                        var hasSoClose = "Yes"
+                                    }
 
-                                        if (Season2Badge == null) {
-                                            var Season2Badge = "None"
-                                        }
+                                    if (SCBYSFNM == null) {
+                                        var hasSoCloseNormal = "No"
+                                    } else {
+                                        var hasSoCloseNormal = "Yes"
+                                    }
 
-                                        if (Season3Badge == null) {
-                                            var Season3Badge = "None"
-                                        }
+                                    if (Season1Badge == null) {
+                                        var Season1Badge = "None"
+                                    }
 
-                                        if (Season4Badge == null) {
-                                            var Season4Badge = "None"
-                                        }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
-                                        myJSON = JSON.stringify(myObj);
-                                        localStorage.setItem("playerDataJSON", myJSON);
+                                    if (Season2Badge == null) {
+                                        var Season2Badge = "None"
+                                    }
+
+                                    if (Season3Badge == null) {
+                                        var Season3Badge = "None"
+                                    }
+
+                                    if (Season4Badge == null) {
+                                        var Season4Badge = "None"
+                                    }
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
+
+                                    if (LifetimeWins == null) {
+                                        var LifetimeWins = "0"
+                                    }
+
+                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    myJSON = JSON.stringify(myObj);
+                                    localStorage.setItem("playerDataJSON", myJSON);
 
                                 }
                                 if (Attempts != "" && Attempts <= Number && Attempts > 0) {
@@ -2920,7 +3029,7 @@
                                         alert('Lower than ' + Attempts + "!");
                                     }
                                 }
-                                if (Guesses == MaxTries - 1) { // If user is on it's last try the system will display the message below
+                                if (Guesses == MaxTries - 1 && Attempts != "SaveGame") { // If user is on it's last try the system will display the message below
                                     alert('This is your last try!!!');
                                 }
                                 if (Guesses >= MaxTries) {
@@ -2978,6 +3087,20 @@
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
                                         var Season4Badge = localStorage.getItem("Season4")
+                                        var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                        var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+
+                                        if (SCBYSFFM == null) {
+                                            var hasSoClose = "No"
+                                        } else {
+                                            var hasSoClose = "Yes"
+                                        }
+
+                                        if (SCBYSFNM == null) {
+                                            var hasSoCloseNormal = "No"
+                                        } else {
+                                            var hasSoCloseNormal = "Yes"
+                                        }
 
                                         if (Season1Badge == null) {
                                             var Season1Badge = "None"
@@ -2996,7 +3119,12 @@
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -5205,7 +5333,7 @@
                                             if (newCoinsEarned == null) {
                                                 var CoinsAfterLoss = parseInt(Coins) - parseInt(CoinsBet)
                                                 localStorage.setItem("Coins", CoinsAfterLoss)
-                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is lower than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you just lost " + CoinsBet + " coins.")
+                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is higher than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you just lost " + CoinsBet + " coins.")
                                             }
 
                                             if (newCoinsEarned != null) {
@@ -5215,7 +5343,7 @@
                                                     var CoinsAfterLoss = "0"
                                                 }
                                                 localStorage.setItem("Coins", CoinsAfterLoss)
-                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is lower than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you have " + newCoinsEarned + " coins left.")
+                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is higher than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you just lost " + newCoinsEarned + " coins.")
                                             }
 
                                             break
@@ -5233,7 +5361,7 @@
                                                 var newCoinsEarned = parseInt(newCoinsEarned) + parseInt(newCoinsEarned)
                                             }
 
-                                            alert("Congrats, your new card, " + getSecondCardFromDeck + " is higher than " + GetDrawnCardFromDeck + ". You just earned " + newCoinsEarned + " coins!")
+                                            alert("Congrats, your new card, " + getSecondCardFromDeck + " is lower than " + GetDrawnCardFromDeck + ". You just earned " + newCoinsEarned + " coins!")
                                             var playAgain = prompt("Would you like to play another round and bet " + newCoinsEarned + " coins? Type 'Yes' or 'No'.")
 
                                             if (playAgain == "Yes" || playAgain == "yes") {
@@ -5265,7 +5393,7 @@
                                                     var CoinsAfterLoss = "0"
                                                 }
                                                 localStorage.setItem("Coins", CoinsAfterLoss)
-                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is lower than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you have " + newCoinsEarned + " coins left.")
+                                                alert("Aw man :(, your new card, " + getSecondCardFromDeck + " is lower than " + GetDrawnCardFromDeck + ". Which means you lost this round. Sorry to tell you this but you just lost " + newCoinsEarned + " coins .")
                                             }
 
                                             break
@@ -5282,7 +5410,7 @@
 
                         function myFunction() {
                             var LifetimeWins = localStorage.getItem("LifetimeWins")
-                            if (LifetimeWins == null){
+                            if (LifetimeWins == null) {
                                 var LifetimeWins = 0
                             }
                             document.getElementById("Wins").innerHTML = "Lifetime Wins: " + LifetimeWins;
@@ -5291,7 +5419,7 @@
 
                         function myFunction2() {
                             var TotalWins = localStorage.getItem("TotalWins")
-                            if (TotalWins == null){
+                            if (TotalWins == null) {
                                 var TotalWins = 0
                             }
                             document.getElementById("Wins").innerHTML = "Wins: " + TotalWins;
