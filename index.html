@@ -942,6 +942,59 @@
                                     document.cookie = "Round18 = " + Round18 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Round19 = " + Round19 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Round20 = " + Round20 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+
+                                    var Season1Badge = localStorage.getItem("Season1")
+                                    var Season2Badge = localStorage.getItem("Season2")
+                                    var Season3Badge = localStorage.getItem("Season3")
+                                    var Season4Badge = localStorage.getItem("Season4")
+                                    var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                    var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                    var ExtraInnings = localStorage.getItem("Extra Innings")
+
+                                    if (SCBYSFFM == null) {
+                                        var hasSoClose = "No"
+                                    } else {
+                                        var hasSoClose = "Yes"
+                                    }
+
+                                    if (SCBYSFNM == null) {
+                                        var hasSoCloseNormal = "No"
+                                    } else {
+                                        var hasSoCloseNormal = "Yes"
+                                    }
+
+                                    if (ExtraInnings == null) {
+                                        var hasExtraInnings = "No"
+                                    } else {
+                                        var hasExtraInnings = "Yes"
+                                    }
+
+                                    if (Season1Badge == null) {
+                                        var Season1Badge = "None"
+                                    }
+
+                                    if (Season2Badge == null) {
+                                        var Season2Badge = "None"
+                                    }
+
+                                    if (Season3Badge == null) {
+                                        var Season3Badge = "None"
+                                    }
+
+                                    if (Season4Badge == null) {
+                                        var Season4Badge = "None"
+                                    }
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
+
+                                    if (LifetimeWins == null) {
+                                        var LifetimeWins = "0"
+                                    }
+
+                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    myJSON = JSON.stringify(myObj);
+                                    localStorage.setItem("playerDataJSON", myJSON);
+
                                     alert("Your game has been successfully saved!")
                                     document.getElementById('Message').innerHTML = "Your game was successfully saved."
                                     break
@@ -1683,6 +1736,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -1694,6 +1748,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -1712,8 +1772,13 @@
                                             var Season4Badge = "None"
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1811,6 +1876,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -1822,6 +1888,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -1846,7 +1918,7 @@
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1867,6 +1939,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -1878,6 +1951,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -1902,7 +1981,7 @@
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1983,6 +2062,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -1994,6 +2074,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -2018,7 +2104,7 @@
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -2218,6 +2304,59 @@
                                     document.cookie = "Round18 = " + Round18 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Round19 = " + Round19 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Round20 = " + Round20 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+
+                                    var Season1Badge = localStorage.getItem("Season1")
+                                    var Season2Badge = localStorage.getItem("Season2")
+                                    var Season3Badge = localStorage.getItem("Season3")
+                                    var Season4Badge = localStorage.getItem("Season4")
+                                    var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
+                                    var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                    var ExtraInnings = localStorage.getItem("Extra Innings")
+
+                                    if (SCBYSFFM == null) {
+                                        var hasSoClose = "No"
+                                    } else {
+                                        var hasSoClose = "Yes"
+                                    }
+
+                                    if (SCBYSFNM == null) {
+                                        var hasSoCloseNormal = "No"
+                                    } else {
+                                        var hasSoCloseNormal = "Yes"
+                                    }
+
+                                    if (ExtraInnings == null) {
+                                        var hasExtraInnings = "No"
+                                    } else {
+                                        var hasExtraInnings = "Yes"
+                                    }
+
+                                    if (Season1Badge == null) {
+                                        var Season1Badge = "None"
+                                    }
+
+                                    if (Season2Badge == null) {
+                                        var Season2Badge = "None"
+                                    }
+
+                                    if (Season3Badge == null) {
+                                        var Season3Badge = "None"
+                                    }
+
+                                    if (Season4Badge == null) {
+                                        var Season4Badge = "None"
+                                    }
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
+
+                                    if (LifetimeWins == null) {
+                                        var LifetimeWins = "0"
+                                    }
+
+                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    myJSON = JSON.stringify(myObj);
+                                    localStorage.setItem("playerDataJSON", myJSON);
+
                                     alert("Your game has been successfully saved!")
                                     document.getElementById('Message').innerHTML = "Your game was successfully saved."
                                     break
@@ -2898,6 +3037,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -2909,6 +3049,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -2926,10 +3072,14 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
+
+                                        if (LifetimeWins == null) {
+                                            var LifetimeWins = "0"
+                                        }
+
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -2979,6 +3129,7 @@
                                     var Season4Badge = localStorage.getItem("Season4")
                                     var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                     var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                    var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                     if (SCBYSFFM == null) {
                                         var hasSoClose = "No"
@@ -2990,6 +3141,12 @@
                                         var hasSoCloseNormal = "No"
                                     } else {
                                         var hasSoCloseNormal = "Yes"
+                                    }
+
+                                    if (ExtraInnings == null) {
+                                        var hasExtraInnings = "No"
+                                    } else {
+                                        var hasExtraInnings = "Yes"
                                     }
 
                                     if (Season1Badge == null) {
@@ -3014,7 +3171,7 @@
                                         var LifetimeWins = "0"
                                     }
 
-                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3089,6 +3246,7 @@
                                         var Season4Badge = localStorage.getItem("Season4")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
+                                        var ExtraInnings = localStorage.getItem("Extra Innings")
 
                                         if (SCBYSFFM == null) {
                                             var hasSoClose = "No"
@@ -3100,6 +3258,12 @@
                                             var hasSoCloseNormal = "No"
                                         } else {
                                             var hasSoCloseNormal = "Yes"
+                                        }
+
+                                        if (ExtraInnings == null) {
+                                            var hasExtraInnings = "No"
+                                        } else {
+                                            var hasExtraInnings = "Yes"
                                         }
 
                                         if (Season1Badge == null) {
@@ -3124,7 +3288,7 @@
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
