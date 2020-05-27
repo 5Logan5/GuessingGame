@@ -984,14 +984,16 @@
                                     if (Season4Badge == null) {
                                         var Season4Badge = "None"
                                     }
-                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                     if (LifetimeWins == null) {
                                         var LifetimeWins = "0"
                                     }
 
-                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
+                                    var CoinsNew = Coins.toSting()
+
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1674,6 +1676,7 @@
                                         }
 
                                         var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
+                                        var CoinsNew = Coins.toString();
                                         var TotalWins = localStorage.getItem('TotalWins')
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
@@ -1771,13 +1774,15 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWinsNew = LifetimeWins.toString()
+
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1910,14 +1915,16 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
+                                        var CoinsNew = Coins.toString()
+
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1973,14 +1980,16 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
+                                        var CoinsNew = Coins.toString()
+
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -2096,14 +2105,16 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
+                                        var CoinsNew = Coins.toString()
+                                
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -2345,14 +2356,16 @@
                                     if (Season4Badge == null) {
                                         var Season4Badge = "None"
                                     }
-                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                     if (LifetimeWins == null) {
                                         var LifetimeWins = "0"
                                     }
 
-                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWinsNew = LifetimeWins.toString()
+                                    var CoinsNew = Coins.toString()
+
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3072,14 +3085,16 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWinsNew = LifetimeWins.toString()
+                                        var CoinsNew = Coins.toString()
+
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3164,14 +3179,16 @@
                                     if (Season4Badge == null) {
                                         var Season4Badge = "None"
                                     }
-                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                    var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                     if (LifetimeWins == null) {
                                         var LifetimeWins = "0"
                                     }
 
-                                    myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                    var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                    var LifetimeWinsNew = LifetimeWins.toString()
+                                    var CoinsNew = Coins.toString()
+
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3281,14 +3298,16 @@
                                         if (Season4Badge == null) {
                                             var Season4Badge = "None"
                                         }
-                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
 
-                                        myObj = { name: Name, Coins: Coins, lastPlayed: timeSlice, LifetimeWins: LifetimeWins, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
+                                        var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
+                                        var LifetimeWinsNew = LifetimeWins.toString()
+                                        var CoinsNew = Coins.toString()
+
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
