@@ -1673,7 +1673,7 @@
                                             var CoinsEarned = 550
                                         }
 
-
+                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         var TotalWins = localStorage.getItem('TotalWins')
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
@@ -1772,7 +1772,6 @@
                                             var Season4Badge = "None"
                                         }
                                         var LifetimeGuesses1234New = LifetimeGuesses1234.toString()
-                                        var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
@@ -2976,6 +2975,7 @@
                                             var CoinsEarned = 200
                                         }
 
+                                        var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         var TotalWins = localStorage.getItem('TotalWins')
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
