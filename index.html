@@ -1675,6 +1675,7 @@
                                             var CoinsEarned = 550
                                         }
 
+                                        var Coins = localStorage.getItem("Coins")
                                         var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         var CoinsNew = Coins.toString();
                                         var TotalWins = localStorage.getItem('TotalWins')
@@ -2982,12 +2983,13 @@
                                     if (Correct == 10) {
 
                                         if (Perk1Active == "1") {
-                                            var CoinsEarned = 400
+                                            var CoinsEarned = 550
                                         }
                                         else {
-                                            var CoinsEarned = 200
+                                            var CoinsEarned = 275
                                         }
 
+                                        var Coins = localStorage.getItem("Coins")
                                         var Coins = parseFloat(Coins) + parseFloat(CoinsEarned)
                                         var TotalWins = localStorage.getItem('TotalWins')
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
