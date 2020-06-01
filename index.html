@@ -104,11 +104,14 @@
             margin: 8px;
             font-size: 22px;
             z-index: 100000000;
+
+
+
             color: white
         }
 
         body {
-            background-image: url('IMG_5.jpg');
+            background-image: url('IMG_5.JPG');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -325,7 +328,7 @@
                         function Chest() {
                             var CheckForWins = localStorage.getItem("WinsForChest")
 
-                            if (CheckForWins != 3) {
+                            if (CheckForWins != 2) {
                                 alert("You don't have enough wins to open a chest.")
                                 return
                             }
@@ -337,7 +340,7 @@
                             var CheckChest2Unlock = localStorage.getItem("Chest2UnlockStart")
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
 
-                            if (CheckForWins = 3) {
+                            if (CheckForWins == 2) {
                                 if (CheckChest1Unlock != "1" && CheckChest2Unlock != "1" && CheckChest3Unlock != "1") {
                                     localStorage.setItem("WinsForChest", 0)
                                     alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
@@ -2442,11 +2445,7 @@
                                         }
 
                                         if (WinsForChest == 1) {
-                                            localStorage.setItem("WinsForChest", 2)
-                                        }
-
-                                        if (WinsForChest == 2) {
-                                            localStorage.setItem("WinsForChest", 3)
+                                            localStorage.setItem("WinsForChest", 0)
                                             Chest()
                                         }
 
@@ -3993,11 +3992,7 @@
                                         }
 
                                         if (WinsForChest == 1) {
-                                            localStorage.setItem("WinsForChest", 2)
-                                        }
-
-                                        if (WinsForChest == 2) {
-                                            localStorage.setItem("WinsForChest", 3)
+                                            localStorage.setItem("WinsForChest", 0)
                                             Chest()
                                         }
 
