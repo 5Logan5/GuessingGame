@@ -62,6 +62,7 @@
 //Patch Notes: v.20.2 Removed savior to buy from shop and in-game. Bug fixes.
 //Patch Notes: v.20.4 Higher or Lower LTM bet cap set to 1000 coins
 //Patch Notes: v.21 New season update and bug fixes
+//Patch Notes: v.21.1 Bug Fix and "ViewAcc" feature
 
 -->
 
@@ -851,7 +852,13 @@
                                 }
 
                             }
-
+                                
+                                if (Buy == "ViewAcc") {
+                                var getJSON = localStorage.getItem("playerDataJSON")
+                                var newWindow = window.open();
+                                newWindow.document.write(getJSON);
+                            }
+                            
                             if (Buy == "Reset") {
                                 localStorage.removeItem('Badge');
                                 localStorage.removeItem('TotalWins');
@@ -1363,7 +1370,7 @@
                             var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
                             var CheckReward = readCookie('Reward')
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.21"
+                            var Version = "v.21.1"
                             var value = localStorage.getItem('Coins');
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
@@ -3073,7 +3080,7 @@
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
-                            var Version = "v.21"
+                            var Version = "v.21.1"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null && Name != "") {
@@ -3182,7 +3189,7 @@
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1200)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,200 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct Jul 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
                                         }
 
                                         if (Season6 == "Diamond") {
