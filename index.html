@@ -345,6 +345,11 @@
                                     alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
                                     setCookie("Chest1", "1", .16667)
                                     localStorage.setItem("Chest1UnlockStart", "1")
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
                                 }
 
                                 if (CheckChest1Unlock == "1" && CheckChest2Unlock != "1" && CheckChest3Unlock != "1") {
@@ -352,6 +357,11 @@
                                     alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
                                     setCookie("Chest2", "1", .16667)
                                     localStorage.setItem("Chest2UnlockStart", "1")
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
                                 }
 
                                 if (CheckChest2Unlock == "1" && CheckChest3Unlock != "1") {
@@ -359,11 +369,21 @@
                                     alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
                                     setCookie("Chest3", "1", .16667)
                                     localStorage.setItem("Chest3UnlockStart", "1")
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
                                 }
 
                                 if (CheckChest1Unlock == "1" && CheckChest2Unlock == "1" && CheckChest3Unlock == "1") {
                                     alert("Your three chest slots are full. Open a chest to unlock a slot.")
                                     localStorage.setItem("WinsForChest", 0)
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
                                     return
                                 }
 
@@ -817,23 +837,23 @@
                             }
 
                             if (Badge == "Bronze") {
-                                var CoinsForSeasonReward = "400"
+                                var CoinsForSeasonReward = "650"
                             }
 
                             if (Badge == "Silver") {
-                                var CoinsForSeasonReward = "800"
+                                var CoinsForSeasonReward = "950"
                             }
 
                             if (Badge == "Gold") {
-                                var CoinsForSeasonReward = "1200"
+                                var CoinsForSeasonReward = "1,650"
                             }
 
                             if (Badge == "Diamond") {
-                                var CoinsForSeasonReward = "2500"
+                                var CoinsForSeasonReward = "15,000"
                             }
 
                             if (Badge == "Obsidian") {
-                                var CoinsForSeasonReward = "5000"
+                                var CoinsForSeasonReward = "21,500"
                             }
 
                             var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins. Type 'View' to see a list of codes. Current season reward: " + CoinsForSeasonReward + " coins.")
@@ -1479,24 +1499,27 @@
                                         }
 
                                         if (Season6 == "Gold") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1200)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,200 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                         if (Season6 == "Diamond") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(2500)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(15000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 2,500 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                         if (Season6 == "Obsidian") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(21000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 5,000 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                     }
@@ -2531,11 +2554,13 @@
                                         }
 
                                         if (WinsForChest == 0) {
-                                            localStorage.setItem("WinsForChest", 1)
+                                            localStorage.setItem("WinsForChest", 2)
+                                            Chest()
                                         }
 
                                         if (WinsForChest == 1) {
                                             localStorage.setItem("WinsForChest", 2)
+                                            localStorage.setItem("ChestUnlockAtOneWin", "yes")
                                             Chest()
                                         }
 
@@ -3190,24 +3215,27 @@
                                         }
 
                                         if (Season6 == "Gold") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1200)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(1650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,200 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                         if (Season6 == "Diamond") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(2500)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(15000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 2,500 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                         if (Season6 == "Obsidian") {
-                                            var SeasonCoins = parseFloat(Coins) + parseFloat(5000)
+                                            var SeasonCoins = parseFloat(Coins) + parseFloat(21000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 5,000 coins! If it is past 2pm on Oct 16th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Mon, 19 Oct 2020 3:59:59 UTC";
+                                            localStorage.setItem("GotReward", "1");
                                         }
 
                                     }
