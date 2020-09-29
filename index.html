@@ -1396,9 +1396,9 @@
 
                                     if (Perk1 >= "1") {
                                         var TotalDC = localStorage.getItem('DoubleCoins')
-                                        var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
+                                        var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.").toLowerCase()
 
-                                        if (UsePerk1 == "Yes") {
+                                        if (UsePerk1 == "yes") {
                                             var TotalDC2 = parseFloat(TotalDC) - parseFloat(1)
                                             alert("The DoubleCoins perk was activated successfully!")
                                             localStorage.setItem("DoubleCoins", TotalDC2)
@@ -3106,9 +3106,9 @@
 
                                     if (Perk1 >= "1") {
                                         var TotalDC = localStorage.getItem('DoubleCoins')
-                                        var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.")
+                                        var UsePerk1 = prompt("It looks like you have " + TotalDC + " DoubleCoins perk(s)! Would you like to use it? Type 'Yes' or 'No'.").toLowerCase()
 
-                                        if (UsePerk1 == "Yes") {
+                                        if (UsePerk1 == "yes") {
                                             var TotalDC2 = parseFloat(TotalDC) - parseFloat(1)
                                             alert("The DoubleCoins perk was activated successfully!")
                                             localStorage.setItem("DoubleCoins", TotalDC2)
