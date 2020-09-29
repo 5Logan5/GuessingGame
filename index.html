@@ -838,11 +838,6 @@
 
                             var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins. Type 'View' to see a list of codes. Current season reward: " + CoinsForSeasonReward + " coins.")
                             
-                            if (Buy == "View){
-                                var newWindow = window.open();
-                                newWindow.document.write("Type: \n 'Timed Mode' to get the timed game mode early. Costs: 15,000 coins \n test");
-                                }
-
                             if (Buy == "Timed Mode") {
                                 var CoinsAfterPurchase = parseFloat(Value) - parseFloat(15000)
                                 if (CoinsAfterPurchase < 0) {
