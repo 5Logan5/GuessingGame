@@ -319,7 +319,7 @@
                     </p>
 
                     <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.21</div>
+                    <div id="versionNumber" class="title">v.21.1</div>
                     </p>
 
                     <script>
@@ -836,8 +836,12 @@
                                 var CoinsForSeasonReward = "5000"
                             }
 
-                            var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins. Current season reward: " + CoinsForSeasonReward + " coins.")
-
+                            var Buy = prompt("Welcome to the shop! What would you like to buy? You have " + Value + " coins. Type 'View' to see a list of codes. Current season reward: " + CoinsForSeasonReward + " coins.")
+                            
+                            if (Buy == "View){
+                                var newWindow = window.open();
+                                newWindow.document.write("Type: \n 'Timed Mode' to get the timed game mode early. Costs: 15,000 coins \n test");
+                                }
 
                             if (Buy == "Timed Mode") {
                                 var CoinsAfterPurchase = parseFloat(Value) - parseFloat(15000)
