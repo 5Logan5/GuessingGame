@@ -1484,6 +1484,8 @@
                                         localStorage.removeItem('GoldUpgradeMedallion');
                                         localStorage.removeItem('DiamondUpgradeMedallion');
                                         localStorage.removeItem('test');
+                                        localStorage.removeItem("HigherOrLower")
+                                        localStorage.removeItem("TimedMode")
                                         if (Season6 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(400)
                                             localStorage.setItem("Coins", SeasonCoins)
@@ -2952,6 +2954,47 @@
                                             }
                                         }
 
+                                        var CheckProtectedBelow5 = localStorage.getItem("BronzeUpgradeMedallion")
+                                        var CheckProtectedBelow10 = localStorage.getItem("SilverUpgradeMedallion")
+                                        var CheckProtectedBelow20 = localStorage.getItem("GoldUpgradeMedallion")
+                                        var CheckProtectedBelow30 = localStorage.getItem("DiamondUpgradeMedallion")
+                                        var CheckForBadge = localStorage.getItem("Badge")
+                                        var TotalWinsCheck = localStorage.getItem("TotalWins")
+                                        if (CheckForBadge == "Obsidian") {
+                                            if (TotalWinsCheck < 40) {
+                                                alert("Since you have the Obsidian Badge you are protected from going below 40 wins.")
+                                                localStorage.setItem("TotalWins", 40)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Diamond") {
+                                            if (TotalWinsCheck < 30) {
+                                                alert("Since you have the Diamond Badge you are protected from going below 30 wins.")
+                                                localStorage.setItem("TotalWins", 30)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Gold") {
+                                            if (TotalWinsCheck < 20) {
+                                                alert("Since you have the Gold Badge you are protected from going below 20 wins.")
+                                                localStorage.setItem("TotalWins", 20)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Silver") {
+                                            if (TotalWinsCheck < 10) {
+                                                alert("Since you have the Silver Badge you are protected from going below 10 wins.")
+                                                localStorage.setItem("TotalWins", 10)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Bronze") {
+                                            if (TotalWinsCheck < 5) {
+                                                alert("Since you have the Bronze Badge you are protected from going below 5 wins.")
+                                                localStorage.setItem("TotalWins", 5)
+                                            }
+                                        }
+                                        
                                         var Season1Badge = localStorage.getItem("Season1")
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
@@ -3200,6 +3243,8 @@
                                         localStorage.removeItem('GoldUpgradeMedallion');
                                         localStorage.removeItem('DiamondUpgradeMedallion');
                                         localStorage.removeItem('test');
+                                        localStorage.removeItem("HigherOrLower")
+                                        localStorage.removeItem("TimedMode")
                                         if (Season6 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(400)
                                             localStorage.setItem("Coins", SeasonCoins)
@@ -4441,6 +4486,47 @@
                                             }
                                         }
 
+                                        var CheckProtectedBelow5 = localStorage.getItem("BronzeUpgradeMedallion")
+                                        var CheckProtectedBelow10 = localStorage.getItem("SilverUpgradeMedallion")
+                                        var CheckProtectedBelow20 = localStorage.getItem("GoldUpgradeMedallion")
+                                        var CheckProtectedBelow30 = localStorage.getItem("DiamondUpgradeMedallion")
+                                        var CheckForBadge = localStorage.getItem("Badge")
+                                        var TotalWinsCheck = localStorage.getItem("TotalWins")
+                                        if (CheckForBadge == "Obsidian") {
+                                            if (TotalWinsCheck < 40) {
+                                                alert("Since you have the Obsidian Badge you are protected from going below 40 wins.")
+                                                localStorage.setItem("TotalWins", 40)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Diamond") {
+                                            if (TotalWinsCheck < 30) {
+                                                alert("Since you have the Diamond Badge you are protected from going below 30 wins.")
+                                                localStorage.setItem("TotalWins", 30)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Gold") {
+                                            if (TotalWinsCheck < 20) {
+                                                alert("Since you have the Gold Badge you are protected from going below 20 wins.")
+                                                localStorage.setItem("TotalWins", 20)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Silver") {
+                                            if (TotalWinsCheck < 10) {
+                                                alert("Since you have the Silver Badge you are protected from going below 10 wins.")
+                                                localStorage.setItem("TotalWins", 10)
+                                            }
+                                        }
+
+                                        if (CheckForBadge == "Bronze") {
+                                            if (TotalWinsCheck < 5) {
+                                                alert("Since you have the Bronze Badge you are protected from going below 5 wins.")
+                                                localStorage.setItem("TotalWins", 5)
+                                            }
+                                        }
+                                        
                                         var Season1Badge = localStorage.getItem("Season1")
                                         var Season2Badge = localStorage.getItem("Season2")
                                         var Season3Badge = localStorage.getItem("Season3")
