@@ -342,8 +342,8 @@
                             if (CheckForWins == 2) {
                                 if (CheckChest1Unlock != "1" && CheckChest2Unlock != "1" && CheckChest3Unlock != "1") {
                                     localStorage.setItem("WinsForChest", 0)
-                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
-                                    setCookie("Chest1", "1", .16667)
+                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
+                                    setCookie("Chest1", "1", .0833333333)
                                     localStorage.setItem("Chest1UnlockStart", "1")
                                     var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
                                     if (ResetToOneWin == "yes") {
@@ -354,8 +354,8 @@
 
                                 if (CheckChest1Unlock == "1" && CheckChest2Unlock != "1" && CheckChest3Unlock != "1") {
                                     localStorage.setItem("WinsForChest", 0)
-                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
-                                    setCookie("Chest2", "1", .16667)
+                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
+                                    setCookie("Chest2", "1", .0833333333)
                                     localStorage.setItem("Chest2UnlockStart", "1")
                                     var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
                                     if (ResetToOneWin == "yes") {
@@ -366,8 +366,8 @@
 
                                 if (CheckChest2Unlock == "1" && CheckChest3Unlock != "1") {
                                     localStorage.setItem("WinsForChest", 0)
-                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 4 hours.")
-                                    setCookie("Chest3", "1", .16667)
+                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
+                                    setCookie("Chest3", "1", .0833333333)
                                     localStorage.setItem("Chest3UnlockStart", "1")
                                     var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
                                     if (ResetToOneWin == "yes") {
