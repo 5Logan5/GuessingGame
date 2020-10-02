@@ -375,6 +375,30 @@
                                         localStorage.removeItem("ChestUnlockAtOneWin")
                                     }
                                 }
+                                
+                                 if (CheckChest2Unlock != "1" && CheckChest3Unlock == "1" && CheckChest1Unlock != "1") {
+                                    localStorage.setItem("WinsForChest", 0)
+                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
+                                    setCookie("Chest1", "1", .0833333333)
+                                    localStorage.setItem("Chest1UnlockStart", "1")
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
+                                }
+                                
+                                 if (CheckChest2Unlock != "1" && CheckChest3Unlock == "1" && CheckChest1Unlock == "1") {
+                                    localStorage.setItem("WinsForChest", 0)
+                                    alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
+                                    setCookie("Chest2", "1", .0833333333)
+                                    localStorage.setItem("Chest2UnlockStart", "1")
+                                    var ResetToOneWin = localStorage.getItem("ChestUnlockAtOneWin")
+                                    if (ResetToOneWin == "yes") {
+                                        localStorage.setItem("WinsForChest", 1)
+                                        localStorage.removeItem("ChestUnlockAtOneWin")
+                                    }
+                                }
 
                                 if (CheckChest1Unlock == "1" && CheckChest2Unlock == "1" && CheckChest3Unlock == "1") {
                                     alert("Your three chest slots are full. Open a chest to unlock a slot.")
