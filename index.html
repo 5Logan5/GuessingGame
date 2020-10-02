@@ -901,6 +901,10 @@
                                 newWindow.document.write("Type: <br> <br> 'Timed Mode' to get the Timed Game Mode early. Costs: 15,000 coins. <br> <br> 'SaviorUpgrade' to upgrade your Savior Card. Costs: to Level 2: 25 Level 3: 50 Level 4: 100 Level 5: 200 Level 6: 400 Level 7: 800 Level 8: 1600 Level 8: 2100 Level 10: 5000 Level 11: 12,000 Level 12: 25,000 Level 13: 100,000 Coins <br> <br>'DoubleCoins' This perk lets you win x2 coins. Cost: 1 = 350 Coins <br> <br> 'Cheater' This perk lets you know the range of where the number is. Cost: 1 = 400 Coins <br> <br> 'BronzeUpgrade' lets you upgrade your BronzeNU Badge. Cost: 200 Coins. <br> <br> 'SilverUpgrade' lets you upgrade your SilverNU Badge. Cost: 600 Coins. <br> <br> 'GoldUpgrade' lets you upgrade your GoldNU Badge. Cost: 800 Coins. <br> <br> 'DiamondUpgrade' lets you upgrade your DiamondNU Badge. Cost: 5000 Coins. <br> <br> 'ObsidianUpgrade' lets you upgrade your ObsidianNU Badge. Cost: 12500 Coins. <br> <br> 'Reset' to reset your season progress. <br> <br> 'ViewAcc' to see a JSON file of your accounts' stats.");
                             }
                             
+                            if (Buy == "ochest"){
+                                Chest()
+                            }
+                            
                                 if (Buy == "ViewAcc") {
                                 var getJSON = localStorage.getItem("playerDataJSON")
                                 var newWindow = window.open();
