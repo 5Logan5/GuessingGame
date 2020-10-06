@@ -64,6 +64,7 @@
 //Patch Notes: v.21 New season update and bug fixes
 //Patch Notes: v.21.1 Bug Fix and "ViewAcc" feature 
 //Patch Notes: v.22 New season update, bug fixes, ChestBoost in the shop, new game mode and tons of more new features
+//Patch Notes: v.22.2 Fixed where you get an error when you reload your badge and game quitting when you reach 10,000 lifetime guesses
 
 -->
 
@@ -2140,14 +2141,14 @@
                                     if (LifetimeGuesses1234 == 10000) {
                                         alert("YOU JUST HIT 10,000 LIFETIME GUESSES. HERE, TAKE 2,500 COINS! Next milestone is at 50,000.")
                                         var CoinsForMilestone = localStorage.getItem("Coins")
-                                        var CoinsAfterMilestone = parseFloat(CoinsForMileStone) + parseFloat(2500)
+                                        var CoinsAfterMilestone = parseFloat(CoinsForMilestone) + parseFloat(2500)
                                         localStorage.setItem("Coins", CoinsAfterMilestone)
                                     }
 
                                     if (LifetimeGuesses1234 == 50000) {
                                         alert("YOU JUST HIT 50,000 LIFETIME GUESSES. HERE, TAKE 7,500 COINS!")
                                         var CoinsForMilestone = localStorage.getItem("Coins")
-                                        var CoinsAfterMilestone = parseFloat(CoinsForMileStone) + parseFloat(7500)
+                                        var CoinsAfterMilestone = parseFloat(CoinsForMilestone) + parseFloat(7500)
                                         localStorage.setItem("Coins", CoinsAfterMilestone)
                                     }
 
@@ -3995,14 +3996,14 @@
                                     if (LifetimeGuesses1234 == 10000) {
                                         alert("YOU JUST HIT 10,000 LIFETIME GUESSES. HERE, TAKE 2,500 COINS! Next milestone is at 50,000.")
                                         var CoinsForMilestone = localStorage.getItem("Coins")
-                                        var CoinsAfterMilestone = parseFloat(CoinsForMileStone) + parseFloat(2500)
+                                        var CoinsAfterMilestone = parseFloat(CoinsForMilestone) + parseFloat(2500)
                                         localStorage.setItem("Coins", CoinsAfterMilestone)
                                     }
 
                                     if (LifetimeGuesses1234 == 50000) {
                                         alert("YOU JUST HIT 50,000 LIFETIME GUESSES. HERE, TAKE 7,500 COINS!")
                                         var CoinsForMilestone = localStorage.getItem("Coins")
-                                        var CoinsAfterMilestone = parseFloat(CoinsForMileStone) + parseFloat(7500)
+                                        var CoinsAfterMilestone = parseFloat(CoinsForMilestone) + parseFloat(7500)
                                         localStorage.setItem("Coins", CoinsAfterMilestone)
                                     }
 
@@ -8970,7 +8971,7 @@
                         function myFunction3() {
                             var Badge = localStorage.getItem("Badge")
                             if (Badge == null) {
-                                var Badge = None
+                                var Badge = "None"
                             }
                             document.getElementById("ExtraTime").innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Badge: " + Badge;
                             document.getElementById("ExtraTime").addEventListener("click", myFunction4);
@@ -8979,7 +8980,7 @@
                         function myFunction4() {
                             var Badge = localStorage.getItem("Badge")
                             if (Badge == null) {
-                                var Badge = None
+                                var Badge = "None"
                             }
                             document.getElementById("ExtraTime").innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Badge: " + Badge;
                             document.getElementById("ExtraTime").addEventListener("click", myFunction3);
