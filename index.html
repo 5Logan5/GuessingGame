@@ -54,7 +54,7 @@
 //Patch Notes: v.17 Changed kinda a lot of things and added a shop with 3 perks. The Savior perk which gives you 3 extra tries, the DoubleCoins perk which lets you win x2 coins and the Cheater perk where you get a range on which the random number is in.
 //Patch Notes: v.17.3 Added badges that you win for a certain amount of wins that you have. They come non-upgraded and can be upgraded in the shop
 //Patch Notes: v.17.5 Bug fixes
-//Patch Notes: v.18 Bug fixes/Improvements and a new SaveGame feature just type in "SaveGame" to save your game . 
+//Patch Notes: v.18 Bug fixes/Improvements and a new SaveGame feature just type in "SaveGame" to save your game.
 //Patch Notes: v.18.2 Bug fixes/Improvements and updated game for new season.
 //Patch Notes: v.19 Lots of changes. Badge glows when you are gold, diamond, or obsidian. New higher or lower game mode. Took out Modes 3 and 4. Lifetime guesses and wins now added. Milestones currently at 10,000 and 50,000 guesses and at 500 wins.
 //Patch Notes: v.19.1 Bug fixes.
@@ -325,7 +325,7 @@
                     </p>
 
                     <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.22</div>
+                    <div id="versionNumber" class="title">v.22.2</div>
                     </p>
 
                     <script>
@@ -1580,7 +1580,7 @@
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
                             var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.22"
+                            var Version = "v.22.2"
                             var value = localStorage.getItem('Coins');
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
@@ -3436,7 +3436,7 @@
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
-                            var Version = "v.22"
+                            var Version = "v.22.2"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null && Name != "") {
