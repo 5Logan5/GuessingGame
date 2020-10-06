@@ -319,7 +319,7 @@
                     </p>
 
                     <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.21.2</div>
+                    <div id="versionNumber" class="title">v.21.4</div>
                     </p>
 
                     <script>
@@ -601,6 +601,13 @@
                         }
 
                         window.onload = function () {
+                            
+                            var Update = localStorage.getItem("Update")
+                            if (Update == "1"){
+                                alert("Update has failed")
+                                console.error("Update Failed. Try again later.")
+                            }
+                            
                             var Time = new Date();
                             var Day = Time.getDate();
                             var Badge = localStorage.getItem('Badge')
@@ -844,6 +851,20 @@
                         }
 
                         function Shop() {
+                            
+                             var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 9 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                location.reload();
+                                return
+                            }
+                            
                             var Value = localStorage.getItem('Coins');
                             var Badge = localStorage.getItem('Season6')
 
@@ -1410,17 +1431,27 @@
                         }
 
                         function Mode1() {
-                            var SaveGame1 = readCookie('SaveGame')
-                            if (SaveGame1 == 2) {
-                                alert("You cannot play this game mode until you finish your game that you have saved in Mode 2.")
+                            var CheckReward = readCookie("Reward")
+                           if (CheckReward == "1"){
+                            var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 12 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                localStorage.setItem("Update", 1)
+                                location.reload();
                                 return
                             }
-
+                            } 
+                            
                             var CheckChest1Unlock = localStorage.getItem("Chest1UnlockStart")
                             var CheckChest2Unlock = localStorage.getItem("Chest2UnlockStart")
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
-                            var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
-                            var CheckReward = readCookie('Reward')
+                            var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")                          
                             document.getElementById('Message').innerHTML = ""
                             var Version = "v.21.1"
                             var value = localStorage.getItem('Coins');
@@ -1551,6 +1582,19 @@
                                             document.cookie = "Reward = " + 1 + "; expires=Wed, 7 Oct 2020 3:59:59 UTC";
                                             localStorage.setItem("GotReward", "1");
                                         }
+                                        
+                                         var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 9 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                location.reload();
+                                return
+                            }
 
                                     }
                                 }
@@ -3165,6 +3209,23 @@
                         }
 
                         function Mode2() {
+                            var CheckReward = readCookie("Reward")
+                           if (CheckReward == "1"){
+                            var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 12 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                localStorage.setItem("Update", 1)
+                                location.reload();
+                                return
+                            }
+                            }  
+                            
                             var SaveGame1 = readCookie('SaveGame')
                             if (SaveGame1 == 1) {
                                 alert("You cannot play this game mode until you finish your game that you have saved in Mode 1.")
@@ -3176,7 +3237,7 @@
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
                             var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
                             var LifetimeWins = localStorage.getItem("LifetimeWins")
-                            var CheckReward = readCookie('Reward')
+                            
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
@@ -3310,6 +3371,19 @@
                                             document.cookie = "Reward = " + 1 + "; expires=Wed, 7 Oct 2020 3:59:59 UTC";
                                             localStorage.setItem("GotReward", "1");
                                         }
+                                        
+                                         var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 12 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                location.reload();
+                                return
+                            }
 
                                     }
                                 }
@@ -4697,6 +4771,23 @@
                         }
 
                         function TimedMode() {
+                           var CheckReward = readCookie("Reward")
+                           if (CheckReward == "1"){
+                            var TimeNew = new Date();
+                            var HourOfUpdate = TimeNew.getHours();
+                            var DayOfUpdate = TimeNew.getDate();
+                            var MonthOfUpdate = TimeNew.getMonth();
+
+                            if (HourOfUpdate == 12 && DayOfUpdate == 6 && MonthOfUpdate == 9){
+                                alert("The season has ended and we're now going to attempt to update the game.")
+                                sleep(3500)
+                                alert("100%! Press 'OK' to update.")
+                                localStorage.setItem("Update", 1)
+                                location.reload();
+                                return
+                            }
+                            }  
+                            
                             document.getElementById('Message').innerHTML = ""
                             var Version = "v.21"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
