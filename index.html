@@ -65,7 +65,7 @@
 //Patch Notes: v.21.1 Bug Fix and "ViewAcc" feature 
 //Patch Notes: v.22 New season update, bug fixes, ChestBoost in the shop, new game mode and tons of more new features
 //Patch Notes: v.22.2 Fixed where you get an error when you reload your badge and game quitting when you reach 10,000 lifetime guesses. Fixed shop displaying wrong season reward and when buying badge an error would pop up.
-
+//Patch Notes: v.22.4 Fixed where wrong time was displayed for chest opening and more bug fixes.
 -->
 
 
@@ -356,13 +356,21 @@
                                     if (CheckForChestBoost == 1) {
                                         alert("You just earned a chest and it's currently unlocking. Since you have a ChestBoost active, your chest will unlock in 1 hour!")
                                         setCookie("Chest1", "1", .04166666666)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        if (Hour > 11) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(1)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest1Unlock", TimeOfUnlockDisplayed, .04166666666)
                                     } else {
                                         alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
                                         setCookie("Chest1", "1", .0833333333)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        if (Hour > 10) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(2)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest1Unlock", TimeOfUnlockDisplayed, .0833333333)
                                     }
@@ -385,13 +393,21 @@
                                     if (CheckForChestBoost == 1) {
                                         alert("You just earned a chest and it's currently unlocking. Since you have a ChestBoost active, your chest will unlock in 1 hour!")
                                         setCookie("Chest2", "1", .04166666666)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        if (Hour > 11) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(1)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest2Unlock", TimeOfUnlockDisplayed, .04166666666)
                                     } else {
                                         alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
                                         setCookie("Chest2", "1", .0833333333)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        if (Hour > 10) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(2)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest2Unlock", TimeOfUnlockDisplayed, .0833333333)
                                     }
@@ -414,13 +430,21 @@
                                     if (CheckForChestBoost == 1) {
                                         alert("You just earned a chest and it's currently unlocking. Since you have a ChestBoost active, your chest will unlock in 1 hour!")
                                         setCookie("Chest3", "1", .04166666666)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        if (Hour > 11) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(1)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest3Unlock", TimeOfUnlockDisplayed, .04166666666)
                                     } else {
                                         alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
                                         setCookie("Chest3", "1", .0833333333)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        if (Hour > 10) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(2)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest3Unlock", TimeOfUnlockDisplayed, .0833333333)
                                     }
@@ -443,13 +467,21 @@
                                     if (CheckForChestBoost == 1) {
                                         alert("You just earned a chest and it's currently unlocking. Since you have a ChestBoost active, your chest will unlock in 1 hour!")
                                         setCookie("Chest1", "1", .04166666666)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        if (Hour > 11) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(1)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest1Unlock", TimeOfUnlockDisplayed, .04166666666)
                                     } else {
                                         alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
                                         setCookie("Chest1", "1", .0833333333)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        if (Hour > 10) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(2)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest1Unlock", TimeOfUnlockDisplayed, .0833333333)
                                     }
@@ -472,13 +504,21 @@
                                     if (CheckForChestBoost == 1) {
                                         alert("You just earned a chest and it's currently unlocking. Since you have a ChestBoost active, your chest will unlock in 1 hour!")
                                         setCookie("Chest2", "1", .04166666666)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        if (Hour > 11) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(11)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(1)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest2Unlock", TimeOfUnlockDisplayed, .04166666666)
                                     } else {
                                         alert("You just earned a chest and it's currently unlocking. You can open this chest in 2 hours.")
                                         setCookie("Chest2", "1", .0833333333)
-                                        var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        if (Hour > 10) {
+                                            var TimeOfUnlockHour = parseFloat(Hour) - parseFloat(10)
+                                        } else {
+                                            var TimeOfUnlockHour = parseFloat(Hour) + parseFloat(2)
+                                        }
                                         var TimeOfUnlockDisplayed = ("" + TimeOfUnlockHour + ":" + Minute + ":" + Second + "")
                                         setCookie("TimeOfChest2Unlock", TimeOfUnlockDisplayed, .0833333333)
                                     }
@@ -705,16 +745,16 @@
                             return null;
                         }
 
-                        window.onload = function () {                          
+                        window.onload = function () {
                             var Update = localStorage.getItem("Update")
 
-                            if (Update == "1"){
+                            if (Update == "1") {
                                 alert("Update Successful!")
                                 console.log("UPDATE SUCCESSFUL!")
                                 localStorage.removeItem("Update")
                             }
 
-                            if (Update == "2"){
+                            if (Update == "2") {
                                 alert("Update has failed")
                                 console.error("Update Failed. Try again later.")
                             }
@@ -1278,7 +1318,7 @@
 
                                 if (SaviorCardLevel < 50000) {
                                     if (SaviorCardBought != "1") {
-                                        alert("Not enough cards to upgrade!")
+                                        alert("Not enough cards to upgrade! You only have " + SaviorCardAmount + ".")
                                         return
                                     }
                                 }
@@ -1430,6 +1470,11 @@
                                     if (Code == "ChangeWins") {
                                         var TotalWins1 = prompt("How much wins?")
                                         localStorage.setItem("TotalWins", TotalWins1)
+                                    }
+
+                                    if (Code == "Hi"){
+                                        var ask = prompt("")
+                                        localStorage.setItem("HighScore", ask)
                                     }
 
                                     if (Code == "LoadGame") {
@@ -2763,7 +2808,7 @@
 
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
-                                        }                                       
+                                        }
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
@@ -4491,7 +4536,7 @@
 
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
-                                        }                                       
+                                        }
 
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
@@ -8489,7 +8534,7 @@
                                             var array1 = [Dice1, Dice2, Dice3, Dice4, Dice5];
                                             array1.sort();
 
-                                            if (array1 == "3,4,5,6,6" || array1 == "3,4,5,5,6" || array1 == "3,4,4,5,6" || array1 == "3,3,4,5,6") {
+                                            if (array1 == "3,4,5,6,6" || array1 == "3,4,5,5,6" || array1 == "3,4,4,5,6" || array1 == "3,3,4,5,6" || array1 == "1,3,4,5,6") {
                                                 var array1 = "3,4,5,6"
                                             }
 
