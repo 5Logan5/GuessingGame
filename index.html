@@ -306,7 +306,7 @@
 
                             <hr size="4" noshade </hr>
                         </div>
-                        <h6> New season update, bug fixes, chest boosts, and tons of other new features.
+                        <h6> Fixed where wrong time was displayed for chest opening and more bug fixes.
 
                         </h6>
                     </div>
@@ -325,7 +325,7 @@
                     </p>
 
                     <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.22.2</div>
+                    <div id="versionNumber" class="title">v.22.4</div>
                     </p>
 
                     <script>
@@ -1625,7 +1625,7 @@
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
                             var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.22.2"
+                            var Version = "v.22.4"
                             var value = localStorage.getItem('Coins');
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
@@ -3479,7 +3479,7 @@
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
-                            var Version = "v.22.2"
+                            var Version = "v.22.4"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null && Name != "") {
