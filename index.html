@@ -268,10 +268,10 @@
                             class="button button2" onClick="Mode2()">Mode 2</button>
                         <button id="button3"
                             title="This game mode is easy! Just put how much you want to bet and win some coins!"
-                            class="button button3" onClick="HigherOrLower()">Higher or Lower</button>
+                            class="button button3" onClick="HigherOrLower()">*********r</button>
 
                         <button id="button6" title="The original yahtzee." class="button button1"
-                            onClick="Yahtzee()">YAHTZEE!</button>
+                            onClick="Yahtzee()">*********</button>
 
                         <button id="button4"
                             title="Click me to visit the shop! 300 coins for the Savior perk, 350 for the Double Coins perk and 400 for the Cheater perk."
@@ -306,7 +306,7 @@
 
                             <hr size="4" noshade </hr>
                         </div>
-                        <h6> Fixed where wrong time was displayed for chest opening and more bug fixes.
+                        <h6> New Season!
 
                         </h6>
                     </div>
@@ -1001,7 +1001,7 @@
                                 var DayOfUpdate = TimeNew.getDate();
                                 var MonthOfUpdate = TimeNew.getMonth();
 
-                                if (HourOfUpdate == 16 && DayOfUpdate == 23 && MonthOfUpdate == 9) {
+                                if (HourOfUpdate == 16 && DayOfUpdate == 5 && MonthOfUpdate == 10) {
                                     alert("The season has ended and we're now going to attempt to update the game.")
                                     sleep(3500)
                                     alert("100%! Press 'OK' to update.")
@@ -1012,7 +1012,7 @@
                             }
 
                             var Value = localStorage.getItem('Coins');
-                            var Badge = localStorage.getItem('Season7')
+                            var Badge = localStorage.getItem('Season8')
 
                             if (Value == null) {
                                 localStorage.setItem("Coins", "0");
@@ -1380,7 +1380,7 @@
                                 if (Coins >= 0 && TotalWins >= 5) {
                                     localStorage.setItem("Coins", Coins)
                                     localStorage.setItem("Badge", "Bronze")
-                                    localStorage.setItem("Season7", "Bronze")
+                                    localStorage.setItem("Season8", "Bronze")
                                     localStorage.setItem("BronzeUpgradeMedallion", "1")
                                     alert("Your purchase of the upgraded Bronze medallion was successful!")
                                 }
@@ -1398,7 +1398,7 @@
                                 if (Coins >= 0 && TotalWins >= 10 && BronzeUpgrade == 1) {
                                     localStorage.setItem("Coins", Coins)
                                     localStorage.setItem("Badge", "Silver")
-                                    localStorage.setItem("Season7", "Silver")
+                                    localStorage.setItem("Season8", "Silver")
                                     localStorage.setItem("SilverUpgradeMedallion", "1")
                                     alert("Your purchase of the upgraded Silver medallion was successful!")
                                 }
@@ -1415,7 +1415,7 @@
                                 if (Coins >= 0 && TotalWins >= 20 && SilverUpgrade == 1) {
                                     localStorage.setItem("Coins", Coins)
                                     localStorage.setItem("Badge", "Gold")
-                                    localStorage.setItem("Season7", "Gold")
+                                    localStorage.setItem("Season8", "Gold")
                                     localStorage.setItem("GoldUpgradeMedallion", "1")
                                     alert("Your purchase of the upgraded Gold medallion was successful!")
                                 }
@@ -1432,7 +1432,7 @@
                                 if (Coins >= 0 && TotalWins >= 30 && GoldUpgrade == 1) {
                                     localStorage.setItem("Coins", Coins)
                                     localStorage.setItem("Badge", "Diamond")
-                                    localStorage.setItem("Season7", "Diamond")
+                                    localStorage.setItem("Season8", "Diamond")
                                     localStorage.setItem("DiamondUpgradeMedallion", "1")
                                     alert("Your purchase of the upgraded Diamond medallion was successful!")
                                 }
@@ -1449,7 +1449,7 @@
                                 if (Coins >= 0 && TotalWins >= 40 && DiamondUpgrade == 1) {
                                     localStorage.setItem("Coins", Coins)
                                     localStorage.setItem("Badge", "Obsidian")
-                                    localStorage.setItem("Season7", "Obsidian")
+                                    localStorage.setItem("Season8", "Obsidian")
                                     alert("Your purchase of the upgraded Obsidian medallion was successful!")
                                 }
                                 else {
@@ -1500,6 +1500,8 @@
                                         localStorage.setItem("Season6", Season6)
                                         var Season7 = prompt("Badge in Season 7?")
                                         localStorage.setItem("Season7", Season7)
+                                        var Season8 = prompt("Badge in Season 8?")
+                                        localStorage.setItem("Season8", Season8)
                                         var LifetimeWins = prompt("How much lifetime wins?")
                                         localStorage.setItem("LifetimeWins", LifetimeWins)
                                         var BronzeUM = prompt("Do you have the BronzeUM?").toLowerCase()
@@ -1604,7 +1606,7 @@
                                 var DayOfUpdate = TimeNew.getDate();
                                 var MonthOfUpdate = TimeNew.getMonth();
 
-                                if (HourOfUpdate == 10 && DayOfUpdate == 6 && MonthOfUpdate == 9) {
+                                if (HourOfUpdate == 10 && DayOfUpdate == 5 && MonthOfUpdate == 10) {
                                     alert("The season has ended and we're now going to attempt to update the game.")
                                     sleep(3500)
                                     alert("100%! Press 'OK' to update.")
@@ -1704,8 +1706,8 @@
 
                             }
                             var GotReward = localStorage.getItem("GotReward")
-                            if (Month111 == 9 && Day >= 6 && GotReward != "1") {
-                                var previousBadge = localStorage.getItem("Season6")
+                            if (Month111 == 10 && Day >= 5 && GotReward != "1") {
+                                var previousBadge = localStorage.getItem("Season8")
                                 if (previousBadge == "Bronze") {
                                     var SeasonCoins = parseFloat(Coins) + parseFloat(650)
                                     alert("You got 650 coins for getting to Bronze last Season!")
@@ -1744,9 +1746,9 @@
 
                             var timeSlice = Time.toString().slice(0, 10);
                             if (CheckReward == null) {
-                                if (Month111 >= 9) {
-                                    if (Month111 == 9 && Day == 23 && Hour >= 16 || Day == 24 || Day == 25 || Day == 26) {
-                                        var Season7 = localStorage.getItem('Season7')
+                                if (Month111 >= 10) {
+                                    if (Month111 == 10 && Day == 5 && Hour >= 16 || Day == 24 || Day == 25 || Day == 26) {
+                                        var Season8 = localStorage.getItem('Season8')
                                         localStorage.removeItem('Badge');
                                         localStorage.removeItem('TotalWins');
                                         localStorage.removeItem('BronzeUpgradeMedallion');
@@ -1757,39 +1759,39 @@
                                         localStorage.removeItem("HigherOrLower")
                                         localStorage.removeItem("TimedMode")
                                         localStorage.setItem("GotReward", "2");
-                                        if (Season7 == "Bronze") {
+                                        if (Season8 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 23 Oct 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Silver") {
+                                        if (Season8 == "Silver") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(950)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 950 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 23 Oct 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Gold") {
+                                        if (Season8 == "Gold") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 23 Oct 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Diamond") {
+                                        if (Season8 == "Diamond") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(15000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 15,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 23 Oct 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Obsidian") {
+                                        if (Season8 == "Obsidian") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(21000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 21,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 23 Oct 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
                                     }
@@ -1874,6 +1876,7 @@
                                     var Season5Badge = localStorage.getItem("Season5")
                                     var Season6Badge = localStorage.getItem("Season6")
                                     var Season7Badge = localStorage.getItem("Season7")
+                                    var Season8Badge = localStorage.getItem("Season8")
                                     var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                     var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                     var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -1922,6 +1925,10 @@
 
                                     if (Season7Badge == null) {
                                         var Season7Badge = "None"
+                                    }
+                                    
+                                    if (Season8Badge == null) {
+                                        var Season8Badge = "None"
                                     }
 
                                     var LifetimeWins = localStorage.getItem("LifetimeWins")
@@ -2905,6 +2912,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -2954,6 +2962,10 @@
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
                                         }
+                                        
+                                        if (Season8Badge == null) {
+                                        var Season8Badge = "None"
+                                    }
 
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
@@ -2989,6 +3001,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -3039,6 +3052,10 @@
                                             var Season7Badge = "None"
                                         }
 
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
+                                        }
+                                        
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
@@ -3297,6 +3314,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -3346,7 +3364,11 @@
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
                                         }
-
+                                        
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
+                                        }
+                                
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
@@ -3374,6 +3396,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -3422,6 +3445,10 @@
 
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
+                                        }
+                                        
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
                                         }
 
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
@@ -3455,7 +3482,7 @@
                                 var DayOfUpdate = TimeNew.getDate();
                                 var MonthOfUpdate = TimeNew.getMonth();
 
-                                if (HourOfUpdate == 16 && DayOfUpdate == 23 && MonthOfUpdate == 9) {
+                                if (HourOfUpdate == 16 && DayOfUpdate == 5 && MonthOfUpdate == 10) {
                                     alert("The season has ended and we're now going to attempt to update the game.")
                                     sleep(3500)
                                     alert("100%! Press 'OK' to update.")
@@ -3560,8 +3587,8 @@
                             }
 
                             var GotReward = localStorage.getItem("GotReward")
-                            if (Month111 == 9 && Day >= 6 && GotReward != "1") {
-                                var previousBadge = localStorage.getItem("Season6")
+                            if (Month111 == 10 && Day >= 5 && GotReward != "1") {
+                                var previousBadge = localStorage.getItem("Season8")
                                 if (previousBadge == "Bronze") {
                                     var SeasonCoins = parseFloat(Coins) + parseFloat(650)
                                     alert("You got 650 coins for getting to Bronze last Season!")
@@ -3600,9 +3627,9 @@
 
                             var timeSlice = Time.toString().slice(0, 10);
                             if (CheckReward == null) {
-                                if (Month111 >= 9) {
-                                    if (Month111 == 9 && Day == 23 && Hour >= 16 || Day == 24 || Day == 25 || Day == 26) {
-                                        var Season7 = localStorage.getItem('Season7')
+                                if (Month111 >= 10) {
+                                    if (Month111 == 10 && Day == 5 && Hour >= 16 || Day == 24 || Day == 25 || Day == 26) {
+                                        var Season8 = localStorage.getItem('Season8')
                                         localStorage.removeItem('Badge');
                                         localStorage.removeItem('TotalWins');
                                         localStorage.removeItem('BronzeUpgradeMedallion');
@@ -3613,39 +3640,39 @@
                                         localStorage.removeItem("HigherOrLower")
                                         localStorage.removeItem("TimedMode")
                                         localStorage.setItem("GotReward", "2")
-                                        if (Season7 == "Bronze") {
+                                        if (Season8 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Silver") {
+                                        if (Season8 == "Silver") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(950)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 950 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Gold") {
+                                        if (Season8 == "Gold") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1650)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2021:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Diamond") {
+                                        if (Season8 == "Diamond") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(15000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 15,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2021 3:59:59 UTC";
                                         }
 
-                                        if (Season7 == "Obsidian") {
+                                        if (Season8 == "Obsidian") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(21000)
                                             localStorage.setItem("Coins", SeasonCoins)
                                             alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 21,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
-                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2020 3:59:59 UTC";
+                                            document.cookie = "Reward = " + 1 + "; expires=Fri, Oct 23 2021 3:59:59 UTC";
                                         }
 
                                     }
@@ -3730,6 +3757,7 @@
                                     var Season5Badge = localStorage.getItem("Season5")
                                     var Season6Badge = localStorage.getItem("Season6")
                                     var Season7Badge = localStorage.getItem("Season7")
+                                    var Season8Badge = localStorage.getItem("Season8")
                                     var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                     var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                     var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -3778,6 +3806,10 @@
 
                                     if (Season7Badge == null) {
                                         var Season7Badge = "None"
+                                    }
+                                    
+                                    if (Season8Badge == null) {
+                                        var Season8Badge = "None"
                                     }
 
                                     var LifetimeWins = localStorage.getItem("LifetimeWins")
@@ -4488,6 +4520,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -4536,6 +4569,10 @@
 
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
+                                        }
+                                        
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
                                         }
 
                                         if (LifetimeWins == null) {
@@ -4616,6 +4653,7 @@
                                     var Season5Badge = localStorage.getItem("Season5")
                                     var Season6Badge = localStorage.getItem("Season6")
                                     var Season7Badge = localStorage.getItem("Season7")
+                                    var Season8Badge = localStorage.getItem("Season8")
                                     var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                     var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                     var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -4664,6 +4702,10 @@
 
                                     if (Season7Badge == null) {
                                         var Season7Badge = "None"
+                                    }
+                                    
+                                    if (Season8Badge == null) {
+                                        var Season8Badge = "None"
                                     }
 
                                     var LifetimeWins = localStorage.getItem("LifetimeWins")
@@ -4917,6 +4959,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -4966,6 +5009,10 @@
                                         if (Season7Badge == null) {
                                             var Season7Badge = "None"
                                         }
+                                        
+                                        if (Season8Badge == null) {
+                                        var Season8Badge = "None"
+                                    }
 
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
@@ -4994,6 +5041,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -5044,6 +5092,10 @@
                                             var Season7Badge = "None"
                                         }
 
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
+                                        }
+                                        
                                         var LifetimeWins = localStorage.getItem("LifetimeWins")
 
                                         if (LifetimeWins == null) {
@@ -6507,7 +6559,7 @@
                                 var DayOfUpdate = TimeNew.getDate();
                                 var MonthOfUpdate = TimeNew.getMonth();
 
-                                if (HourOfUpdate == 16 && DayOfUpdate == 23 && MonthOfUpdate == 9) {
+                                if (HourOfUpdate == 16 && DayOfUpdate == 5 && MonthOfUpdate == 10) {
                                     alert("The season has ended and we're now going to attempt to update the game.")
                                     sleep(3500)
                                     alert("100%! Press 'OK' to update.")
