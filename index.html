@@ -67,6 +67,7 @@
 //Patch Notes: v.22.2 Fixed where you get an error when you reload your badge and game quitting when you reach 10,000 lifetime guesses. Fixed shop displaying wrong season reward and when buying badge an error would pop up.
 //Patch Notes: v.22.4 Fixed where wrong time was displayed for chest opening and more bug fixes.
 //Patch Notes: v.22.5 New season and bug fixes.
+
 -->
 
 
@@ -326,7 +327,7 @@
                     </p>
 
                     <p id="WinningMessage">
-                    <div id="versionNumber" class="title">v.22.4</div>
+                    <div id="versionNumber" class="title">v.22.5</div>
                     </p>
 
                     <script>
@@ -1647,7 +1648,7 @@
                             var CheckChest3Unlock = localStorage.getItem("Chest3UnlockStart")
                             var SaviorCardLevel = localStorage.getItem("SaviorCardLevel")
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.22.4"
+                            var Version = "v.22.5"
                             var value = localStorage.getItem('Coins');
                             var Coins = value
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
@@ -3534,7 +3535,7 @@
                             document.getElementById('Message').innerHTML = ""
                             var value = localStorage.getItem('Coins');
                             var Coins = value
-                            var Version = "v.22.4"
+                            var Version = "v.22.5"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null && Name != "") {
@@ -3737,6 +3738,7 @@
                                     document.cookie = "Perk1Active = " + Perk1Active + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "SaveGame = " + 2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "RandomNumber = " + RandomNumber + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    localStorage.setItem("randomNumber", RandomNumber)
                                     document.cookie = "Attempt1 = " + Attempt1 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Attempt2 = " + Attempt2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Attempt3 = " + Attempt3 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -3876,7 +3878,7 @@
                                     var MaxTriess = readCookie('MaxTries')
                                     var MaxTries = parseFloat(MaxTriess) + parseFloat(0)
                                     var Perk1Active = readCookie('Perk1Active')
-                                    var RandomNumberr = readCookie('RandomNumber')
+                                    var RandomNumberr = localStorage.getItem("randomNumber")
                                     var RandomNumber = parseFloat(RandomNumberr) + parseFloat(0)
                                     var Attempt1 = readCookie('Attempt1')
                                     var Attempt2 = readCookie('Attempt2')
@@ -3947,7 +3949,7 @@
                                     document.cookie = "MaxTries = " + MaxTries + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Perk1Active = " + Perk1Active + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "SaveGame = " + 1 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
-                                    document.cookie = "RandomNumber = " + RandomNumber + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
+                                    localStorage.removeItem("randomNumber")
                                     document.cookie = "Attempt1 = " + Attempt1 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Attempt2 = " + Attempt2 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Attempt3 = " + Attempt3 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
@@ -5150,7 +5152,7 @@
 
                         function TimedMode() {
                             document.getElementById('Message').innerHTML = ""
-                            var Version = "v.21"
+                            var Version = "v.22.5"
                             console.log("Welcome to " + Version + " of the Guessing Game. If you came here to cheat then get out!")
                             var Name = prompt("Before we begin the game, what is your name? (Max = 30 Letters)");
                             if (Name != null) {
