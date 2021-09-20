@@ -66,6 +66,7 @@
 //Patch Notes: v.22 New season update, bug fixes, ChestBoost in the shop, new game mode and tons of more new features
 //Patch Notes: v.22.2 Fixed where you get an error when you reload your badge and game quitting when you reach 10,000 lifetime guesses. Fixed shop displaying wrong season reward and when buying badge an error would pop up.
 //Patch Notes: v.22.4 Fixed where wrong time was displayed for chest opening and more bug fixes.
+//Patch Notes: v.22.5 New season and bug fixes.
 -->
 
 
@@ -766,7 +767,7 @@
                             var CheckCrosshair = localStorage.getItem("Crosshair")
                             var CheckForGM = localStorage.getItem("HigherOrLower")
 
-                            if (Day == "22" || Day == "23") {
+                            if (Day == "4" || Day == "5") {
                                 alert("Uh oh! The season ends in less than 24 hours")
                             }
 
@@ -1781,35 +1782,35 @@
                                         if (Season8 == "Bronze") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(650)
                                             localStorage.setItem("Coins", SeasonCoins)
-                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and the highest badge that you earned was the Bronze badge; for that, you get 650 coins! If it is past 2pm on Oct 5th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
                                         if (Season8 == "Silver") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(950)
                                             localStorage.setItem("Coins", SeasonCoins)
-                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 950 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and the highest badge that you earned was the Silver badge; for that, you get 950 coins! If it is past 2pm on Oct 5th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
                                         if (Season8 == "Gold") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(1650)
                                             localStorage.setItem("Coins", SeasonCoins)
-                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,650 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and the highest badge that you earned was the Gold badge; for that, you get 1,650 coins! If it is past 2pm on Oct 5th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
                                         if (Season8 == "Diamond") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(15000)
                                             localStorage.setItem("Coins", SeasonCoins)
-                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 15,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and the highest badge that you earned was the Diamond badge; for that, you get 15,000 coins! If it is past 2pm on Oct 5th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
                                         if (Season8 == "Obsidian") {
                                             var SeasonCoins = parseFloat(Coins) + parseFloat(21000)
                                             localStorage.setItem("Coins", SeasonCoins)
-                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 21,000 coins! If it is past 2pm on Oct 23rd consider reloading the page because any wins that you earn will not count.")
+                                            alert("The season has ended and you earned the highest badge; the Obsidian badge and for that, you get 21,000 coins! If it is past 2pm on Oct 5th consider reloading the page because any wins that you earn will not count.")
                                             document.cookie = "Reward = " + 1 + "; expires=Fri, 10 Oct 2021 3:59:59 UTC";
                                         }
 
@@ -1847,6 +1848,7 @@
                                     document.cookie = "Perk1Active = " + Perk1Active + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "SaveGame = " + 1 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "RandomNumber = " + RandomNumber + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
+                                    localStorage.setItem("randomNumber", RandomNumber)
                                     document.cookie = "Attempt1 = " + Attempt1 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Attempt2 = " + Attempt2 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
                                     document.cookie = "Attempt3 = " + Attempt3 + "; expires=Thu, 8 Jun 2055 12:00:00 UTC";
@@ -1962,7 +1964,7 @@
                                         var CoinsNew = Coins.toString()
                                     }
 
-                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -1987,7 +1989,7 @@
                                     var MaxTriess = readCookie('MaxTries')
                                     var MaxTries = parseFloat(MaxTriess) + parseFloat(0)
                                     var Perk1Active = readCookie('Perk1Active')
-                                    var RandomNumberr = readCookie('RandomNumber')
+                                    var RandomNumberr = localStorage.getItem("randomNumber")
                                     var RandomNumber = parseFloat(RandomNumberr) + parseFloat(0)
                                     var Attempt1 = readCookie('Attempt1')
                                     var Attempt2 = readCookie('Attempt2')
@@ -2058,7 +2060,7 @@
                                     document.cookie = "MaxTries = " + MaxTries + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Perk1Active = " + Perk1Active + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "SaveGame = " + 1 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
-                                    document.cookie = "RandomNumber = " + RandomNumber + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
+                                    localStorage.removeItem("randomNumber")
                                     document.cookie = "Attempt1 = " + Attempt1 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Attempt2 = " + Attempt2 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
                                     document.cookie = "Attempt3 = " + Attempt3 + "; expires=Thu, 8 Jun 1990 12:00:00 UTC";
@@ -2192,10 +2194,12 @@
                                         alert("Your random number is between " + Range2 + " and " + Range1 + ".")
                                         localStorage.setItem("Cheater", finalC)
                                         var Perk3 = parseFloat(Perk3) - parseFloat(1)
-                                    }
-                                    if (Perk3 == "0") {
+                                    }else {
+                                        if (Perk3 == "0") {
                                         alert("Perk was not activated successfully because it is not in you inventory!")
                                     }
+                                    }
+                                    
                                 }
 
 
@@ -2786,6 +2790,7 @@
                                         var Season5Badge = localStorage.getItem("Season5")
                                         var Season6Badge = localStorage.getItem("Season6")
                                         var Season7Badge = localStorage.getItem("Season7")
+                                        var Season8Badge = localStorage.getItem("Season8")
                                         var SCBYSFFM = localStorage.getItem("So Close But Yet So Far (Fast Mode)")
                                         var SCBYSFNM = localStorage.getItem("So Close But Yet So Far (Normal Mode)")
                                         var ExtraInnings = localStorage.getItem("Extra Innings")
@@ -2836,6 +2841,10 @@
                                             var Season7Badge = "None"
                                         }
 
+                                        if (Season8Badge == null) {
+                                            var Season8Badge = "None"
+                                        }
+
                                         if (LifetimeWins == null) {
                                             var LifetimeWins = "0"
                                         }
@@ -2846,7 +2855,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
                                         var testcom = localStorage.getItem("test")
@@ -2998,7 +3007,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3087,7 +3096,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -3400,7 +3409,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
                                         document.body.style.fontSize = "30px";
@@ -3482,7 +3491,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
                                         document.body.style.fontSize = "30px";
@@ -3843,7 +3852,7 @@
                                         var CoinsNew = Coins.toString()
                                     }
 
-                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -4072,9 +4081,11 @@
                                         localStorage.setItem("Cheater", finalC)
                                         var Perk3 = parseFloat(Perk3) - parseFloat(1)
                                     }
+                                    else{
                                     if (Perk3 == "0") {
                                         alert("Perk was not activated successfully because it is not in you inventory!")
                                     }
+                                }
                                 }
 
                                 if (Attempts <= Number && Attempts > 0 && Attempts != "Cheat") {
@@ -4604,7 +4615,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
                                         var testcom = localStorage.getItem("test")
@@ -4739,7 +4750,7 @@
                                         var CoinsNew = Coins.toString()
                                     }
 
-                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                    myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                     myJSON = JSON.stringify(myObj);
                                     localStorage.setItem("playerDataJSON", myJSON);
 
@@ -5045,7 +5056,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
 
@@ -5127,7 +5138,7 @@
                                             var CoinsNew = Coins.toString()
                                         }
 
-                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge };
+                                        myObj = { name: Name, Coins: CoinsNew, lastPlayed: timeSlice, LifetimeWins: LifetimeWinsNew, LifetimeGuesses: LifetimeGuesses1234New, ExtraInnings: hasExtraInnings, SoCloseButYetSoFarFastMode: hasSoClose, SoCloseButYetSoFarNormalMode: hasSoCloseNormal, Season1Badge: Season1Badge, Season2Badge: Season2Badge, Season3Badge: Season3Badge, Season4Badge: Season4Badge, Season5Badge: Season5Badge, Season6Badge: Season6Badge, Season7Badge: Season7Badge, Season8Badge: Season8Badge };
                                         myJSON = JSON.stringify(myObj);
                                         localStorage.setItem("playerDataJSON", myJSON);
                                         document.body.style.fontSize = "30px";
